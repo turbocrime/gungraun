@@ -295,6 +295,9 @@ impl Flamegraph {
             output_path.set_event_kind(*event_kind);
 
             let stacks_lines = map.to_stack_format(event_kind)?;
+            if stacks_lines.is_empty() {
+                continue;
+            }
             if self.is_regular() {
                 Self::write(
                     output_path,
