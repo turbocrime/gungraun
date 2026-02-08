@@ -1,0 +1,39 @@
+# callgrind format
+version: 1
+creator: callgrind-3.21.0
+pid: 1000000
+cmd:  target/release/multithread-test
+part: 1
+thread: 1
+
+
+desc: I1 cache: 32768 B, 64 B, 8-way associative
+desc: D1 cache: 32768 B, 64 B, 8-way associative
+desc: LL cache: 8388608 B, 64 B, 16-way associative
+
+desc: Timerange: Basic block 0 - 1000
+desc: Trigger: Program termination
+
+positions: line
+events: Ir
+summary: 120
+
+fl=src/worker.rs
+fn=worker_entry
+1 20
+cfl=src/worker.rs
+cfn=beta
+calls=1 10
+1 100
+
+fl=src/worker.rs
+fn=beta
+10 30
+cfl=src/worker.rs
+cfn=beta_leaf
+calls=1 20
+10 70
+
+fl=src/worker.rs
+fn=beta_leaf
+20 70

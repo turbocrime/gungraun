@@ -1,0 +1,3 @@
+src/main.rs:main 10
+src/main.rs:main;src/main.rs:alpha 40
+src/main.rs:main;src/main.rs:alpha;src/main.rs:alpha_leaf 50

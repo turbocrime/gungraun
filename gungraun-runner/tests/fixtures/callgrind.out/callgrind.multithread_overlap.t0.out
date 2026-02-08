@@ -1,0 +1,31 @@
+# callgrind format
+version: 1
+creator: callgrind-3.21.0
+pid: 1000000
+cmd:  target/release/multithread-overlap-test
+part: 1
+thread: 0
+
+
+desc: I1 cache: 32768 B, 64 B, 8-way associative
+desc: D1 cache: 32768 B, 64 B, 8-way associative
+desc: LL cache: 8388608 B, 64 B, 16-way associative
+
+desc: Timerange: Basic block 0 - 1000
+desc: Trigger: Program termination
+
+positions: line
+events: Ir
+summary: 100
+
+fl=src/lib.rs
+fn=top
+1 10
+cfl=src/lib.rs
+cfn=work
+calls=1 10
+1 90
+
+fl=src/lib.rs
+fn=work
+10 90

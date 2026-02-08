@@ -114,7 +114,6 @@ impl FlamegraphGenerator for BaselineFlamegraphGenerator {
         output_path.init()?;
         output_path.to_diff_path().clear(true)?;
         output_path.shift(true)?;
-        output_path.set_modifiers(["total"]);
 
         if flamegraph.config.kind == FlamegraphKind::None
             || flamegraph.config.event_kinds.is_empty()
@@ -125,45 +124,42 @@ impl FlamegraphGenerator for BaselineFlamegraphGenerator {
         let (maps, base_maps) =
             flamegraph.parse(tool_output_path, sentinel, project_root, false)?;
 
-        let total = total_flamegraph_map_from_parsed(&maps).unwrap();
-
         let mut flamegraph_summaries = FlamegraphSummaries::default();
-        for event_kind in &flamegraph.config.event_kinds {
-            let mut flamegraph_summary = FlamegraphSummary::new(*event_kind);
-            output_path.set_event_kind(*event_kind);
 
-            let stacks_lines = total.to_stack_format(event_kind)?;
-            if flamegraph.is_regular() {
-                Flamegraph::write(
-                    &output_path,
-                    &mut flamegraph.options(*event_kind, output_path.file_name()),
-                    stacks_lines.iter().map(std::string::String::as_str),
-                )?;
-                flamegraph_summary.regular_path = Some(output_path.to_path());
+        if maps.len() <= 1 {
+            // Single map (or empty): produce a single "total" flamegraph as before.
+            output_path.set_modifiers(["total"]);
+            let total = total_flamegraph_map_from_parsed(&maps).unwrap();
+            let base_total = base_maps
+                .as_ref()
+                .and_then(total_flamegraph_map_from_parsed);
+            let summaries = flamegraph.generate_for_map(
+                &mut output_path,
+                &total,
+                base_total.as_deref(),
+            )?;
+            flamegraph_summaries.totals.extend(summaries);
+        } else {
+            // Multiple maps (separate threads/parts): produce per-map flamegraphs.
+            for (_, props, map) in &maps {
+                output_path.set_modifiers(modifier_from_properties(props));
+                let base_map = base_maps.as_ref().and_then(|bases| {
+                    bases
+                        .iter()
+                        .find(|(_, bp, _)| bp.thread == props.thread && bp.part == props.part)
+                        .map(|(_, _, m)| m)
+                });
+                let summaries =
+                    flamegraph.generate_for_map(&mut output_path, map, base_map)?;
+                flamegraph_summaries.summaries.extend(summaries);
             }
-
-            if let Some(base_maps) = &base_maps {
-                let total_base = total_flamegraph_map_from_parsed(base_maps).unwrap();
-                // Is Some if FlamegraphKind::Differential or FlamegraphKind::All
-                Flamegraph::create_differential(
-                    &output_path,
-                    &mut flamegraph.options(*event_kind, output_path.to_diff_path().file_name()),
-                    &total_base,
-                    // This unwrap is safe since we always have differential options if the
-                    // flamegraph kind is differential
-                    flamegraph.differential_options().unwrap(),
-                    *event_kind,
-                    &stacks_lines,
-                )?;
-
-                flamegraph_summary.base_path = Some(output_path.to_base_path().to_path());
-                flamegraph_summary.diff_path = Some(output_path.to_diff_path().to_path());
-            }
-
-            flamegraph_summaries.totals.push(flamegraph_summary);
         }
 
-        Ok(flamegraph_summaries.totals)
+        Ok(flamegraph_summaries
+            .totals
+            .into_iter()
+            .chain(flamegraph_summaries.summaries)
+            .collect())
     }
 }
 
@@ -285,6 +281,49 @@ impl Flamegraph {
         Ok((maps, base_maps))
     }
 
+    /// Generate flamegraphs for a single [`FlamegraphMap`], writing regular and/or differential
+    /// SVGs for each configured event kind. Returns the generated [`FlamegraphSummary`] entries.
+    fn generate_for_map(
+        &self,
+        output_path: &mut OutputPath,
+        map: &FlamegraphMap,
+        base_map: Option<&FlamegraphMap>,
+    ) -> Result<Vec<FlamegraphSummary>> {
+        let mut summaries = vec![];
+        for event_kind in &self.config.event_kinds {
+            let mut flamegraph_summary = FlamegraphSummary::new(*event_kind);
+            output_path.set_event_kind(*event_kind);
+
+            let stacks_lines = map.to_stack_format(event_kind)?;
+            if self.is_regular() {
+                Self::write(
+                    output_path,
+                    &mut self.options(*event_kind, output_path.file_name()),
+                    stacks_lines.iter().map(String::as_str),
+                )?;
+                flamegraph_summary.regular_path = Some(output_path.to_path());
+            }
+
+            if let Some(base_map) = base_map {
+                Self::create_differential(
+                    output_path,
+                    &mut self.options(*event_kind, output_path.to_diff_path().file_name()),
+                    base_map,
+                    // Safe: is_differential() is true when base_map is Some
+                    self.differential_options().unwrap(),
+                    *event_kind,
+                    &stacks_lines,
+                )?;
+
+                flamegraph_summary.base_path = Some(output_path.to_base_path().to_path());
+                flamegraph_summary.diff_path = Some(output_path.to_diff_path().to_path());
+            }
+
+            summaries.push(flamegraph_summary);
+        }
+        Ok(summaries)
+    }
+
     fn create_differential(
         output_path: &OutputPath,
         options: &mut inferno::flamegraph::Options,
@@ -346,42 +385,82 @@ impl FlamegraphGenerator for LoadBaselineFlamegraphGenerator {
         }
 
         output_path.to_diff_path().clear(true)?;
-        output_path.set_modifiers(["total"]);
 
         let (maps, base_maps) = flamegraph
             .parse(tool_output_path, sentinel, project_root, false)
             .map(|(a, b)| (a, b.unwrap()))?;
 
         let mut flamegraph_summaries = FlamegraphSummaries::default();
-        if let Some(total) = total_flamegraph_map_from_parsed(&maps) {
-            let base_total = total_flamegraph_map_from_parsed(&base_maps);
 
-            if let Some(base_total) = base_total {
-                for event_kind in &flamegraph.config.event_kinds {
-                    let mut flamegraph_summary = FlamegraphSummary::new(*event_kind);
-                    output_path.set_event_kind(*event_kind);
+        if maps.len() <= 1 {
+            output_path.set_modifiers(["total"]);
+            if let Some(total) = total_flamegraph_map_from_parsed(&maps) {
+                let base_total = total_flamegraph_map_from_parsed(&base_maps);
+                if let Some(base_total) = base_total {
+                    for event_kind in &flamegraph.config.event_kinds {
+                        let mut flamegraph_summary = FlamegraphSummary::new(*event_kind);
+                        output_path.set_event_kind(*event_kind);
 
-                    Flamegraph::create_differential(
-                        &output_path,
-                        &mut flamegraph
-                            .options(*event_kind, output_path.to_diff_path().file_name()),
-                        &base_total,
-                        // This unwrap is safe since we always produce a differential flamegraph
-                        flamegraph.differential_options().unwrap(),
-                        *event_kind,
-                        &total.to_stack_format(event_kind)?,
-                    )?;
+                        Flamegraph::create_differential(
+                            &output_path,
+                            &mut flamegraph
+                                .options(*event_kind, output_path.to_diff_path().file_name()),
+                            &base_total,
+                            flamegraph.differential_options().unwrap(),
+                            *event_kind,
+                            &total.to_stack_format(event_kind)?,
+                        )?;
 
-                    flamegraph_summary.regular_path = Some(output_path.to_path());
-                    flamegraph_summary.base_path = Some(output_path.to_base_path().to_path());
-                    flamegraph_summary.diff_path = Some(output_path.to_diff_path().to_path());
+                        flamegraph_summary.regular_path = Some(output_path.to_path());
+                        flamegraph_summary.base_path =
+                            Some(output_path.to_base_path().to_path());
+                        flamegraph_summary.diff_path =
+                            Some(output_path.to_diff_path().to_path());
 
-                    flamegraph_summaries.totals.push(flamegraph_summary);
+                        flamegraph_summaries.totals.push(flamegraph_summary);
+                    }
+                }
+            }
+        } else {
+            // Per-thread/part differential flamegraphs
+            for (_, props, map) in &maps {
+                output_path.set_modifiers(modifier_from_properties(props));
+                let base_map = base_maps
+                    .iter()
+                    .find(|(_, bp, _)| bp.thread == props.thread && bp.part == props.part)
+                    .map(|(_, _, m)| m);
+                if let Some(base_map) = base_map {
+                    for event_kind in &flamegraph.config.event_kinds {
+                        let mut flamegraph_summary = FlamegraphSummary::new(*event_kind);
+                        output_path.set_event_kind(*event_kind);
+
+                        Flamegraph::create_differential(
+                            &output_path,
+                            &mut flamegraph
+                                .options(*event_kind, output_path.to_diff_path().file_name()),
+                            base_map,
+                            flamegraph.differential_options().unwrap(),
+                            *event_kind,
+                            &map.to_stack_format(event_kind)?,
+                        )?;
+
+                        flamegraph_summary.regular_path = Some(output_path.to_path());
+                        flamegraph_summary.base_path =
+                            Some(output_path.to_base_path().to_path());
+                        flamegraph_summary.diff_path =
+                            Some(output_path.to_diff_path().to_path());
+
+                        flamegraph_summaries.summaries.push(flamegraph_summary);
+                    }
                 }
             }
         }
 
-        Ok(flamegraph_summaries.totals)
+        Ok(flamegraph_summaries
+            .totals
+            .into_iter()
+            .chain(flamegraph_summaries.summaries)
+            .collect())
     }
 }
 
@@ -628,7 +707,6 @@ impl FlamegraphGenerator for SaveBaselineFlamegraphGenerator {
         output_path.init()?;
         output_path.clear(true)?;
         output_path.clear_diff()?;
-        output_path.set_modifiers(["total"]);
 
         if flamegraph.config.kind == FlamegraphKind::None
             || flamegraph.config.event_kinds.is_empty()
@@ -638,27 +716,27 @@ impl FlamegraphGenerator for SaveBaselineFlamegraphGenerator {
         }
 
         let (maps, _) = flamegraph.parse(tool_output_path, sentinel, project_root, true)?;
-        let total_map = total_flamegraph_map_from_parsed(&maps).unwrap();
 
         let mut flamegraph_summaries = FlamegraphSummaries::default();
-        for event_kind in &flamegraph.config.event_kinds {
-            let mut flamegraph_summary = FlamegraphSummary::new(*event_kind);
-            output_path.set_event_kind(*event_kind);
 
-            Flamegraph::write(
-                &output_path,
-                &mut flamegraph.options(*event_kind, output_path.file_name()),
-                total_map
-                    .to_stack_format(event_kind)?
-                    .iter()
-                    .map(String::as_str),
-            )?;
-
-            flamegraph_summary.regular_path = Some(output_path.to_path());
-            flamegraph_summaries.summaries.push(flamegraph_summary);
+        if maps.len() <= 1 {
+            output_path.set_modifiers(["total"]);
+            let total_map = total_flamegraph_map_from_parsed(&maps).unwrap();
+            let summaries = flamegraph.generate_for_map(&mut output_path, &total_map, None)?;
+            flamegraph_summaries.totals.extend(summaries);
+        } else {
+            for (_, props, map) in &maps {
+                output_path.set_modifiers(modifier_from_properties(props));
+                let summaries = flamegraph.generate_for_map(&mut output_path, map, None)?;
+                flamegraph_summaries.summaries.extend(summaries);
+            }
         }
 
-        Ok(flamegraph_summaries.totals)
+        Ok(flamegraph_summaries
+            .totals
+            .into_iter()
+            .chain(flamegraph_summaries.summaries)
+            .collect())
     }
 }
 
@@ -673,5 +751,17 @@ fn total_flamegraph_map_from_parsed(maps: &ParserOutput) -> Option<Cow<'_, Flame
             }
             Some(Cow::Owned(total))
         }
+    }
+}
+
+/// Build a modifier string from [`CallgrindProperties`] matching `sanitize_callgrind()` naming.
+///
+/// Returns e.g. `"t0"`, `"t1.p2"`, or `"total"` when there is no thread/part info.
+fn modifier_from_properties(props: &CallgrindProperties) -> Vec<String> {
+    match (props.thread, props.part) {
+        (Some(t), Some(p)) => vec![format!("t{t}"), format!("p{p}")],
+        (Some(t), None) => vec![format!("t{t}")],
+        (None, Some(p)) => vec![format!("p{p}")],
+        (None, None) => vec!["total".to_owned()],
     }
 }
