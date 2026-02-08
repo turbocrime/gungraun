@@ -559,9 +559,12 @@ impl ToolConfigs {
                     .create(
                         &Flamegraph::new(title.to_owned(), flamegraph_config.to_owned()),
                         &output_path,
-                        (tool_config.entry_point == EntryPoint::Default)
-                            .then(Sentinel::default)
-                            .as_ref(),
+                        match &tool_config.entry_point {
+                            EntryPoint::Default => Some(Sentinel::default()),
+                            EntryPoint::Custom(pattern) => Some(Sentinel::new(pattern)),
+                            EntryPoint::None => None,
+                        }
+                        .as_ref(),
                         &config.meta.project_root,
                     )?;
                 }
@@ -696,9 +699,12 @@ impl ToolConfigs {
                         profile.flamegraphs = SaveBaselineFlamegraphGenerator { baseline }.create(
                             &Flamegraph::new(title.to_owned(), flamegraph_config.to_owned()),
                             &output_path,
-                            (tool_config.entry_point == EntryPoint::Default)
-                                .then(Sentinel::default)
-                                .as_ref(),
+                            match &tool_config.entry_point {
+                                EntryPoint::Default => Some(Sentinel::default()),
+                                EntryPoint::Custom(pattern) => Some(Sentinel::new(pattern)),
+                                EntryPoint::None => None,
+                            }
+                            .as_ref(),
                             &config.meta.project_root,
                         )?;
                     }
@@ -711,9 +717,12 @@ impl ToolConfigs {
                     .create(
                         &Flamegraph::new(title.to_owned(), flamegraph_config.to_owned()),
                         &output_path,
-                        (tool_config.entry_point == EntryPoint::Default)
-                            .then(Sentinel::default)
-                            .as_ref(),
+                        match &tool_config.entry_point {
+                            EntryPoint::Default => Some(Sentinel::default()),
+                            EntryPoint::Custom(pattern) => Some(Sentinel::new(pattern)),
+                            EntryPoint::None => None,
+                        }
+                        .as_ref(),
                         &config.meta.project_root,
                     )?;
                 } else {

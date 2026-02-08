@@ -525,7 +525,9 @@ impl ToolOutputPath {
 
     /// Strip the `<tool>.<name>` prefix from a `file_name`
     pub fn strip_prefix<'a>(&self, file_name: &'a str) -> Option<&'a str> {
-        file_name.strip_prefix(format!("{}.{}", self.tool.id(), self.name).as_str())
+        file_name
+            .strip_prefix(format!("{}.{}", self.tool.id(), self.name).as_str())
+            .filter(|suffix| suffix.starts_with('.'))
     }
 
     /// Return the file name prefix as in `<tool>.<name>`
