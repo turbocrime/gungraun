@@ -15,7 +15,7 @@ use crate::runner::metrics::Metric;
 /// The `FlamegraphMap` based on a [`CallgrindMap`]
 #[derive(Debug, Clone, Default, PartialEq, Eq)]
 pub struct FlamegraphMap {
-    callees: HashSet<Id>,
+    roots: Vec<Id>,
     costs: CallgrindMap,
     edges: HashMap<Id, HashMap<Id, Metrics>>,
 }
@@ -25,6 +25,7 @@ pub struct FlamegraphMap {
 pub struct FlamegraphParser {
     project_root: PathBuf,
     sentinel: Option<Sentinel>,
+    min_cost: u64,
 }
 
 impl FlamegraphMap {
@@ -76,7 +77,8 @@ impl FlamegraphMap {
                 self.edges.insert(caller.clone(), callee_map.clone());
             }
         }
-        self.callees.extend(other.callees.iter().cloned());
+
+        // TODO: recompute roots after merge
     }
 
     /// Convert to stacks string format for this `EventType`
@@ -95,41 +97,43 @@ impl FlamegraphMap {
             })?;
         }
 
-        let roots: Vec<&Id> = if let Some(sentinel_key) = &self.costs.sentinel_key {
-            vec![sentinel_key]
-        } else {
-            let mut roots: Vec<&Id> = self
-                .costs
-                .map
-                .keys()
-                .filter(|id| !self.callees.contains(id))
-                .collect();
-            roots.sort();
-            roots
+        // Precompute how many distinct callers each function has.
+        let caller_count: HashMap<&Id, usize> = {
+            let mut counts: HashMap<&Id, usize> = HashMap::new();
+            for callee_map in self.edges.values() {
+                for callee_id in callee_map.keys() {
+                    *counts.entry(callee_id).or_default() += 1;
+                }
+            }
+            counts
         };
 
         let mut stacks: Vec<String> = vec![];
-        let mut visited = HashSet::new();
-        for root in roots {
-            self.dfs_emit(root, "", event_kind, None, &mut stacks, &mut visited);
+        let mut path: HashSet<&Id> = HashSet::new();
+        for root in &self.roots {
+            self.dfs_emit(root, "", event_kind, &mut stacks, None, &caller_count, &mut path);
         }
 
         Ok(stacks)
     }
 
-    fn dfs_emit(
-        &self,
-        id: &Id,
+    fn dfs_emit<'a>(
+        &'a self,
+        id: &'a Id,
         parent_stack: &str,
         event_kind: &EventKind,
-        edge_cost: Option<Metric>,
         stacks: &mut Vec<String>,
-        visited: &mut HashSet<Id>,
+        edge_cost: Option<Metric>,
+        caller_count: &HashMap<&Id, usize>,
+        path: &mut HashSet<&'a Id>,
     ) {
-        if !visited.insert(id.clone()) {
+        // Cycle detection: skip nodes already on the current DFS path.
+        if !path.insert(id) {
             return;
         }
 
+        // For root nodes (no incoming edge), use global inclusive cost from costs.map.
+        // For non-root nodes, use the per-callsite edge cost from the parent.
         let inclusive = edge_cost.unwrap_or_else(|| {
             self.costs
                 .map
@@ -151,13 +155,13 @@ impl FlamegraphMap {
         } else {
             write!(source, "{}", id.func).unwrap();
         }
-        if let Some(path) = &id.obj {
-            match path {
+        if let Some(obj_path) = &id.obj {
+            match obj_path {
                 SourcePath::Unknown => {}
-                SourcePath::Rust(path)
-                | SourcePath::Relative(path)
-                | SourcePath::Absolute(path) => {
-                    write!(source, " [{}]", path.display()).unwrap();
+                SourcePath::Rust(p)
+                | SourcePath::Relative(p)
+                | SourcePath::Absolute(p) => {
+                    write!(source, " [{}]", p.display()).unwrap();
                 }
             }
         }
@@ -168,12 +172,29 @@ impl FlamegraphMap {
             format!("{parent_stack};{source}")
         };
 
+        // Shared non-leaf: called from multiple sites AND has outgoing edges.
+        // We can't split outgoing edges per-caller, so emit the full edge cost
+        // as a solid block and don't recurse.
+        let is_shared = caller_count.get(id).copied().unwrap_or(0) > 1;
+        let has_children = self.edges.contains_key(id);
+
+        if is_shared && has_children && edge_cost.is_some() {
+            stacks.push(format!("{} {}", current_stack, inclusive));
+            path.remove(id);
+            return;
+        }
+
+        // Filter out children that are on the current DFS path (back-edges).
+        // Their cost is absorbed into this node's self-cost.
         let mut children: Vec<(&Id, Metric)> = self
             .edges
             .get(id)
             .map(|m| {
                 m.iter()
                     .filter_map(|(callee, edge_metrics)| {
+                        if path.contains(callee) {
+                            return None;
+                        }
                         edge_metrics.metric_by_kind(event_kind).map(|c| (callee, c))
                     })
                     .collect()
@@ -183,38 +204,47 @@ impl FlamegraphMap {
             cost_b.cmp(cost_a).then_with(|| id_a.cmp(id_b))
         });
 
+        // Self-cost: inclusive minus reachable children's edge costs.
+        // Clamped to 0 because callgrind's cycle cost attribution can make
+        // outgoing edges exceed the incoming edge cost.
         let children_cost: Metric = children
             .iter()
-            .filter(|(child_id, _)| !visited.contains(*child_id))
             .map(|(_, c)| *c)
             .fold(Metric::Int(0), |acc, c| acc + c);
 
-        stacks.push(format!("{} {}", current_stack, inclusive - children_cost));
+        let self_cost = if inclusive > children_cost {
+            inclusive - children_cost
+        } else {
+            Metric::Int(0)
+        };
+        stacks.push(format!("{} {}", current_stack, self_cost));
 
         for (child_id, child_edge_cost) in &children {
             self.dfs_emit(
                 child_id,
                 &current_stack,
                 event_kind,
-                Some(*child_edge_cost),
                 stacks,
-                visited,
+                Some(*child_edge_cost),
+                caller_count,
+                path,
             );
         }
 
-        visited.remove(id);
+        path.remove(id);
     }
 }
 
 impl FlamegraphParser {
     /// Create a new `FlamegraphParser`
-    pub fn new<P>(sentinel: Option<&Sentinel>, project_root: P) -> Self
+    pub fn new<P>(sentinel: Option<&Sentinel>, project_root: P, min_cost: u64) -> Self
     where
         P: Into<PathBuf>,
     {
         Self {
             sentinel: sentinel.cloned(),
             project_root: project_root.into(),
+            min_cost,
         }
     }
 }
@@ -230,10 +260,19 @@ impl CallgrindParser for FlamegraphParser {
             sentinel: self.sentinel.clone(),
         };
 
+        let min_cost_metric = Metric::Int(self.min_cost);
         let mut callees = HashSet::new();
         let mut edges: HashMap<Id, HashMap<Id, Metrics>> = HashMap::new();
 
         let (props, costs) = parser.parse_with_edges(path, |caller_id, callee_id, metrics| {
+            if self.min_cost > 0 {
+                if let Some(ir_cost) = metrics.metric_by_kind(&EventKind::Ir) {
+                    if ir_cost < min_cost_metric {
+                        return;
+                    }
+                }
+            }
+
             if let Some(callee_map) = edges.get_mut(caller_id) {
                 if let Some(m) = callee_map.get_mut(callee_id) {
                     m.add(metrics);
@@ -245,15 +284,26 @@ impl CallgrindParser for FlamegraphParser {
                 callee_map.insert(callee_id.clone(), metrics.clone());
                 edges.insert(caller_id.clone(), callee_map);
             }
-            if !callees.contains(callee_id) {
-                callees.insert(callee_id.clone());
-            }
+            callees.insert(callee_id.clone());
         })?;
+
+        let roots = if let Some(ref key) = costs.sentinel_key {
+            vec![key.clone()]
+        } else {
+            let mut r: Vec<Id> = costs
+                .map
+                .keys()
+                .filter(|id| !callees.contains(id) && edges.contains_key(id))
+                .cloned()
+                .collect();
+            r.sort();
+            r
+        };
 
         Ok((
             props,
             FlamegraphMap {
-                callees,
+                roots,
                 costs,
                 edges,
             },

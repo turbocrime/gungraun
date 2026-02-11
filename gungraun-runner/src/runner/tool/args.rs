@@ -25,6 +25,7 @@ pub mod defaults {
     pub const DUMP_LINE: bool = true;
     pub const DUMP_INSTR: bool = false;
     pub const SEPARATE_THREADS: bool = true;
+    pub const SEPARATE_RECS: u32 = 1;
     ////////////////////////////////////////////////////
 
     ////////////////////////////////////////////////////

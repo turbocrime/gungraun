@@ -236,7 +236,7 @@ impl HashMapParser {
                         .map(|s| s.parse::<u64>().unwrap())
                         .sum();
                 }
-                None if line.starts_with(|c: char| c.is_ascii_digit()) => {
+                None if line.starts_with(|c: char| c.is_ascii_digit() || matches!(c, '*' | '+' | '-')) => {
                     let mut metrics = config.metrics_prototype.clone();
                     metrics.add_iter_str(
                         line.split_whitespace()

@@ -1,4 +1,9 @@
-src/main.rs:main 10
-src/main.rs:main;src/main.rs:rec_func 20
-src/main.rs:main;src/main.rs:rec_func;src/main.rs:leaf 30
-src/main.rs:main;src/main.rs:helper 15
+/work/benchmark-tests-recursive.rs:benchmark_tests_recursive::main [/work/benchmark-tests-recursive] 2937
+/work/benchmark-tests-recursive.rs:benchmark_tests_recursive::main [/work/benchmark-tests-recursive];/work/benchmark-tests-recursive.rs:benchmark_tests_recursive::get_arg [/work/benchmark-tests-recursive] 74915
+/work/benchmark-tests-recursive.rs:benchmark_tests_recursive::main [/work/benchmark-tests-recursive];/work/benchmark-tests-recursive.rs:benchmark_tests_recursive::recursive [/work/benchmark-tests-recursive] 73122
+/work/benchmark-tests-recursive.rs:benchmark_tests_recursive::main [/work/benchmark-tests-recursive];std::process::exit [/work/benchmark-tests-recursive] 5
+/work/benchmark-tests-recursive.rs:benchmark_tests_recursive::main [/work/benchmark-tests-recursive];std::process::exit [/work/benchmark-tests-recursive];std::rt::cleanup [/work/benchmark-tests-recursive] 22
+/work/benchmark-tests-recursive.rs:benchmark_tests_recursive::main [/work/benchmark-tests-recursive];std::process::exit [/work/benchmark-tests-recursive];std::rt::cleanup [/work/benchmark-tests-recursive];std::sys::pal::unix::os::exit [/work/benchmark-tests-recursive] 5
+/work/benchmark-tests-recursive.rs:benchmark_tests_recursive::main [/work/benchmark-tests-recursive];std::process::exit [/work/benchmark-tests-recursive];std::rt::cleanup [/work/benchmark-tests-recursive];std::sys::pal::unix::os::exit [/work/benchmark-tests-recursive];std::sys::exit_guard::unique_thread_exit [/work/benchmark-tests-recursive] 2158
+/work/benchmark-tests-recursive.rs:benchmark_tests_recursive::main [/work/benchmark-tests-recursive];std::process::exit [/work/benchmark-tests-recursive];std::rt::cleanup [/work/benchmark-tests-recursive];std::sys::sync::once::futex::Once::call [/work/benchmark-tests-recursive] 722
+/work/benchmark-tests-recursive.rs:benchmark_tests_recursive::main [/work/benchmark-tests-recursive];/build/rustc-1.91.1-src/library/core/src/hint.rs:core::hint::black_box [/work/benchmark-tests-recursive] 7

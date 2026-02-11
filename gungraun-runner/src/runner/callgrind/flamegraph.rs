@@ -262,7 +262,7 @@ impl Flamegraph {
     where
         P: Into<PathBuf>,
     {
-        let parser = FlamegraphParser::new(sentinel, project_root);
+        let parser = FlamegraphParser::new(sentinel, project_root, 0);
         // We need this map in all remaining cases of `FlamegraphKinds`
         let mut maps = parser.parse(tool_output_path)?;
 
