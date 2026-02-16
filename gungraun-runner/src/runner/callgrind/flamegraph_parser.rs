@@ -97,21 +97,10 @@ impl FlamegraphMap {
             })?;
         }
 
-        // Precompute how many distinct callers each function has.
-        let caller_count: HashMap<&Id, usize> = {
-            let mut counts: HashMap<&Id, usize> = HashMap::new();
-            for callee_map in self.edges.values() {
-                for callee_id in callee_map.keys() {
-                    *counts.entry(callee_id).or_default() += 1;
-                }
-            }
-            counts
-        };
-
         let mut stacks: Vec<String> = vec![];
-        let mut path: HashSet<&Id> = HashSet::new();
+        let mut visited: HashSet<&Id> = HashSet::new();
         for root in &self.roots {
-            self.dfs_emit(root, "", event_kind, &mut stacks, None, &caller_count, &mut path);
+            self.dfs_emit(root, "", event_kind, &mut stacks, None, &mut visited);
         }
 
         Ok(stacks)
@@ -124,11 +113,12 @@ impl FlamegraphMap {
         event_kind: &EventKind,
         stacks: &mut Vec<String>,
         edge_cost: Option<Metric>,
-        caller_count: &HashMap<&Id, usize>,
-        path: &mut HashSet<&'a Id>,
+        visited: &mut HashSet<&'a Id>,
     ) {
-        // Cycle detection: skip nodes already on the current DFS path.
-        if !path.insert(id) {
+        // Global visited: each function is emitted at most once, claimed by
+        // the first DFS path that reaches it. This prevents infinite traversal
+        // of cycles and avoids double-counting shared callees.
+        if !visited.insert(id) {
             return;
         }
 
@@ -146,10 +136,10 @@ impl FlamegraphMap {
         if let Some(file) = &id.file {
             match file {
                 SourcePath::Unknown => write!(source, "{}", id.func).unwrap(),
-                SourcePath::Rust(path)
-                | SourcePath::Relative(path)
-                | SourcePath::Absolute(path) => {
-                    write!(source, "{}:{}", path.display(), id.func).unwrap();
+                SourcePath::Rust(obj_path)
+                | SourcePath::Relative(obj_path)
+                | SourcePath::Absolute(obj_path) => {
+                    write!(source, "{}:{}", obj_path.display(), id.func).unwrap();
                 }
             }
         } else {
@@ -172,27 +162,14 @@ impl FlamegraphMap {
             format!("{parent_stack};{source}")
         };
 
-        // Shared non-leaf: called from multiple sites AND has outgoing edges.
-        // We can't split outgoing edges per-caller, so emit the full edge cost
-        // as a solid block and don't recurse.
-        let is_shared = caller_count.get(id).copied().unwrap_or(0) > 1;
-        let has_children = self.edges.contains_key(id);
-
-        if is_shared && has_children && edge_cost.is_some() {
-            stacks.push(format!("{} {}", current_stack, inclusive));
-            path.remove(id);
-            return;
-        }
-
-        // Filter out children that are on the current DFS path (back-edges).
-        // Their cost is absorbed into this node's self-cost.
+        // Collect children not yet visited, with their edge costs.
         let mut children: Vec<(&Id, Metric)> = self
             .edges
             .get(id)
             .map(|m| {
                 m.iter()
                     .filter_map(|(callee, edge_metrics)| {
-                        if path.contains(callee) {
+                        if visited.contains(callee) {
                             return None;
                         }
                         edge_metrics.metric_by_kind(event_kind).map(|c| (callee, c))
@@ -204,9 +181,9 @@ impl FlamegraphMap {
             cost_b.cmp(cost_a).then_with(|| id_a.cmp(id_b))
         });
 
-        // Self-cost: inclusive minus reachable children's edge costs.
-        // Clamped to 0 because callgrind's cycle cost attribution can make
-        // outgoing edges exceed the incoming edge cost.
+        // Self-cost: inclusive minus children's edge costs.
+        // Clamped to 0 because callgrind's phantom edges can make
+        // outgoing edge costs exceed the incoming edge cost.
         let children_cost: Metric = children
             .iter()
             .map(|(_, c)| *c)
@@ -226,12 +203,9 @@ impl FlamegraphMap {
                 event_kind,
                 stacks,
                 Some(*child_edge_cost),
-                caller_count,
-                path,
+                visited,
             );
         }
-
-        path.remove(id);
     }
 }
 

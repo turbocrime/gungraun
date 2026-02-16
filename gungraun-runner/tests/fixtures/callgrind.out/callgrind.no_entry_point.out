@@ -1,7 +1,7 @@
 # callgrind format
 version: 1
 creator: callgrind-3.26.0
-pid: 66
+pid: 65
 cmd:  ./benchmark-tests-exit 0
 part: 1
 
@@ -18,92 +18,3094 @@ events: Ir
 summary: 295059
 
 
-ob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/ld-linux-aarch64.so.1
+ob=/work/benchmark-tests-exit
+fl=/build/rustc-1.91.1-src/library/core/src/char/methods.rs
+fn=core::char::methods::<impl char>::to_digit
+fi=/build/rustc-1.91.1-src/library/core/src/num/mod.rs
+1609 4
+1589 3
+cfn=core::num::<impl i32>::from_ascii_radix'2
+calls=1 0 
+1589 24
+fe=/build/rustc-1.91.1-src/library/core/src/char/methods.rs
+402 7
+fi=/build/rustc-1.91.1-src/library/core/src/fmt/rt.rs
+194 3
+fi=/build/rustc-1.91.1-src/library/core/src/num/uint_macros.rs
+2339 4
+fe=/build/rustc-1.91.1-src/library/core/src/char/methods.rs
+404 2
+0 1
+404 3
+cfn=core::char::methods::<impl char>::to_digit'2
+calls=1 0 
+404 23
+
+fn=core::char::methods::<impl char>::to_digit'2
+0 1
+408 3
+cfn=core::char::methods::<impl char>::to_digit'2
+calls=1 0 
+408 19
+0 1
+420 1
+fi=/build/rustc-1.91.1-src/library/core/src/num/uint_macros.rs
+2340 2
+fe=/build/rustc-1.91.1-src/library/core/src/char/methods.rs
+408 1
+cfn=core::char::methods::<impl char>::to_digit'2
+calls=1 0 
+408 14
+0 1
+423 8
+cfn=core::char::methods::<impl char>::to_digit'2
+calls=1 424 
+423 5
+424 5
+
+fl=/work/benchmark-tests-exit.rs
+fn=core::num::<impl i32>::from_ascii_radix
+0 5
+fi=/build/rustc-1.91.1-src/library/core/src/num/mod.rs
+1582 3
+1576 8
+1585 1
+1596 5
+1387 5
+0 1
+1387 6
+1596 2
+1615 1
+cfn=core::num::<impl i32>::from_ascii_radix'2
+calls=1 1607 
+1615 96
+fe=/work/benchmark-tests-exit.rs
+
+fn=benchmark_tests_exit::main
+1 5
+2 1
+cfi=???
+cfn=std::env::args
+calls=1 0 
+2 5084
+
+fn=benchmark_tests_exit::main'2
+2 9
+cfi=/build/rustc-1.91.1-src/library/core/src/option.rs
+cfn=core::option::Option<T>::expect
+calls=1 962 
+2 3680
+2 2
+cfi=/build/rustc-1.91.1-src/library/core/src/ptr/mod.rs
+cfn=core::ptr::drop_in_place<std::env::Args>
+calls=1 804 
+2 3652
+3 2
+cfi=/build/rustc-1.91.1-src/library/alloc/src/string.rs
+cfn=<alloc::string::String as core::ops::deref::Deref>::deref
+calls=1 2727 
+3 3265
+0 2
+3 1
+cfi=/build/rustc-1.91.1-src/library/core/src/str/mod.rs
+cfn=core::str::<impl str>::parse
+calls=1 2701 
+3 3164
+0 1
+3 13
+cfi=/build/rustc-1.91.1-src/library/core/src/result.rs
+cfn=core::result::Result<T,E>::expect
+calls=1 1172 
+3 18
+3 2
+cfn=benchmark_tests_exit::main'2
+calls=1 0 
+3 2915
+0 1
+3 1
+4 1
+cfi=???
+cfn=std::process::exit
+calls=1 0 
+4 2912
+
+fl=/build/rustc-1.91.1-src/library/alloc/src/raw_vec/mod.rs
+fn=<<alloc::vec::into_iter::IntoIter<T,A> as core::ops::drop::Drop>::drop::DropGuard<T,A> as core::ops::drop::Drop>::drop
+0 1
+fi=/build/rustc-1.91.1-src/library/core/src/num/niche_types.rs
+54 1
+fe=/build/rustc-1.91.1-src/library/alloc/src/raw_vec/mod.rs
+48 1
+cfn=<<alloc::vec::into_iter::IntoIter<T,A> as core::ops::drop::Drop>::drop::DropGuard<T,A> as core::ops::drop::Drop>::drop'2
+calls=1 0 
+48 165
+
+fn=<<alloc::vec::into_iter::IntoIter<T,A> as core::ops::drop::Drop>::drop::DropGuard<T,A> as core::ops::drop::Drop>::drop'2
+0 1
+277 5
+fi=/build/rustc-1.91.1-src/library/alloc/src/vec/into_iter.rs
+496 1
+cfi=/build/rustc-1.91.1-src/library/core/src/ptr/mod.rs
+cfn=core::ptr::drop_in_place<alloc::raw_vec::RawVec<std::ffi::os_str::OsString>>
+calls=1 804 
+496 158
+fe=/build/rustc-1.91.1-src/library/alloc/src/raw_vec/mod.rs
+
+fn=<alloc::raw_vec::RawVec<T,A> as core::ops::drop::Drop>::drop
+fi=/build/rustc-1.91.1-src/library/core/src/ptr/mod.rs
+804 3
+fe=/build/rustc-1.91.1-src/library/alloc/src/raw_vec/mod.rs
+404 5
+406 5
+cfi=???
+cfn=alloc::raw_vec::RawVecInner<A>::deallocate
+calls=1 0 
+406 136
+
+fl=/build/rustc-1.91.1-src/library/core/src/option.rs
+fn=core::option::Option<T>::expect
+fi=/work/benchmark-tests-exit.rs
+2 1
+cfn=benchmark_tests_exit::main'2
+calls=1 2 
+2 3654
+fe=/build/rustc-1.91.1-src/library/core/src/option.rs
+962 10
+963 6
+cfn=core::option::Option<T>::expect'2
+calls=1 0 
+963 9
+
+fn=core::option::Option<T>::expect'2
+0 2
+964 4
+967 3
+
+fn=core::iter::traits::exact_size::ExactSizeIterator::len
+0 2
+2355 5
+fi=/build/rustc-1.91.1-src/library/core/src/cmp.rs
+1866 1
+fi=/build/rustc-1.91.1-src/library/core/src/macros/mod.rs
+46 2
+0 1
+fi=/build/rustc-1.91.1-src/library/core/src/iter/traits/exact_size.rs
+124 3
+fe=/build/rustc-1.91.1-src/library/core/src/option.rs
+
+fn=<core::option::Option<T> as core::ops::try_trait::FromResidual<core::option::Option<core::convert::Infallible>>>::from_residual
+2668 1
+2672 3
+
+fn=core::iter::traits::iterator::Iterator::nth
+2655 3
+cfn=core::iter::traits::iterator::Iterator::nth'2
+calls=1 0 
+2655 68
+
+fn=core::iter::traits::iterator::Iterator::nth'2
+0 2
+fi=/build/rustc-1.91.1-src/library/core/src/iter/traits/iterator.rs
+375 1
+cfi=???
+cfn=<std::env::Args as core::iter::traits::iterator::Iterator>::next
+calls=1 0 
+375 65
+fe=/build/rustc-1.91.1-src/library/core/src/option.rs
+
+fn=<core::option::Option<T> as core::ops::try_trait::Try>::branch
+fi=/build/rustc-1.91.1-src/library/core/src/iter/traits/iterator.rs
+2426 2
+cfn=core::iter::traits::iterator::Iterator::try_fold'2
+calls=1 0 
+2426 22
+fe=/build/rustc-1.91.1-src/library/core/src/option.rs
+2654 2
+2655 4
+2657 2
+cfn=<core::option::Option<T> as core::ops::try_trait::Try>::branch'2
+calls=1 2659 
+2657 3
+
+fn=<core::option::Option<T> as core::ops::try_trait::Try>::branch'2
+2659 3
+
+fl=/build/rustc-1.91.1-src/library/core/src/result.rs
+fn=core::result::Result<T,E>::expect
+1172 11
+1176 2
+1177 2
+1180 3
+
+fl=/build/rustc-1.91.1-src/library/core/src/iter/traits/exact_size.rs
+fn=core::iter::traits::exact_size::ExactSizeIterator::len
+116 5
+fi=/build/rustc-1.91.1-src/library/core/src/macros/mod.rs
+47 2
+fe=/build/rustc-1.91.1-src/library/core/src/iter/traits/exact_size.rs
+117 1
+cfi=/build/rustc-1.91.1-src/library/alloc/src/vec/into_iter.rs
+cfn=<alloc::vec::into_iter::IntoIter<T,A> as core::iter::traits::iterator::Iterator>::size_hint
+calls=1 229 
+117 101
+156 2
+cfi=/build/rustc-1.91.1-src/library/alloc/src/vec/into_iter.rs
+cfn=<alloc::vec::into_iter::IntoIter<T,A> as core::ops::drop::Drop>::drop'2
+calls=1 0 
+156 221
+
+fl=/build/rustc-1.91.1-src/library/core/src/ptr/mod.rs
+fn=core::ptr::drop_in_place<std::sys::args::common::Args>
+804 9
+cfn=core::ptr::drop_in_place<alloc::vec::into_iter::IntoIter<std::ffi::os_str::OsString>>
+calls=1 804 
+804 360
+
+fn=core::ptr::drop_in_place<alloc::vec::into_iter::IntoIter<std::ffi::os_str::OsString>>
+804 9
+cfi=/build/rustc-1.91.1-src/library/alloc/src/vec/into_iter.rs
+cfn=<alloc::vec::into_iter::IntoIter<T,A> as core::ops::drop::Drop>::drop
+calls=1 487 
+804 351
+
+fn=core::ptr::drop_in_place<alloc::raw_vec::RawVec<u8>>
+804 9
+cfi=???
+cfn=<alloc::raw_vec::RawVec<T,A> as core::ops::drop::Drop>::drop
+calls=1 0 
+804 142
+
+fn=core::ptr::drop_in_place<std::env::ArgsOs>
+804 9
+cfn=core::ptr::drop_in_place<std::sys::args::common::Args>
+calls=1 804 
+804 369
+
+fn=core::ptr::drop_in_place<<alloc::vec::into_iter::IntoIter<T,A> as core::ops::drop::Drop>::drop::DropGuard<std::ffi::os_str::OsString,alloc::alloc::Global>>
+804 6
+cfi=/build/rustc-1.91.1-src/library/alloc/src/vec/into_iter.rs
+cfn=<<alloc::vec::into_iter::IntoIter<T,A> as core::ops::drop::Drop>::drop::DropGuard<T,A> as core::ops::drop::Drop>::drop
+calls=1 491 
+804 189
+fi=/build/rustc-1.91.1-src/library/alloc/src/vec/into_iter.rs
+507 3
+fe=/build/rustc-1.91.1-src/library/core/src/ptr/mod.rs
+
+fn=core::ptr::drop_in_place<alloc::string::String>
+804 6
+cfn=core::ptr::drop_in_place<alloc::vec::Vec<u8>>
+calls=1 804 
+804 168
+fi=/build/rustc-1.91.1-src/library/core/src/iter/traits/iterator.rs
+0 1
+320 3
+fe=/build/rustc-1.91.1-src/library/core/src/ptr/mod.rs
+
+fn=core::ptr::drop_in_place<alloc::vec::Vec<u8>>
+804 10
+cfi=???
+cfn=<alloc::vec::Vec<T,A> as core::ops::drop::Drop>::drop
+calls=1 0 
+804 4
+804 1
+cfn=core::ptr::drop_in_place<alloc::vec::Vec<u8>>'2
+calls=1 0 
+804 153
+
+fn=core::ptr::drop_in_place<alloc::vec::Vec<u8>>'2
+0 1
+804 1
+cfn=core::ptr::drop_in_place<alloc::raw_vec::RawVec<u8>>
+calls=1 804 
+804 151
+
+fn=core::ptr::drop_in_place<[std::ffi::os_str::OsString]>
+804 9
+cfn=core::ptr::drop_in_place<[std::ffi::os_str::OsString]>'2
+calls=1 0 
+804 7
+fi=/build/rustc-1.91.1-src/library/alloc/src/vec/into_iter.rs
+504 1
+cfn=<alloc::vec::into_iter::IntoIter<T,A> as core::ops::drop::Drop>::drop'2
+calls=1 507 
+504 200
+fe=/build/rustc-1.91.1-src/library/core/src/ptr/mod.rs
+
+fn=core::ptr::drop_in_place<[std::ffi::os_str::OsString]>'2
+0 1
+804 6
+
+fn=core::ptr::drop_in_place<alloc::raw_vec::RawVec<std::ffi::os_str::OsString>>
+fi=/build/rustc-1.91.1-src/library/alloc/src/vec/into_iter.rs
+498 3
+fe=/build/rustc-1.91.1-src/library/core/src/ptr/mod.rs
+804 6
+cfi=/build/rustc-1.91.1-src/library/alloc/src/raw_vec/mod.rs
+cfn=<alloc::raw_vec::RawVec<T,A> as core::ops::drop::Drop>::drop
+calls=1 404 
+804 149
+
+fn=core::ptr::drop_in_place<std::env::Args>
+fi=/work/benchmark-tests-exit.rs
+2 1
+cfn=benchmark_tests_exit::main'2
+calls=1 3 
+2 3267
+fe=/build/rustc-1.91.1-src/library/core/src/ptr/mod.rs
+804 6
+cfn=core::ptr::drop_in_place<std::env::ArgsOs>
+calls=1 804 
+804 378
+
+fl=/build/rustc-1.91.1-src/library/core/src/num/mod.rs
+fn=core::num::<impl core::str::traits::FromStr for i32>::from_str
+1439 7
+1482 1
+1483 1
+cfn=core::num::<impl i32>::from_ascii_radix
+calls=1 1561 
+1483 190
+fi=/build/rustc-1.91.1-src/library/core/src/str/mod.rs
+2702 3
+2703 4
+fe=/build/rustc-1.91.1-src/library/core/src/num/mod.rs
+
+fn=core::num::<impl i32>::from_ascii_radix
+1561 13
+1574 1
+1386 1
+1565 4
+cfn=core::num::<impl i32>::from_ascii_radix'2
+calls=1 0 
+1565 164
+1483 3
+1441 4
+
+fn=core::num::<impl i32>::from_ascii_radix'2
+0 1
+1565 2
+0 1
+1569 1
+fi=/work/benchmark-tests-exit.rs
+0 1
+fe=/build/rustc-1.91.1-src/library/core/src/num/mod.rs
+1577 2
+1649 5
+0 1
+1576 5
+cfn=core::num::<impl i32>::from_ascii_radix'2
+calls=1 0 
+1576 150
+0 1
+1576 3
+cfn=core::num::<impl i32>::from_ascii_radix'2
+calls=1 0 
+1576 146
+0 1
+1580 2
+0 1
+1576 5
+cfn=core::num::<impl i32>::from_ascii_radix'2
+calls=1 0 
+1576 137
+0 1
+1576 3
+cfi=/work/benchmark-tests-exit.rs
+cfn=core::num::<impl i32>::from_ascii_radix
+calls=1 0 
+1576 133
+1607 1
+cfn=core::num::<impl i32>::from_ascii_radix'2
+calls=1 1607 
+1607 95
+1607 7
+cfn=core::num::<impl i32>::from_ascii_radix'2
+calls=1 1648 
+1607 10
+1648 1
+cfn=core::num::<impl i32>::from_ascii_radix'2
+calls=1 1648 
+1648 9
+1648 3
+1649 1
+cfn=core::num::<impl i32>::from_ascii_radix'2
+calls=1 1649 
+1649 5
+fi=/work/benchmark-tests-exit.rs
+0 2
+fe=/build/rustc-1.91.1-src/library/core/src/num/mod.rs
+1607 11
+1608 3
+1609 2
+cfi=/build/rustc-1.91.1-src/library/core/src/char/methods.rs
+cfn=core::char::methods::<impl char>::to_digit
+calls=1 402 
+1609 74
+0 2
+1590 2
+1610 3
+1611 2
+1607 1
+cfn=core::num::<impl i32>::from_ascii_radix'2
+calls=1 1607 
+1607 14
+
+fl=/build/rustc-1.91.1-src/library/core/src/ptr/const_ptr.rs
+fn=core::ptr::non_null::NonNull<T>::offset_from_unsigned
+727 1
+cfn=core::ptr::non_null::NonNull<T>::offset_from_unsigned'2
+calls=1 0 
+727 10
+
+fn=core::ptr::non_null::NonNull<T>::offset_from_unsigned'2
+0 2
+729 5
+fi=/build/rustc-1.91.1-src/library/core/src/ptr/non_null.rs
+954 3
+fe=/build/rustc-1.91.1-src/library/core/src/ptr/const_ptr.rs
+
+fn=core::slice::raw::from_raw_parts::precondition_check
+0 2
+1377 2
+fi=/build/rustc-1.91.1-src/library/core/src/ub_checks.rs
+124 1
+fe=/build/rustc-1.91.1-src/library/core/src/ptr/const_ptr.rs
+0 1
+fi=/build/rustc-1.91.1-src/library/core/src/slice/raw.rs
+136 1
+fi=/work/benchmark-tests-exit.rs
+0 1
+fi=/build/rustc-1.91.1-src/library/core/src/ub_checks.rs
+148 1
+0 1
+148 2
+cfi=/build/rustc-1.91.1-src/library/core/src/slice/raw.rs
+cfn=core::slice::raw::from_raw_parts::precondition_check
+calls=1 0 
+148 13
+fe=/build/rustc-1.91.1-src/library/core/src/ptr/const_ptr.rs
+
+fl=/build/rustc-1.91.1-src/library/core/src/iter/traits/iterator.rs
+fn=<I as core::iter::traits::iterator::Iterator::advance_by::SpecAdvanceBy>::spec_advance_by
+330 3
+315 6
+fi=/build/rustc-1.91.1-src/library/core/src/num/nonzero.rs
+400 1
+fe=/build/rustc-1.91.1-src/library/core/src/iter/traits/iterator.rs
+316 5
+cfn=<I as core::iter::traits::iterator::Iterator::advance_by::SpecAdvanceBy>::spec_advance_by'2
+calls=1 0 
+316 377
+
+fn=<I as core::iter::traits::iterator::Iterator::advance_by::SpecAdvanceBy>::spec_advance_by'2
+0 1
+316 2
+320 1
+cfn=core::iter::traits::iterator::Iterator::try_fold
+calls=1 2418 
+320 373
+323 2
+cfn=<I as core::iter::traits::iterator::Iterator::advance_by::SpecAdvanceBy>::spec_advance_by'2
+calls=1 326 
+323 5
+326 1
+cfn=<I as core::iter::traits::iterator::Iterator::advance_by::SpecAdvanceBy>::spec_advance_by'2
+calls=1 326 
+326 4
+326 4
+
+fn=core::iter::traits::iterator::Iterator::try_fold
+2418 8
+2424 3
+2425 1
+cfn=core::iter::traits::iterator::Iterator::try_fold'2
+calls=1 0 
+2425 348
+320 1
+322 5
+cfn=<I as core::iter::traits::iterator::Iterator::advance_by::SpecAdvanceBy>::spec_advance_by'2
+calls=1 323 
+322 7
+
+fn=core::iter::traits::iterator::Iterator::try_fold'2
+0 1
+2425 2
+cfi=???
+cfn=<std::env::Args as core::iter::traits::iterator::Iterator>::next
+calls=1 0 
+2425 345
+2425 6
+cfn=core::iter::traits::iterator::Iterator::try_fold'2
+calls=1 2425 
+2425 244
+2425 4
+2426 12
+cfn=<I as core::iter::traits::iterator::Iterator::advance_by::SpecAdvanceBy>::spec_advance_by::{{closure}}
+calls=1 320 
+2426 228
+0 1
+2426 1
+cfi=/build/rustc-1.91.1-src/library/core/src/option.rs
+cfn=<core::option::Option<T> as core::ops::try_trait::Try>::branch
+calls=1 2654 
+2426 35
+0 1
+2426 7
+cfn=core::iter::traits::iterator::Iterator::try_fold'2
+calls=1 2426 
+2426 14
+2426 1
+cfi=/build/rustc-1.91.1-src/library/core/src/option.rs
+cfn=<core::option::Option<T> as core::ops::try_trait::FromResidual<core::option::Option<core::convert::Infallible>>>::from_residual
+calls=1 2668 
+2426 4
+2426 2
+cfn=core::iter::traits::iterator::Iterator::try_fold'2
+calls=1 0 
+2426 7
+0 1
+2426 1
+2429 1
+cfn=core::iter::traits::iterator::Iterator::try_fold'2
+calls=1 2429 
+2429 4
+2429 4
+
+fn=<I as core::iter::traits::iterator::Iterator::advance_by::SpecAdvanceBy>::spec_advance_by::{{closure}}
+2426 2
+cfn=core::iter::traits::iterator::Iterator::try_fold'2
+calls=1 0 
+2426 37
+320 11
+cfi=/build/rustc-1.91.1-src/library/core/src/ptr/mod.rs
+cfn=core::ptr::drop_in_place<alloc::string::String>
+calls=1 804 
+320 178
+
+fn=core::iter::traits::iterator::Iterator::nth
+fi=/work/benchmark-tests-exit.rs
+2 1
+cfn=benchmark_tests_exit::main'2
+calls=1 2 
+2 3689
+fe=/build/rustc-1.91.1-src/library/core/src/iter/traits/iterator.rs
+373 8
+374 1
+cfn=core::iter::traits::iterator::Iterator::advance_by
+calls=1 296 
+374 477
+
+fn=core::iter::traits::iterator::Iterator::nth'2
+376 3
+
+fn=core::iter::traits::iterator::Iterator::advance_by
+296 6
+329 1
+cfn=<I as core::iter::traits::iterator::Iterator::advance_by::SpecAdvanceBy>::spec_advance_by
+calls=1 315 
+329 392
+374 1
+fi=/build/rustc-1.91.1-src/library/core/src/result.rs
+706 3
+707 3
+cfi=/build/rustc-1.91.1-src/library/core/src/option.rs
+cfn=core::iter::traits::iterator::Iterator::nth
+calls=1 2655 
+707 71
+fe=/build/rustc-1.91.1-src/library/core/src/iter/traits/iterator.rs
+
 fl=???
-fn=_dl_start
-0 25
-cfn=_dl_start
-calls=1 0 
-0 205361
-0 158
-cfn=_dl_start
-calls=4 0 
-0 820932
-0 383
-cfn=_dl_start
-calls=1 0 
-0 204612
-0 39
-cfn=_dl_start
-calls=1 0 
-0 204628
-0 17
-cfn=_dl_start
-calls=1 0 
-0 205313
-0 150
-cfn=_dl_start
-calls=50 0 
-0 10244124
-0 8
-cfn=__rtld_malloc_init_stubs
-calls=1 0 
-0 21
-0 7
-cfn=_dl_setup_hash
-calls=1 0 
-0 32
-0 11
-cfn=_dl_sysdep_start
-calls=1 0 
-0 204532
-0 3
-cfn=_dl_start
-calls=1 0 
-0 205133
-0 9
-cfn=_dl_init
-calls=1 0 
-0 89659
+fn=call_weak_fn
+0 4
 
-fn=__tunable_get_val
-0 674
-cfn=__tunable_get_val
-calls=1 0 
-0 20
-0 89
-cfn=strlen
-calls=1 0 
-0 13
+fn=init_have_lse_atomics
 0 3
-cfn=sbrk
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
+cfi=???
+cfn=getauxval
 calls=1 0 
-0 18
 0 12
-cfn=dl_main
+0 13
+0 18
+fi=???
+cfn=__init_cpu_features
 calls=1 0 
-0 202269
+0 88388
+cfn=0x0000000000008920
+calls=1 0 
+0 11
+cfn=std::sys::args::unix::imp::ARGV_INIT_ARRAY::init_wrapper
+calls=1 0 
+0 9
+0 9
 
-fn=_dl_debug_state
-0 8
-
-fn=_dl_audit_objopen
-0 51
-
-fn=_dl_add_to_namespace_list
-0 44
-cfn=rtld_mutex_dummy
-calls=4 0 
+fn=__aarch64_cas4_acq
 0 20
-0 122
-cfn=rtld_mutex_dummy
-calls=3 0 
+cfn=std::sys::pal::unix::stack_overflow::thread_info::delete_current_info'2
+calls=1 0 
+0 347
+cfn=std::sys::pal::unix::stack_overflow::thread_info::set_current_info'2
+calls=1 0 
+0 328
+
+fn=__aarch64_cas8_acq
 0 15
-0 21
-cfn=_dl_add_to_namespace_list
+cfn=std::sys::exit_guard::unique_thread_exit'2
+calls=1 0 
+0 5
+
+fn=__aarch64_cas8_relax
+0 5
+
+fn=std::sync::once_lock::OnceLock<T>::initialize
+0 19
+cfn=std::sys::sync::once::futex::Once::call'2
+calls=1 0 
+0 68
+0 3
+cfn=std::io::stdio::cleanup'2
+calls=1 0 
+0 6
+
+fn=0x0000000000008860
+0 7
+cfn=0x0000000000008900
+calls=1 0 
+0 5
+
+fn=__rustc::__rust_alloc
+0 2
+cfn=__rustc::__rdl_alloc
+calls=2 0 
+0 1725
+
+fn=__rustc::__rust_alloc'2
+0 3
+cfn=__rustc::__rdl_alloc'2
+calls=3 0 
+0 1112
+
+fn=std::sys::pal::unix::stack_overflow::thread_info::set_current_info
+0 11
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
+cfi=???
+cfn=sigaction
+calls=3 0 
+0 206
+0 37
+0 13
+cfn=__aarch64_cas4_acq
+calls=1 0 
+0 333
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
+cfi=???
+cfn=__errno_location
+calls=1 0 
+0 9
+0 11
+
+fn=std::sys::pal::unix::stack_overflow::thread_info::set_current_info'2
+0 17
+cfn=__aarch64_cas8_acq
+calls=1 0 
+0 5
+0 16
+cfn=alloc::collections::btree::map::entry::VacantEntry<K,V,A>::insert_entry
+calls=1 0 
+0 290
+
+fn=__aarch64_swp4_rel
+0 20
+
+fn=<alloc::raw_vec::RawVec<T,A> as core::ops::drop::Drop>::drop
+0 6
+cfn=alloc::raw_vec::RawVecInner<A>::deallocate
+calls=1 0 
+0 136
+
+fn=__rustc::__rust_dealloc
+0 1
+cfn=__rustc::__rdl_dealloc
+calls=1 0 
+0 135
+
+fn=std::rt::cleanup
+0 2
+cfn=std::sys::pal::unix::os::exit
+calls=1 0 
+0 2163
+0 20
+cfn=std::sys::sync::once::futex::Once::call
+calls=1 0 
+0 722
+
+fn=alloc::collections::btree::remove::<impl alloc::collections::btree::node::Handle<alloc::collections::btree::node::NodeRef<alloc::collections::btree::node::marker::Mut,K,V,alloc::collections::btree::node::marker::Leaf>,alloc::collections::btree::node::marker::KV>>::remove_leaf_kv
+0 22
+cfn=alloc::collections::btree::remove::<impl alloc::collections::btree::node::Handle<alloc::collections::btree::node::NodeRef<alloc::collections::btree::node::marker::Mut,K,V,alloc::collections::btree::node::marker::Leaf>,alloc::collections::btree::node::marker::KV>>::remove_leaf_kv'2
+calls=1 0 
+0 17
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
+cfi=???
+cfn=__GI_memmove
+calls=2 0 
+0 26
+0 30
+0 4
+
+fn=alloc::collections::btree::remove::<impl alloc::collections::btree::node::Handle<alloc::collections::btree::node::NodeRef<alloc::collections::btree::node::marker::Mut,K,V,alloc::collections::btree::node::marker::Leaf>,alloc::collections::btree::node::marker::KV>>::remove_leaf_kv'2
+0 17
+
+fn=__init_cpu_features_constructor
+0 178
+cfn=__init_cpu_features'2
+calls=1 0 
+0 17
+
+fn=main
+0 12
+cfi=/build/rustc-1.91.1-src/library/std/src/rt.rs
+cfn=std::rt::lang_start
+calls=1 199 
+0 88026
+
+fn=std::sys::pal::unix::stack_overflow::imp::init
+0 19
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
+cfi=???
+cfn=sysconf
+calls=1 0 
+0 82570
+0 4
+
+fn=std::sys::pal::unix::stack_overflow::imp::make_handler
+0 19
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
+cfi=???
+cfn=mprotect
+calls=1 0 
+0 6
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
+cfi=???
+cfn=mmap
 calls=1 0 
 0 19
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
+cfi=???
+cfn=getauxval
+calls=1 0 
+0 114
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
+cfi=???
+cfn=sigaltstack
+calls=2 0 
+0 12
+0 61
+0 4
+cfn=__rustc::__rust_no_alloc_shim_is_unstable_v2
+calls=1 0 
+0 1
+0 3
+cfn=__rustc::__rust_alloc
+calls=1 0 
+0 857
+
+fn=__rustc::__rdl_dealloc
+0 12
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
+cfi=???
+cfn=free
+calls=3 0 
+0 343
+0 12
+
+fn=__init_cpu_features
+0 14
+cfn=__init_cpu_features_constructor
+calls=1 0 
+0 195
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
+cfi=???
+cfn=getauxval
+calls=2 0 
+0 26
+0 18
+0 4
+fi=???
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
+cfi=???
+cfn=__libc_start_main@@GLIBC_2.34'2
+calls=1 0 
+0 88131
+fe=???
+
+fn=__init_cpu_features'2
+0 17
+
+fn=core::str::converts::from_utf8
+0 42
+cfn=core::str::converts::from_utf8'2
+calls=2 0 
+0 71
+
+fn=core::str::converts::from_utf8'2
+0 63
+cfn=core::str::converts::from_utf8'2
+calls=2 0 
+0 8
+0 8
+
+fn=std::process::exit
 0 5
+cfn=std::rt::cleanup
+calls=1 0 
+0 2907
+
+fn=std::sys::args::unix::imp::ARGV_INIT_ARRAY::init_wrapper
+0 9
+
+fn=__rustc::__rdl_alloc
+0 14
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
+cfi=???
+cfn=malloc
+calls=2 0 
+0 1703
+0 8
+
+fn=__rustc::__rdl_alloc'2
+0 21
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
+cfi=???
+cfn=malloc'2
+calls=3 0 
+0 1079
+0 12
+
+fn=std::sync::poison::once::Once::call_once_force::{{closure}}
+0 11
+
+fn=std::sys::pal::unix::stack_overflow::thread_info::delete_current_info
+0 7
+cfn=__aarch64_cas4_acq
+calls=1 0 
+0 352
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
+cfi=???
+cfn=__errno_location
+calls=1 0 
+0 9
+0 11
+0 5
+
+fn=std::sys::pal::unix::stack_overflow::thread_info::delete_current_info'2
+0 17
+cfn=__aarch64_cas8_acq
+calls=1 0 
+0 5
+0 32
+cfn=alloc::collections::btree::map::entry::OccupiedEntry<K,V,A>::remove_kv
+calls=1 0 
+0 293
+
+fn=alloc::collections::btree::remove::<impl alloc::collections::btree::node::Handle<alloc::collections::btree::node::NodeRef<alloc::collections::btree::node::marker::Mut,K,V,alloc::collections::btree::node::marker::LeafOrInternal>,alloc::collections::btree::node::marker::KV>>::remove_kv_tracking
+0 36
+cfn=alloc::collections::btree::remove::<impl alloc::collections::btree::node::Handle<alloc::collections::btree::node::NodeRef<alloc::collections::btree::node::marker::Mut,K,V,alloc::collections::btree::node::marker::Leaf>,alloc::collections::btree::node::marker::KV>>::remove_leaf_kv
+calls=1 0 
+0 99
+
+fn=(below main)
+0 12
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
+cfi=???
+cfn=__libc_start_main@@GLIBC_2.34
+calls=1 0 
+0 88627
+0 4
+
+fn=__rustc::__rust_no_alloc_shim_is_unstable_v2
+0 4
+cfn=std::sys::args::unix::args'2
+calls=1 0 
+0 587
+
+fn=__rustc::__rust_no_alloc_shim_is_unstable_v2'2
+0 1
+cfn=std::sys::args::unix::args'2
+calls=1 0 
+0 287
+
+fn=std::sys::args::unix::args
+fi=/work/benchmark-tests-exit.rs
+2 5
+cfi=/build/rustc-1.91.1-src/library/core/src/iter/traits/iterator.rs
+cfn=core::iter::traits::iterator::Iterator::nth
+calls=1 373 
+2 4176
+fe=???
+0 25
+cfn=__rustc::__rust_no_alloc_shim_is_unstable_v2
+calls=1 0 
+0 1
+0 3
+cfn=__rustc::__rust_alloc
+calls=1 0 
+0 870
+
+fn=std::sys::args::unix::args'2
+0 18
+cfn=__rustc::__rust_alloc'2
+calls=2 0 
+0 868
+
+fn=0x0000000000008900
+0 5
+
+fn=<alloc::vec::Vec<T,A> as core::ops::drop::Drop>::drop
+0 4
+
+fn=std::sys::sync::once::futex::Once::call
+0 13
+cfn=std::sys::sync::once::futex::Once::call'2
+calls=1 0 
+0 706
+0 3
+
+fn=std::sys::sync::once::futex::Once::call'2
+0 17
+cfn=std::sys::sync::once::futex::Once::call'2
+calls=1 0 
+0 51
+0 4
+cfn=__aarch64_cas4_acq
+calls=1 0 
+0 5
+0 16
+cfn=std::sync::poison::once::Once::call_once_force::{{closure}}
+calls=1 0 
+0 11
+0 6
+cfn=std::sync::poison::once::Once::call_once::{{closure}}
+calls=1 0 
+0 680
+0 3
+cfn=__aarch64_swp4_rel
+calls=1 0 
+0 5
+0 17
+cfn=__aarch64_cas4_acq
+calls=1 0 
+0 5
+0 5
+cfn=std::sys::sync::once::futex::Once::call'2
+calls=1 0 
+0 686
+
+fn=std::sync::poison::once::Once::call_once::{{closure}}
+0 3
+cfn=__aarch64_swp4_rel
+calls=1 0 
+0 5
+0 18
+cfn=std::io::stdio::cleanup
+calls=1 0 
+0 654
+
+fn=std::sys::exit_guard::unique_thread_exit
+0 4
+cfn=__aarch64_cas8_acq
+calls=1 0 
+0 10
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
+cfi=???
+cfn=__errno_location
+calls=1 0 
+0 9
+0 10
+0 2
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
+cfi=???
+cfn=exit
+calls=1 0 
+0 2119
+0 4
+
+fn=std::sys::exit_guard::unique_thread_exit'2
+0 5
+
+fn=0x0000000000008890
+0 10
+
+fn=std::rt::lang_start_internal
+0 13
+cfn=std::sys::pal::unix::init
+calls=1 0 
+0 87992
+
+fn=alloc::collections::btree::map::entry::VacantEntry<K,V,A>::insert_entry
+0 11
+cfn=__aarch64_swp4_rel
+calls=1 0 
+0 5
+0 23
+cfn=__rustc::__rust_no_alloc_shim_is_unstable_v2
+calls=1 0 
+0 1
+0 3
+cfn=__rustc::__rust_alloc'2
+calls=1 0 
+0 247
+
+fn=alloc::raw_vec::RawVecInner<A>::deallocate
+0 2
+cfn=__rustc::__rdl_dealloc
+calls=2 0 
+0 232
+0 22
+cfn=alloc::raw_vec::RawVecInner<A>::deallocate'2
+calls=2 0 
+0 16
+
+fn=alloc::raw_vec::RawVecInner<A>::deallocate'2
+0 16
+
+fn=alloc::collections::btree::map::entry::OccupiedEntry<K,V,A>::remove_kv
+0 6
+cfn=__rustc::__rust_dealloc
+calls=1 0 
+0 136
+0 16
+cfn=alloc::collections::btree::remove::<impl alloc::collections::btree::node::Handle<alloc::collections::btree::node::NodeRef<alloc::collections::btree::node::marker::Mut,K,V,alloc::collections::btree::node::marker::LeafOrInternal>,alloc::collections::btree::node::marker::KV>>::remove_kv_tracking
+calls=1 0 
+0 135
+
+fn=0x0000000000008920
+0 1
+cfn=0x0000000000008890
+calls=1 0 
+0 10
+
+fn=std::sys::pal::unix::init
+0 18
+cfn=std::sys::pal::unix::init'2
+calls=1 0 
+0 82762
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
+cfi=???
+cfn=poll
+calls=1 0 
+0 59
+0 12
+0 19
+cfn=__aarch64_cas8_relax
+calls=1 0 
+0 5
+0 9
+cfi=/build/rustc-1.91.1-src/library/std/src/rt.rs
+cfn=std::rt::lang_start::{{closure}}
+calls=1 206 
+0 5108
+
+fn=std::sys::pal::unix::init'2
+0 7
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
+cfi=???
+cfn=signal
+calls=1 0 
+0 82731
+0 4
+0 20
+
+fn=std::env::args
+0 4
+cfn=std::sys::args::unix::args
+calls=1 0 
+0 5080
+
+fn=<std::env::Args as core::iter::traits::iterator::Iterator>::next
+fi=/build/rustc-1.91.1-src/library/core/src/iter/traits/iterator.rs
+375 1
+cfn=core::iter::traits::iterator::Iterator::nth'2
+calls=1 376 
+375 3
+2425 1
+cfn=core::iter::traits::iterator::Iterator::try_fold'2
+calls=1 2425 
+2425 250
+fe=???
+0 42
+cfn=core::str::converts::from_utf8
+calls=2 0 
+0 113
+
+fn=std::io::stdio::cleanup
+0 15
+cfn=std::sync::once_lock::OnceLock<T>::initialize
+calls=1 0 
+0 96
+0 5
+cfn=std::sys::pal::unix::stack_overflow::thread_info::delete_current_info
+calls=1 0 
+0 384
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
+cfi=???
+cfn=munmap
+calls=1 0 
+0 6
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
+cfi=???
+cfn=sigaltstack
+calls=1 0 
+0 6
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
+cfi=???
+cfn=getauxval
+calls=1 0 
+0 114
+0 28
+
+fn=std::io::stdio::cleanup'2
+0 6
+
+fn=std::sys::pal::unix::os::exit
+0 5
+cfn=std::sys::exit_guard::unique_thread_exit
+calls=1 0 
+0 2158
+
+fn=0x00000000000088cc
+0 25
+cfn=0x0000000000008860
+calls=1 0 
+0 12
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
+cfi=???
+cfn=__cxa_finalize
+calls=1 0 
+0 118
+0 5
+
+fl=/build/rustc-1.91.1-src/library/alloc/src/string.rs
+fn=<alloc::string::String as core::ops::deref::Deref>::deref
+fi=/work/benchmark-tests-exit.rs
+3 3
+cfn=benchmark_tests_exit::main'2
+calls=1 0 
+3 3167
+fe=/build/rustc-1.91.1-src/library/alloc/src/string.rs
+2727 5
+2728 1
+cfn=alloc::string::String::as_str
+calls=1 1066 
+2728 89
+
+fn=alloc::string::String::as_str
+1066 5
+1069 2
+fi=/build/rustc-1.91.1-src/library/alloc/src/raw_vec/mod.rs
+508 2
+fi=/build/rustc-1.91.1-src/library/alloc/src/vec/mod.rs
+1767 1
+1671 3
+fi=/build/rustc-1.91.1-src/library/core/src/ub_checks.rs
+76 1
+cfn=alloc::string::String::as_str
+calls=1 0 
+76 72
+fe=/build/rustc-1.91.1-src/library/alloc/src/string.rs
+2729 3
+
+fl=/build/rustc-1.91.1-src/library/alloc/src/vec/into_iter.rs
+fn=<<alloc::vec::into_iter::IntoIter<T,A> as core::ops::drop::Drop>::drop::DropGuard<T,A> as core::ops::drop::Drop>::drop
+491 5
+494 3
+496 8
+fi=/build/rustc-1.91.1-src/library/core/src/ptr/non_null.rs
+504 1
+fi=/build/rustc-1.91.1-src/library/alloc/src/raw_vec/mod.rs
+48 1
+cfn=<<alloc::vec::into_iter::IntoIter<T,A> as core::ops::drop::Drop>::drop::DropGuard<T,A> as core::ops::drop::Drop>::drop
+calls=1 0 
+48 168
+fi=/build/rustc-1.91.1-src/library/core/src/ptr/mod.rs
+804 3
+fe=/build/rustc-1.91.1-src/library/alloc/src/vec/into_iter.rs
+
+fn=<alloc::vec::into_iter::IntoIter<T,A> as core::iter::traits::iterator::Iterator>::size_hint
+229 6
+230 1
+cfn=<alloc::vec::into_iter::IntoIter<T,A> as core::iter::traits::iterator::Iterator>::size_hint'2
+calls=1 0 
+230 63
+fi=/build/rustc-1.91.1-src/library/core/src/iter/traits/exact_size.rs
+117 8
+fi=/build/rustc-1.91.1-src/library/core/src/macros/mod.rs
+44 2
+fi=/build/rustc-1.91.1-src/library/core/src/iter/traits/exact_size.rs
+122 3
+fi=/build/rustc-1.91.1-src/library/core/src/macros/mod.rs
+44 1
+fi=/build/rustc-1.91.1-src/library/core/src/option.rs
+2354 3
+cfn=core::iter::traits::exact_size::ExactSizeIterator::len
+calls=1 0 
+2354 14
+fe=/build/rustc-1.91.1-src/library/alloc/src/vec/into_iter.rs
+
+fn=<alloc::vec::into_iter::IntoIter<T,A> as core::iter::traits::iterator::Iterator>::size_hint'2
+0 1
+28 1
+233 2
+cfi=/build/rustc-1.91.1-src/library/core/src/ptr/non_null.rs
+cfn=core::ptr::non_null::NonNull<T>::offset_from_unsigned
+calls=1 948 
+233 59
+0 1
+235 6
+236 3
+
+fn=<alloc::vec::into_iter::IntoIter<T,A> as core::ops::drop::Drop>::drop
+fi=/build/rustc-1.91.1-src/library/core/src/ptr/mod.rs
+804 3
+fe=/build/rustc-1.91.1-src/library/alloc/src/vec/into_iter.rs
+487 5
+501 1
+504 4
+113 3
+fi=/build/rustc-1.91.1-src/library/core/src/ptr/non_null.rs
+407 1
+fe=/build/rustc-1.91.1-src/library/alloc/src/vec/into_iter.rs
+113 1
+fi=/build/rustc-1.91.1-src/library/core/src/iter/traits/exact_size.rs
+156 1
+cfn=core::iter::traits::exact_size::ExactSizeIterator::len
+calls=1 116 
+156 332
+fe=/build/rustc-1.91.1-src/library/alloc/src/vec/into_iter.rs
+
+fn=<alloc::vec::into_iter::IntoIter<T,A> as core::ops::drop::Drop>::drop'2
+0 2
+fi=/build/rustc-1.91.1-src/library/core/src/iter/traits/exact_size.rs
+156 1
+fe=/build/rustc-1.91.1-src/library/alloc/src/vec/into_iter.rs
+504 1
+cfi=/build/rustc-1.91.1-src/library/core/src/ptr/mod.rs
+cfn=core::ptr::drop_in_place<[std::ffi::os_str::OsString]>
+calls=1 804 
+504 217
+507 2
+cfi=/build/rustc-1.91.1-src/library/core/src/ptr/mod.rs
+cfn=core::ptr::drop_in_place<<alloc::vec::into_iter::IntoIter<T,A> as core::ops::drop::Drop>::drop::DropGuard<std::ffi::os_str::OsString,alloc::alloc::Global>>
+calls=1 804 
+507 198
+
+fl=/build/rustc-1.91.1-src/library/std/src/rt.rs
+fn=std::rt::lang_start::{{closure}}
+206 7
+cfi=/build/rustc-1.91.1-src/library/std/src/sys/backtrace.rs
+cfn=std::sys::backtrace::__rust_begin_short_backtrace
+calls=1 154 
+206 5101
+
+fn=std::rt::lang_start
+199 17
+206 1
+205 3
+cfi=???
+cfn=std::rt::lang_start_internal
+calls=1 0 
+205 88005
+
+fl=/build/rustc-1.91.1-src/library/core/src/mem/mod.rs
+fn=core::ptr::non_null::NonNull<T>::offset_from_unsigned
+335 2
+fi=/build/rustc-1.91.1-src/library/core/src/ptr/const_ptr.rs
+727 1
+cfn=core::ptr::non_null::NonNull<T>::offset_from_unsigned
+calls=1 727 
+727 11
+fe=/build/rustc-1.91.1-src/library/core/src/mem/mod.rs
+
+fl=/build/rustc-1.91.1-src/library/core/src/ub_checks.rs
+fn=core::ptr::const_ptr::<impl *const T>::offset_from_unsigned::precondition_check
+67 6
+69 5
+fi=/build/rustc-1.91.1-src/library/core/src/ptr/const_ptr.rs
+723 2
+fe=/build/rustc-1.91.1-src/library/core/src/ub_checks.rs
+74 3
+
+fn=alloc::string::String::as_str
+0 4
+77 4
+cfn=core::slice::raw::from_raw_parts::precondition_check
+calls=1 67 
+77 64
+
+fn=alloc::string::String::as_str'2
+0 2
+fi=/build/rustc-1.91.1-src/library/core/src/ptr/metadata.rs
+119 2
+fi=/build/rustc-1.91.1-src/library/alloc/src/string.rs
+1070 3
+fe=/build/rustc-1.91.1-src/library/core/src/ub_checks.rs
+
+fn=core::ptr::non_null::NonNull<T>::offset_from_unsigned
+0 2
+77 3
+cfn=core::ptr::const_ptr::<impl *const T>::offset_from_unsigned::precondition_check
+calls=1 67 
+77 16
+76 1
+cfi=/build/rustc-1.91.1-src/library/core/src/mem/mod.rs
+cfn=core::ptr::non_null::NonNull<T>::offset_from_unsigned
+calls=1 335 
+76 14
+
+fn=core::slice::raw::from_raw_parts::precondition_check
+67 13
+69 5
+121 1
+fi=/build/rustc-1.91.1-src/library/core/src/fmt/rt.rs
+194 3
+fi=/build/rustc-1.91.1-src/library/core/src/slice/raw.rs
+136 1
+fi=/build/rustc-1.91.1-src/library/core/src/num/uint_macros.rs
+82 5
+fi=/build/rustc-1.91.1-src/library/core/src/ptr/const_ptr.rs
+1373 3
+cfn=core::slice::raw::from_raw_parts::precondition_check
+calls=1 0 
+1373 25
+fe=/build/rustc-1.91.1-src/library/core/src/ub_checks.rs
+76 1
+cfn=alloc::string::String::as_str'2
+calls=1 0 
+76 7
+
+fn=core::slice::raw::from_raw_parts::precondition_check'2
+0 1
+149 1
+fi=/build/rustc-1.91.1-src/library/core/src/slice/raw.rs
+137 2
+fe=/build/rustc-1.91.1-src/library/core/src/ub_checks.rs
+74 4
+
+fl=/build/rustc-1.91.1-src/library/core/src/ops/function.rs
+fn=core::ops::function::FnOnce::call_once
+250 5
+cfi=/work/benchmark-tests-exit.rs
+cfn=benchmark_tests_exit::main
+calls=1 1 
+250 5090
+
+fl=/build/rustc-1.91.1-src/library/core/src/slice/raw.rs
+fn=core::slice::raw::from_raw_parts::precondition_check
+0 1
+fi=/build/rustc-1.91.1-src/library/core/src/ub_checks.rs
+148 4
+cfn=core::slice::raw::from_raw_parts::precondition_check'2
+calls=1 0 
+148 8
+fe=/build/rustc-1.91.1-src/library/core/src/slice/raw.rs
+
+fl=/build/rustc-1.91.1-src/library/core/src/ptr/non_null.rs
+fn=core::ptr::non_null::NonNull<T>::offset_from_unsigned
+fi=/build/rustc-1.91.1-src/library/alloc/src/vec/into_iter.rs
+233 1
+230 1
+cfn=<alloc::vec::into_iter::IntoIter<T,A> as core::iter::traits::iterator::Iterator>::size_hint'2
+calls=1 0 
+230 10
+fe=/build/rustc-1.91.1-src/library/core/src/ptr/non_null.rs
+948 7
+407 1
+953 1
+fi=/build/rustc-1.91.1-src/library/core/src/ptr/mut_ptr.rs
+887 1
+fi=/build/rustc-1.91.1-src/library/core/src/ub_checks.rs
+76 1
+cfn=core::ptr::non_null::NonNull<T>::offset_from_unsigned
+calls=1 0 
+76 36
+fe=/build/rustc-1.91.1-src/library/core/src/ptr/non_null.rs
+
+fl=/build/rustc-1.91.1-src/library/core/src/str/mod.rs
+fn=core::str::<impl str>::parse
+fi=/work/benchmark-tests-exit.rs
+3 2
+cfn=benchmark_tests_exit::main'2
+calls=1 0 
+3 2949
+fe=/build/rustc-1.91.1-src/library/core/src/str/mod.rs
+2701 6
+2702 1
+cfi=/build/rustc-1.91.1-src/library/core/src/num/mod.rs
+cfn=core::num::<impl core::str::traits::FromStr for i32>::from_str
+calls=1 1439 
+2702 206
+
+fl=/build/rustc-1.91.1-src/library/std/src/sys/backtrace.rs
+fn=std::sys::backtrace::__rust_begin_short_backtrace
+154 5
+158 1
+cfi=/build/rustc-1.91.1-src/library/core/src/ops/function.rs
+cfn=core::ops::function::FnOnce::call_once
+calls=1 250 
+158 5095
+
+ob=???
+fl=???
+fn=0x00000000040051d0
+0 4
+cob=/work/benchmark-tests-exit
+cfi=???
+cfn=call_weak_fn
+calls=1 0 
+0 4
+0 2
+
+fn=0x00000000048f3748
+0 4
+cob=/nix/store/l8wljp091lkvnvx6xfnvfpgr6j568idc-gcc-14.3.0-libgcc/lib/libgcc_s.so.1
+cfi=???
+cfn=call_weak_fn
+calls=1 0 
+0 4
+0 2
+
+fn=0x00000000048c0578
+0 4
+cob=/nix/store/skvxpqppwwsfqgb4c8jhsk8s9v4cxbm6-valgrind-3.26.0/libexec/valgrind/vgpreload_core-arm64-linux.so
+cfi=???
+cfn=call_weak_fn
+calls=1 0 
+0 4
+0 2
+
+ob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
+fl=???
+fn=rindex
+0 53
+
+fn=__sigsetjmp
+0 21
+cfn=__sigjmp_save
+calls=1 0 
+0 14
+
+fn=ptmalloc_init.part.0
+0 554
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/ld-linux-aarch64.so.1
+cfi=???
+cfn=__tunable_get_val
+calls=12 0 
+0 384
+0 128
+0 20
+cfn=tcache_init.part.0
+calls=1 0 
+0 532
+0 14
+cfn=_int_malloc
+calls=1 0 
+0 176
+
+fn=brk
+0 34
+
+fn=strstr
+0 17
+cfn=index
+calls=1 0 
+0 19
+0 24
+
+fn=__vfscanf_internal
+0 2673
+cfn=__libc_cleanup_push_defer
+calls=33 0 
+0 792
+0 1914
+cfn=__vfscanf_internal'2
+calls=33 0 
+0 56260
+0 66
+
+fn=__vfscanf_internal'2
+0 2145
+cfn=__vfscanf_internal'2
+calls=33 0 
+0 28480
+0 2376
+cfn=__libc_cleanup_pop_restore
+calls=33 0 
+0 693
+0 2409
+cfn=__vfscanf_internal'2
+calls=66 0 
+0 81506
+0 1650
+cfn=_IO_sputbackc'2
+calls=33 0 
+0 26038
+cfn=_IO_sputbackc
+calls=33 0 
+0 53818
+0 11634
+cfn=__vfscanf_internal'2
+calls=66 0 
+0 32869
+0 9012
+cfn=__vfscanf_internal'2
+calls=66 0 
+0 57206
+0 594
+cfn=_IO_sputbackc'2
+calls=66 0 
+0 55952
+0 354
+cfn=__vfscanf_internal'2
+calls=66 0 
+0 74324
+
+fn=____strtoul_l_internal
+0 1107
+cfn=____strtoul_l_internal'2
+calls=12 0 
+0 2611
+0 315
+cfn=____strtoul_l_internal'2
+calls=21 0 
+0 3941
+0 1089
+cfn=__vfscanf_internal'2
+calls=33 0 
+0 30658
+
+fn=____strtoul_l_internal'2
+0 2223
+cfn=____strtoul_l_internal'2
+calls=66 0 
+0 11923
+0 11995
+cfn=____strtoul_l_internal'2
+calls=12 0 
+0 2611
+0 315
+cfn=____strtoul_l_internal'2
+calls=21 0 
+0 3948
+0 1089
+cfn=__vfscanf_internal'2
+calls=33 0 
+0 2871
+
+fn=realloc
+0 8
+cfn=__GI_memcpy
+calls=1 0 
+0 30
+0 8
+cfn=getdelim'2
+calls=1 0 
+0 14
+0 49
+cfn=realloc'2
+calls=1 0 
+0 363
+0 5
+cfn=malloc
+calls=1 0 
+0 981
+
+fn=realloc'2
+0 34
+cfn=_int_realloc
+calls=1 0 
+0 342
+0 5
+cfn=malloc'2
+calls=1 0 
+0 246
+
+fn=_IO_default_finish
+0 19
+
+fn=mmap
+0 19
+
+fn=__internal_atexit
+0 21
+cob=???
+cfi=???
+cfn=0x00000000040051d0
+calls=1 0 
+0 10
+0 13
+cfn=__libc_start_main@@GLIBC_2.34'2
+calls=1 0 
+0 88468
+0 14
+cfn=__aarch64_cas4_acq
+calls=1 0 
+0 5
+0 3
+cfn=__new_exitfn
+calls=1 0 
+0 71
+
+fn=getrlimit
+0 32
+
+fn=(below main)
+0 13
+cfn=_setjmp
+calls=1 0 
+0 38
+0 16
+cob=/work/benchmark-tests-exit
+cfi=???
+cfn=main
+calls=1 0 
+0 88038
+
+fn=pthread_self
+0 3
+
+fn=_IO_file_open
+0 12
+cfn=__open_nocancel
+calls=1 0 
+0 41
+0 2
+cfn=_IO_file_open'2
+calls=1 0 
+0 56
+0 6
+cfn=strstr
+calls=1 0 
+0 60
+0 3
+cfn=_IO_file_fopen@@GLIBC_2.17'2
+calls=1 0 
+0 23
+
+fn=_IO_file_open'2
+0 14
+cfn=_IO_link_in
+calls=1 0 
+0 30
+0 12
+
+fn=index
+0 19
+
+fn=__underflow
+0 110
+cfn=_IO_file_underflow@@GLIBC_2.17
+calls=4 0 
+0 873
+0 14
+
+fn=_IO_file_stat
+0 5
+cfn=fstat
+calls=1 0 
+0 13
+
+fn=__isoc23_sscanf
+0 28
+cfn=_IO_no_init
+calls=1 0 
+0 52
+0 8
+cfn=_IO_str_init_static_internal
+calls=1 0 
+0 108
+0 15
+cfn=__vfscanf_internal
+calls=1 0 
+0 1808
+0 4
+cfn=getline'2
+calls=1 0 
+0 75625
+0 13
+
+fn=__isoc23_sscanf'2
+0 896
+cfn=_IO_no_init
+calls=32 0 
+0 1664
+0 256
+cfn=_IO_str_init_static_internal
+calls=32 0 
+0 3546
+0 480
+cfn=__vfscanf_internal
+calls=32 0 
+0 59897
+0 124
+cfn=getline'2
+calls=31 0 
+0 1205371
+0 429
+cfn=pthread_getattr_np@@GLIBC_2.32'2
+calls=1 0 
+0 1710
+
+fn=_IO_file_close
+0 5
+cfn=__close_nocancel
+calls=1 0 
+0 13
+
+fn=__pthread_attr_extension
+0 9
+cfn=calloc
+calls=1 0 
+0 256
+0 13
+0 7
+cfn=realloc'2
+calls=1 0 
+0 264
+0 4
+
+fn=memchr
+0 14
+
+fn=__aarch64_swp4_rel
+0 55
+
+fn=memset
+0 58
+
+fn=__pthread_tunables_init
+0 14
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/ld-linux-aarch64.so.1
+cfi=???
+cfn=__tunable_get_val'2
+calls=3 0 
+0 96
+0 39
+0 20
+
+fn=_IO_stdfiles_init
+0 24
+
+fn=__sigjmp_save
+0 14
+
+fn=sigaction
+0 50
+cfn=__libc_sigaction
+calls=5 0 
+0 311
+
+fn=sysconf
+0 7
+fi=???
+cfn=pthread_getattr_np@@GLIBC_2.32
+calls=1 0 
+0 82482
+cfn=pthread_self
+calls=1 0 
+0 3
+fi=???
+0 10
+fe=???
+0 31
+cfn=sysconf'2
+calls=1 0 
+0 37
+
+fn=sysconf'2
+0 25
+cfn=getpagesize
+calls=1 0 
+0 10
+0 2
+cfn=sysconf'2
+calls=1 0 
+0 16
+
+fn=malloc
+0 9
+fi=???
+cob=/work/benchmark-tests-exit
+cfi=???
+cfn=std::sys::pal::unix::stack_overflow::thread_info::set_current_info
+calls=1 0 
+0 620
+0 15
+fi=???
+cob=/work/benchmark-tests-exit
+cfi=???
+cfn=__rustc::__rust_no_alloc_shim_is_unstable_v2
+calls=1 0 
+0 588
+cfn=__strlen_asimd
+calls=1 0 
+0 31
+fi=???
+0 8
+fe=???
+0 11
+cfn=_IO_no_init
+calls=1 0 
+0 58
+0 5
+cfn=_IO_new_file_init_internal
+calls=1 0 
+0 445
+0 8
+cfn=__underflow
+calls=1 0 
+0 607
+0 6
+cfn=pthread_getaffinity_np@@GLIBC_2.32
+calls=1 0 
+0 41
+0 9
+cfn=pthread_attr_setaffinity_np@@GLIBC_2.32
+calls=1 0 
+0 709
+0 125
+cfn=ptmalloc_init.part.0
+calls=1 0 
+0 1808
+0 32
+cfn=_int_malloc
+calls=4 0 
+0 716
+
+fn=malloc'2
+0 12
+fi=???
+cob=/work/benchmark-tests-exit
+cfi=???
+cfn=std::sys::args::unix::args'2
+calls=1 0 
+0 12
+cob=/work/benchmark-tests-exit
+cfi=???
+cfn=__rustc::__rust_no_alloc_shim_is_unstable_v2'2
+calls=1 0 
+0 288
+cfn=__strlen_asimd
+calls=1 0 
+0 21
+cfn=__GI_memcpy
+calls=2 0 
+0 34
+fi=???
+0 45
+fe=???
+0 26
+cfn=_IO_setb
+calls=1 0 
+0 28
+0 25
+cfn=__GI_memcpy
+calls=1 0 
+0 14
+0 2
+cfn=pthread_attr_setaffinity_np@@GLIBC_2.32'2
+calls=1 0 
+0 8
+0 185
+cfn=_int_malloc
+calls=5 0 
+0 878
+
+fn=_IO_old_init
+0 919
+
+fn=_IO_file_underflow@@GLIBC_2.17
+0 5
+cfn=getdelim'2
+calls=1 0 
+0 128
+0 73
+cfn=_IO_switch_to_get_mode
+calls=3 0 
+0 84
+0 39
+cfn=_IO_file_read
+calls=3 0 
+0 57
+0 61
+cfn=_IO_doallocbuf
+calls=1 0 
+0 426
+
+fn=_IO_file_underflow@@GLIBC_2.17'2
+0 3
+cfn=_IO_switch_to_get_mode
+calls=1 0 
+0 28
+0 13
+cfn=_IO_file_read
+calls=1 0 
+0 19
+0 19
+
+fn=_IO_setb
+0 6
+cfn=_IO_un_link'2
+calls=1 0 
+0 10
+0 984
+cfn=free'2
+calls=1 0 
+0 124
+0 4
+
+fn=_IO_setb'2
+0 17
+
+fn=__GI__IO_un_link.part.0
+0 4
+cfn=fclose@@GLIBC_2.17'2
+calls=1 0 
+0 438
+0 22
+cfn=__libc_cleanup_push_defer
+calls=1 0 
+0 24
+0 9
+cfn=__GI__IO_un_link.part.0'2
+calls=1 0 
+0 66
+
+fn=__GI__IO_un_link.part.0'2
+0 16
+cfn=__libc_cleanup_pop_restore
+calls=1 0 
+0 21
+0 29
+cfn=__GI__IO_un_link.part.0'2
+calls=1 0 
+0 41
+
+fn=pthread_attr_destroy
+0 21
+fi=???
+cob=/work/benchmark-tests-exit
+cfi=???
+cfn=std::sys::pal::unix::stack_overflow::imp::make_handler
+calls=1 0 
+0 1096
+cfn=sigaction
+calls=1 0 
+0 68
+fi=???
+0 16
+fe=???
+0 8
+cfn=free
+calls=1 0 
+0 222
+0 4
+
+fn=exit
+0 7
+cfn=__run_exit_handlers
+calls=1 0 
+0 2112
+
+fn=__pthread_mutex_unlock_usercnt
+0 3
+fi=???
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/ld-linux-aarch64.so.1
+cfi=???
+cfn=_dl_fini'2
+calls=1 0 
+0 847
+0 29
+cfn=__pthread_mutex_unlock_usercnt'2
+calls=1 0 
+0 24
+
+fn=__pthread_mutex_unlock_usercnt'2
+0 24
+cfn=__pthread_mutex_unlock_usercnt'2
+calls=1 0 
+0 18
+
+fn=poll
+0 59
+
+fn=pthread_getattr_np@@GLIBC_2.32
+0 9
+fi=???
+cfn=pthread_attr_destroy
+calls=1 0 
+0 1435
+cfn=pthread_attr_getstack@@GLIBC_2.34
+calls=1 0 
+0 14
+fi=???
+0 13
+fe=???
+0 14
+cfn=pthread_attr_init@@GLIBC_2.17
+calls=1 0 
+0 27
+0 7
+cfn=__aarch64_cas4_acq
+calls=1 0 
+0 5
+0 20
+cfn=fopen@@GLIBC_2.17
+calls=1 0 
+0 80938
+
+fn=pthread_getattr_np@@GLIBC_2.32'2
+0 8
+cfn=realloc
+calls=1 0 
+0 999
+0 4
+0 21
+cfn=fclose@@GLIBC_2.17
+calls=1 0 
+0 1596
+0 1
+cfn=free
+calls=1 0 
+0 1705
+0 4
+
+fn=alloc_perturb
+0 169
+
+fn=_IO_no_init
+0 306
+cfn=_IO_old_init
+calls=34 0 
+0 919
+0 549
+
+fn=_IO_new_file_init_internal
+0 5
+cfn=_IO_file_fopen@@GLIBC_2.17
+calls=1 0 
+0 281
+0 11
+cfn=_IO_link_in
+calls=1 0 
+0 148
+
+fn=getline
+0 6
+cfn=getdelim
+calls=1 0 
+0 78526
+
+fn=getline'2
+0 192
+cfn=getdelim'2
+calls=32 0 
+0 1280804
+
+fn=_IO_file_read
+0 24
+cfn=__read_nocancel
+calls=4 0 
+0 52
+
+fn=__GI_memcpy
+0 855
+
+fn=__strtoul_internal
+0 297
+cfn=____strtoul_l_internal
+calls=33 0 
+0 39721
+
+fn=__strtoul_internal'2
+0 297
+cfn=____strtoul_l_internal'2
+calls=33 0 
+0 11941
+
+fn=_IO_un_link
+0 6
+cfn=__GI__IO_un_link.part.0
+calls=1 0 
+0 563
+
+fn=_IO_un_link'2
+0 10
+
+fn=pthread_getaffinity_np@@GLIBC_2.32
+0 16
+cfn=__GI_memset
+calls=1 0 
+0 15
+0 10
+
+fn=__strlen_asimd
+0 52
+
+fn=__GI_memmove
+0 26
+
+fn=strlen
+0 45
+
+fn=__aarch64_cas4_acq
+0 55
+
+fn=getauxval
+0 330
+
+fn=_init_first
+0 26
+cfn=__init_misc
+calls=1 0 
+0 80
+
+fn=sysmalloc
+0 56
+cfn=__glibc_morecore
+calls=1 0 
+0 227
+0 4
+cfn=_int_malloc'2
+calls=1 0 
+0 38
+
+fn=sysmalloc'2
+0 74
+cfn=__glibc_morecore'2
+calls=1 0 
+0 36
+0 11
+cfn=sysmalloc'2
+calls=1 0 
+0 54
+0 12
+cfn=sysmalloc'2
+calls=1 0 
+0 131
+0 3
+cfn=sysmalloc'2
+calls=1 0 
+0 113
+
+fn=_IO_link_in
+0 65
+cfn=__libc_cleanup_push_defer
+calls=1 0 
+0 24
+0 20
+cfn=_IO_link_in'2
+calls=1 0 
+0 69
+
+fn=_IO_link_in'2
+0 43
+cfn=_IO_link_in'2
+calls=1 0 
+0 44
+0 2
+cfn=__libc_cleanup_pop_restore
+calls=1 0 
+0 21
+0 3
+cfn=_IO_link_in'2
+calls=1 0 
+0 18
+
+fn=__libc_cleanup_pop_restore
+0 777
+
+fn=__open_nocancel
+0 41
+
+fn=_IO_doallocbuf
+0 6
+cfn=_IO_file_underflow@@GLIBC_2.17'2
+calls=1 0 
+0 82
+0 18
+cfn=_IO_file_doallocate
+calls=1 0 
+0 320
+
+fn=pthread_attr_getstack@@GLIBC_2.34
+0 14
+
+fn=__run_exit_handlers
+0 12
+cfn=__call_tls_dtors
+calls=1 0 
+0 19
+0 1
+cfn=__run_exit_handlers'2
+calls=1 0 
+0 2080
+
+fn=__run_exit_handlers'2
+0 5
+cfn=__aarch64_cas4_acq
+calls=1 0 
+0 5
+0 28
+cfn=__aarch64_swp4_rel
+calls=1 0 
+0 5
+0 5
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/ld-linux-aarch64.so.1
+cfi=???
+cfn=_dl_fini
+calls=1 0 
+0 2034
+
+fn=__call_tls_dtors
+0 19
+
+fn=_IO_cleanup
+0 1
+cfn=__run_exit_handlers'2
+calls=1 0 
+0 2
+0 18
+cfn=_IO_flush_all
+calls=1 0 
+0 410
+
+fn=_IO_cleanup'2
+0 96
+cfn=__libc_cleanup_pop_restore
+calls=1 0 
+0 21
+0 32
+cfn=_IO_cleanup'2
+calls=3 0 
+0 328
+0 6
+cfn=_IO_cleanup'2
+calls=1 0 
+0 43
+
+fn=__libc_early_init
+0 1
+fi=???
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/ld-linux-aarch64.so.1
+cfi=???
+cfn=_dl_sysdep_start_cleanup
+calls=1 0 
+0 4
+0 3
+fi=???
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/ld-linux-aarch64.so.1
+cfi=???
+cfn=_dl_audit_activity_nsid
+calls=1 0 
+0 21
+0 2
+fi=???
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/ld-linux-aarch64.so.1
+cfi=???
+cfn=_dl_debug_update
+calls=1 0 
+0 13
+0 2
+fi=???
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/ld-linux-aarch64.so.1
+cfi=???
+cfn=_dl_debug_state
+calls=1 0 
+0 4
+0 1
+fi=???
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/ld-linux-aarch64.so.1
+cfi=???
+cfn=_dl_unload_cache
+calls=1 0 
+0 17
+0 37
+cfn=__ctype_init
+calls=1 0 
+0 30
+0 10
+cfn=getrlimit
+calls=1 0 
+0 16
+0 29
+cfn=__pthread_tunables_init
+calls=1 0 
+0 169
+
+fn=init_have_lse_atomics
+0 12
+fi=???
+cfn=check_stdfiles_vtables
+calls=1 0 
+0 74
+cfn=_init_first
+calls=1 0 
+0 106
+0 10
+cfn=getauxval
+calls=1 0 
+0 12
+0 9
+
+fn=_setjmp
+0 3
+cfn=__sigsetjmp
+calls=1 0 
+0 35
+
+fn=__libc_sigaction
+0 311
+
+fn=__GI_memchr
+0 2300
+
+fn=_IO_sputbackc
+0 594
+cfn=__vfscanf_internal'2
+calls=33 0 
+0 52333
+0 561
+cfn=_IO_sputbackc'2
+calls=33 0 
+0 330
+
+fn=_IO_sputbackc'2
+0 2442
+cfn=__strtoul_internal'2
+calls=33 0 
+0 12238
+cfn=__strtoul_internal
+calls=33 0 
+0 40018
+0 66
+cfn=__vfscanf_internal'2
+calls=33 0 
+0 24553
+0 3003
+cfn=_IO_sputbackc'2
+calls=99 0 
+0 990
+
+fn=_IO_file_finish@@GLIBC_2.17
+0 12
+cfn=_IO_default_finish
+calls=1 0 
+0 19
+
+fn=mprotect
+0 6
+
+fn=__new_exitfn
+0 22
+cfn=__new_exitfn'2
+calls=1 0 
+0 18
+0 13
+cfn=__aarch64_swp4_rel
+calls=1 0 
+0 5
+0 13
+
+fn=__new_exitfn'2
+0 18
+
+fn=__ctype_init
+0 30
+
+fn=__fopen_internal
+0 10
+cfn=malloc
+calls=1 0 
+0 2336
+0 4
+0 5
+cfn=getrlimit
+calls=1 0 
+0 16
+0 30
+cfn=getline
+calls=1 0 
+0 78532
+
+fn=__libc_cleanup_push_defer
+0 888
+
+fn=__read_nocancel
+0 52
+
+fn=__GI_strlen
+0 1608
+
+fn=_IO_file_close_it@@GLIBC_2.17
+0 4
+cfn=fclose@@GLIBC_2.17'2
+calls=1 0 
+0 187
+0 16
+cfn=_IO_unsave_markers
+calls=1 0 
+0 14
+0 12
+cfn=_IO_file_close
+calls=1 0 
+0 18
+0 9
+cfn=_IO_setb
+calls=1 0 
+0 176
+
+fn=pthread_attr_setaffinity_np@@GLIBC_2.32
+0 11
+cfn=__pthread_attr_extension
+calls=1 0 
+0 553
+0 3
+cfn=free'2
+calls=1 0 
+0 138
+0 4
+
+fn=pthread_attr_setaffinity_np@@GLIBC_2.32'2
+0 8
+
+fn=calloc
+0 33
+cfn=_int_malloc
+calls=1 0 
+0 192
+0 31
+
+fn=calloc'2
+0 19
+
+fn=munmap
+0 6
+
+fn=pthread_mutex_lock@@GLIBC_2.17
+0 12
+fi=???
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/ld-linux-aarch64.so.1
+cfi=???
+cfn=_dl_audit_activity_nsid
+calls=1 0 
+0 21
+0 95
+fi=???
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/ld-linux-aarch64.so.1
+cfi=???
+cfn=_dl_sort_maps
+calls=1 0 
+0 425
+0 3
+fi=???
+cfn=pthread_mutex_unlock@@GLIBC_2.17
+calls=1 0 
+0 908
+0 63
+cfn=pthread_mutex_lock@@GLIBC_2.17'2
+calls=1 0 
+0 14
+
+fn=pthread_mutex_lock@@GLIBC_2.17'2
+0 14
+
+fn=pthread_mutex_unlock@@GLIBC_2.17
+0 5
+cfn=__pthread_mutex_unlock_usercnt
+calls=1 0 
+0 903
+
+fn=__cxa_finalize
+0 39
+cfn=__aarch64_cas4_acq
+calls=3 0 
+0 15
+0 99
+cfn=__unregister_atfork
+calls=3 0 
+0 129
+0 12
+cfn=__aarch64_swp4_rel
+calls=3 0 
+0 15
+0 45
+
+fn=memcpy
+0 102
+fi=???
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/ld-linux-aarch64.so.1
+cfi=???
+cfn=_dl_lookup_symbol_x'2
+calls=2 0 
+0 85534
+0 82
+cfn=memcpy'2
+calls=2 0 
+0 10
+
+fn=memcpy'2
+0 10
+
+fn=memmove
+0 42
+
+fn=pthread_attr_init@@GLIBC_2.17
+0 8
+cfn=getpagesize
+calls=1 0 
+0 10
+0 9
+
+fn=__GI_memset
+0 15
+
+fn=_IO_file_doallocate
+0 22
+cfn=_IO_file_stat
+calls=1 0 
+0 18
+0 13
+cfn=malloc'2
+calls=1 0 
+0 253
+0 4
+0 10
+
+fn=_IO_str_init_static_internal
+0 330
+cfn=__GI_strlen
+calls=33 0 
+0 1608
+0 198
+cfn=_IO_setb
+calls=33 0 
+0 924
+0 594
+
+fn=_int_free
+0 520
+cfn=_int_free'2
+calls=10 0 
+0 170
+0 131
+
+fn=_int_free'2
+0 170
+
+fn=free
+fi=/build/rustc-1.91.1-src/library/core/src/ptr/mod.rs
+804 3
+fi=/build/rustc-1.91.1-src/library/alloc/src/raw_vec/mod.rs
+407 3
+fe=???
+0 9
+fi=???
+cob=/work/benchmark-tests-exit
+cfi=???
+cfn=__aarch64_swp4_rel
+calls=1 0 
+0 5
+0 10
+cfn=free'2
+calls=1 0 
+0 111
+0 4
+0 2
+cfn=pthread_getattr_np@@GLIBC_2.32'2
+calls=1 0 
+0 1598
+0 105
+cfn=free'2
+calls=5 0 
+0 420
+
+fn=free'2
+0 12
+cfn=_IO_setb'2
+calls=1 0 
+0 17
+0 9
+cfn=__aarch64_swp4_rel
+calls=1 0 
+0 5
+0 6
+cfn=pthread_getattr_np@@GLIBC_2.32'2
+calls=1 0 
+0 19
+0 90
+cfn=_int_free
+calls=9 0 
+0 738
+0 12
+cfn=free'2
+calls=4 0 
+0 336
+
+fn=sigaltstack
+0 18
+
+fn=__errno_location
+0 27
+
+fn=__unregister_atfork
+0 33
+cfn=__aarch64_cas4_acq
+calls=3 0 
+0 15
+0 24
+cfn=__aarch64_swp4_rel
+calls=3 0 
+0 15
+0 42
+
+fn=__libc_start_main@@GLIBC_2.34
+0 16
+cfn=__cxa_atexit
+calls=1 0 
+0 88611
+
+fn=__libc_start_main@@GLIBC_2.34'2
+0 2
+cfn=(below main)
+calls=1 0 
+0 88105
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/ld-linux-aarch64.so.1
+cfi=???
+cfn=_dl_audit_preinit
+calls=1 0 
+0 15
+0 9
+0 5
+cob=/work/benchmark-tests-exit
+cfi=???
+cfn=init_have_lse_atomics
+calls=1 0 
+0 88463
+
+fn=__cxa_atexit
+0 6
+cfn=__internal_atexit
+calls=1 0 
+0 88605
+
+fn=__init_misc
+0 10
+cfn=rindex
+calls=1 0 
+0 53
+0 17
+
+fn=check_stdfiles_vtables
+0 6
+fi=???
+cfn=_IO_stdfiles_init
+calls=1 0 
+0 24
+0 39
+cfn=check_stdfiles_vtables'2
+calls=1 0 
+0 5
+
+fn=check_stdfiles_vtables'2
+0 5
+
+fn=signal
+0 3
+fi=???
+cob=/work/benchmark-tests-exit
+cfi=???
+cfn=std::sys::pal::unix::stack_overflow::imp::init
+calls=1 0 
+0 82593
+0 28
+cfn=sigaction
+calls=1 0 
+0 87
+0 3
+cfn=signal'2
+calls=1 0 
+0 17
+
+fn=signal'2
+0 17
+
+fn=getpagesize
+0 20
+
+fn=fopen@@GLIBC_2.17
+0 5
+cfn=__fopen_internal
+calls=1 0 
+0 80933
+
+fn=tcache_init.part.0
+0 13
+cfn=__aarch64_cas4_acq
+calls=1 0 
+0 5
+0 4
+cfn=_int_malloc
+calls=1 0 
+0 447
+0 63
+
+fn=_int_malloc
+0 367
+cfn=_int_malloc'2
+calls=7 0 
+0 924
+0 24
+cfn=_int_malloc'2
+calls=1 0 
+0 77
+0 25
+cfn=_int_malloc'2
+calls=5 0 
+0 927
+0 5
+cfn=__aarch64_swp4_rel
+calls=1 0 
+0 5
+0 24
+cfn=__GI_memcpy
+calls=1 0 
+0 20
+0 4
+cfn=_int_free
+calls=1 0 
+0 83
+0 184
+cfn=calloc'2
+calls=1 0 
+0 19
+
+fn=_int_malloc'2
+0 735
+cfn=_int_malloc'2
+calls=12 0 
+0 1363
+0 52
+cfn=_int_malloc'2
+calls=13 0 
+0 1388
+0 425
+cfn=alloc_perturb
+calls=13 0 
+0 169
+0 65
+cfn=_int_malloc'2
+calls=13 0 
+0 247
+0 192
+cfn=_int_malloc'2
+calls=12 0 
+0 456
+0 3
+cfn=sysmalloc
+calls=1 0 
+0 325
+
+fn=__glibc_morecore
+0 6
+cfn=sbrk
+calls=1 0 
+0 74
+0 11
+cfn=sysmalloc'2
+calls=1 0 
+0 136
+
+fn=__glibc_morecore'2
+0 6
+cfn=sbrk
+calls=1 0 
+0 23
+0 7
+
+fn=sbrk
+0 44
+cfn=brk
+calls=1 0 
+0 17
+0 3
+cfn=sbrk'2
+calls=1 0 
+0 33
+
+fn=sbrk'2
+0 6
+cfn=brk
+calls=1 0 
+0 17
+0 10
+
+fn=_IO_file_fopen@@GLIBC_2.17
+0 38
+cfn=_IO_file_fopen@@GLIBC_2.17'2
+calls=1 0 
+0 243
+
+fn=_IO_file_fopen@@GLIBC_2.17'2
+0 25
+cfn=_IO_file_open
+calls=1 0 
+0 203
+0 34
+cfn=_IO_file_fopen@@GLIBC_2.17'2
+calls=1 0 
+0 217
+0 4
+cfn=_IO_file_fopen@@GLIBC_2.17'2
+calls=1 0 
+0 234
+
+fn=getdelim
+0 22
+cfn=malloc
+calls=1 0 
+0 831
+0 4
+0 8
+cfn=__isoc23_sscanf
+calls=1 0 
+0 77661
+
+fn=getdelim'2
+0 867
+cfn=getdelim'2
+calls=33 0 
+0 5404
+0 221
+cfn=realloc
+calls=1 0 
+0 459
+0 4
+0 140
+cfn=__GI_memcpy
+calls=35 0 
+0 757
+0 146
+cfn=__underflow
+calls=3 0 
+0 390
+0 27
+cfn=__GI_memchr
+calls=3 0 
+0 143
+0 132
+cfn=__GI_memchr
+calls=33 0 
+0 2157
+0 874
+cfn=getdelim'2
+calls=32 0 
+0 448
+0 256
+cfn=__isoc23_sscanf'2
+calls=32 0 
+0 1274373
+
+fn=fstat
+0 13
+
+fn=_IO_switch_to_get_mode
+0 112
+
+fn=_int_realloc
+0 37
+cfn=_int_malloc
+calls=1 0 
+0 279
+0 26
+
+fn=fclose@@GLIBC_2.17
+0 9
+cfn=_IO_un_link
+calls=1 0 
+0 569
+0 7
+cfn=pthread_getattr_np@@GLIBC_2.32'2
+calls=1 0 
+0 1011
+
+fn=fclose@@GLIBC_2.17'2
+0 4
+cfn=_IO_file_finish@@GLIBC_2.17
+calls=1 0 
+0 31
+0 15
+cfn=free'2
+calls=1 0 
+0 115
+0 4
+0 20
+cfn=_IO_file_close_it@@GLIBC_2.17
+calls=1 0 
+0 436
+
+fn=_IO_unsave_markers
+0 14
+
+fn=__close_nocancel
+0 13
+
+fn=_IO_flush_all
+0 21
+cfn=__libc_cleanup_push_defer
+calls=1 0 
+0 24
+0 12
+cfn=_IO_flush_all'2
+calls=1 0 
+0 145
+0 13
+cfn=__libc_cleanup_push_defer
+calls=1 0 
+0 24
+0 10
+cfn=_IO_cleanup'2
+calls=1 0 
+0 155
+0 6
+
+fn=_IO_flush_all'2
+0 87
+cfn=__libc_cleanup_pop_restore
+calls=1 0 
+0 21
+0 31
+cfn=_IO_flush_all'2
+calls=3 0 
+0 306
+0 6
+cfn=_IO_flush_all'2
+calls=1 0 
+0 42
+
+ob=/nix/store/l8wljp091lkvnvx6xfnvfpgr6j568idc-gcc-14.3.0-libgcc/lib/libgcc_s.so.1
+fl=???
+fn=btree_destroy
+0 14
+cfn=__aarch64_swp8_acq_rel
+calls=2 0 
+0 10
+0 12
+
+fn=0x0000000000003dcc
+0 25
+cfn=0x0000000000003d60
+calls=1 0 
+0 12
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
+cfi=???
+cfn=__cxa_finalize
+calls=1 0 
+0 118
+0 5
+
+fn=init_have_sme
+0 4
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
+cfi=???
+cfn=getauxval
+calls=1 0 
+0 14
+0 9
+0 6
+fi=???
+cfn=init_have_lse_atomics
+calls=1 0 
+0 326
+0 3
+
+fn=0x0000000000003e00
+0 5
+
+fn=__init_cpu_features
+0 9
+cfn=__init_cpu_features_constructor
+calls=1 0 
+0 204
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
+cfi=???
+cfn=getauxval
+calls=2 0 
+0 26
+0 18
+0 15
+
+fn=__init_cpu_features'2
+0 3
+
+fn=call_weak_fn
+0 4
+
+fn=__init_cpu_features_constructor
+0 201
+cfn=__init_cpu_features'2
+calls=1 0 
+0 3
+
+fn=release_registered_frames
+0 7
+cfn=btree_destroy
+calls=1 0 
+0 18
+0 2
+cfn=btree_destroy
+calls=1 0 
+0 18
+0 5
+
+fn=0x0000000000003d90
+0 10
+
+fn=0x0000000000003d60
+0 7
+cfn=0x0000000000003e00
+calls=1 0 
+0 5
+
+fn=0x0000000000003e20
+0 1
+cfn=0x0000000000003d90
+calls=1 0 
+0 10
+
+fn=init_have_lse_atomics
+0 4
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
+cfi=???
+cfn=getauxval
+calls=1 0 
+0 12
+0 9
+0 12
+fi=???
+cfn=__init_cpu_features
+calls=1 0 
+0 272
+cfn=0x0000000000003e20
+calls=1 0 
+0 11
+0 6
+
+fn=__aarch64_swp8_acq_rel
+0 10
+
+ob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/ld-linux-aarch64.so.1
+fl=???
+fn=_dl_hwcaps_split
+0 105
 
 fn=expand_dynamic_string_token
 0 24
@@ -115,6 +3117,357 @@ cfn=strdup
 calls=3 0 
 0 303
 
+fn=handle_preload_list
+0 20
+cfn=handle_preload_list'2
+calls=1 0 
+0 3071
+0 3
+cfn=dl_main'2
+calls=1 0 
+0 194339
+
+fn=handle_preload_list'2
+0 6
+cfn=do_preload
+calls=1 0 
+0 2617
+0 3
+cfn=strcspn
+calls=1 0 
+0 410
+0 9
+cfn=memcpy
+calls=1 0 
+0 20
+0 6
+
+fn=_dl_lookup_direct
+0 125
+cfn=check_match
+calls=3 0 
+0 656
+0 46
+
+fn=_dl_init
+0 16
+cfn=call_init
+calls=1 0 
+0 996
+0 4
+cob=/work/benchmark-tests-exit
+cfi=???
+cfn=(below main)
+calls=1 0 
+0 88643
+
+fn=_dl_init'2
+0 14
+cfn=call_init'2
+calls=1 0 
+0 893
+
+fn=_dl_important_hwcaps
+0 5
+cfn=__minimal_malloc
+calls=1 0 
+0 31
+0 14
+cfn=__minimal_malloc
+calls=1 0 
+0 31
+0 25
+cfn=memset
+calls=1 0 
+0 14
+0 11
+cfn=memset
+calls=1 0 
+0 14
+0 29
+cfn=decompose_rpath
+calls=1 0 
+0 2676
+0 14
+cfn=_dl_hwcaps_subdirs_active
+calls=1 0 
+0 5
+0 6
+cfn=_dl_important_hwcaps'2
+calls=1 0 
+0 397
+
+fn=_dl_important_hwcaps'2
+0 2
+cfn=_dl_hwcaps_split_masked
+calls=1 0 
+0 30
+0 9
+cfn=_dl_important_hwcaps'2
+calls=1 0 
+0 356
+0 2
+cfn=_dl_hwcaps_split_masked
+calls=1 0 
+0 37
+0 7
+cfn=__minimal_malloc
+calls=1 0 
+0 31
+0 8
+cfn=_dl_important_hwcaps'2
+calls=1 0 
+0 271
+0 2
+cfn=_dl_hwcaps_split
+calls=1 0 
+0 14
+0 9
+cfn=_dl_important_hwcaps'2
+calls=1 0 
+0 246
+0 2
+cfn=_dl_hwcaps_split_masked
+calls=1 0 
+0 37
+0 22
+cfn=__minimal_malloc
+calls=1 0 
+0 31
+0 10
+cfn=copy_hwcaps
+calls=1 0 
+0 144
+
+fn=_dl_hwcaps_split_masked
+0 30
+cfn=_dl_hwcaps_split
+calls=5 0 
+0 91
+0 50
+
+fn=_dl_dst_count
+0 48
+cfn=index
+calls=8 0 
+0 284
+0 72
+
+fn=__set_vma_name
+0 34
+cfn=__tunable_get_val'2
+calls=1 0 
+0 32
+0 16
+
+fn=_dl_bti_check
+0 12
+
+fn=_dl_relocate_object
+0 24
+cfn=_dl_relocate_object'2
+calls=1 0 
+0 65319
+0 41
+cfn=_dl_relocate_object'2
+calls=1 0 
+0 36
+0 11
+cfn=_dl_add_to_slotinfo
+calls=1 0 
+0 111256
+0 3
+
+fn=_dl_relocate_object'2
+0 229
+cfn=_dl_relocate_object'2
+calls=1 0 
+0 65284
+0 9988
+cfn=_dl_relocate_object'2
+calls=675 0 
+0 40077581
+0 6967
+cfn=_dl_lookup_symbol_x'2
+calls=72 0 
+0 2658886
+cfn=_dl_lookup_symbol_x
+calls=4 0 
+0 150690
+0 540
+cfn=_dl_relocate_object'2
+calls=3 0 
+0 297
+0 313
+cfn=_dl_relocate_object'2
+calls=11 0 
+0 601194
+0 56
+cfn=_dl_relocate_object'2
+calls=14 0 
+0 541008
+0 13
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
+cfi=???
+cfn=strlen
+calls=1 0 
+0 15
+0 4
+cfn=_dl_relocate_object'2
+calls=1 0 
+0 118
+0 75
+cfn=_dl_relocate_object'2
+calls=7 0 
+0 229409
+0 10
+cfn=_dl_protect_relro
+calls=5 0 
+0 175
+0 138
+cfn=_dl_relocate_object'2
+calls=4 0 
+0 160148
+0 307
+cfn=_dl_lookup_symbol_x'2
+calls=7 0 
+0 22377
+cfn=_dl_lookup_symbol_x
+calls=1 0 
+0 5467
+0 60
+cfn=_dl_relocate_object'2
+calls=1 0 
+0 104
+0 20
+cfn=_dl_relocate_object'2
+calls=4 0 
+0 16437
+0 9
+cfn=_dl_relocate_object'2
+calls=3 0 
+0 104212
+0 8
+cfn=_dl_relocate_object'2
+calls=4 0 
+0 105517
+0 21
+cfn=_dl_relocate_object'2
+calls=1 0 
+0 64221
+0 20
+cfn=_dl_add_to_slotinfo'2
+calls=2 0 
+0 76337
+0 1
+cfn=dl_main'2
+calls=1 0 
+0 655
+
+fn=(below main)
+0 5
+cfn=_dl_start
+calls=1 0 
+0 295054
+
+fn=_dl_sort_maps_init
+0 6
+cfn=__tunable_get_val
+calls=1 0 
+0 32
+0 12
+
+fn=__GI___close_nocancel
+0 36
+
+fn=_dl_assign_tls_modid
+0 50
+
+fn=__rtld_malloc_init_real
+0 53
+cfn=lookup_malloc_symbol
+calls=1 0 
+0 2617
+0 1
+cfn=__rtld_mutex_init
+calls=1 0 
+0 626
+0 10
+cfn=_dl_relocate_object'2
+calls=1 0 
+0 1540
+
+fn=_dl_debug_state
+0 8
+
+fn=strcspn
+0 410
+
+fn=_dl_catch_exception
+0 36
+cfn=_dl_catch_exception'2
+calls=2 0 
+0 5290
+0 22
+cfn=_dl_dst_count
+calls=1 0 
+0 44
+0 32
+cfn=_dl_catch_exception'2
+calls=1 0 
+0 6500
+0 3
+
+fn=_dl_catch_exception'2
+0 66
+cfn=__sigsetjmp
+calls=6 0 
+0 126
+0 18
+cfn=openaux
+calls=5 0 
+0 6939
+cfn=map_doit
+calls=1 0 
+0 2489
+0 78
+cfn=_dl_catch_exception'2
+calls=4 0 
+0 4354
+0 27
+cfn=__minimal_malloc
+calls=2 0 
+0 62
+0 16
+cfn=memcpy
+calls=2 0 
+0 28
+0 8
+cfn=memcpy
+calls=2 0 
+0 28
+0 67
+cfn=__libc_scratch_buffer_set_array_size
+calls=2 0 
+0 42
+0 6
+cfn=_dl_map_object_deps'2
+calls=2 0 
+0 4126
+0 24
+cfn=_dl_map_object_deps'2
+calls=1 0 
+0 578
+0 5
+cfn=_dl_dst_count
+calls=1 0 
+0 44
+0 810
+cfn=_dl_catch_exception'2
+calls=1 0 
+0 3414
+0 12
+
 fn=_dl_map_object
 0 354
 cfn=_dl_name_match_p
@@ -124,7 +3477,7 @@ calls=18 0
 cfn=strcmp
 calls=6 0 
 0 244
-0 177
+0 114
 cfn=index
 calls=3 0 
 0 67
@@ -140,16 +3493,12 @@ calls=1 0
 cfn=_dl_map_object_from_fd
 calls=1 0 
 0 1729
-0 26
-cfn=_dl_map_object_from_fd
-calls=2 0 
-0 3644
 0 4
 cfn=strlen
 calls=2 0 
 0 33
 0 31
-cfn=_dl_map_object
+cfn=_dl_map_object'2
 calls=1 0 
 0 1936
 0 14
@@ -162,23 +3511,408 @@ calls=2 0
 0 2668
 0 15
 
-fn=_dl_sort_maps
-0 208
-cfn=_dl_sort_maps
+fn=_dl_map_object'2
+0 89
+cfn=_dl_map_object_from_fd
 calls=2 0 
-0 596
-0 102
-cfn=dfs_traversal.part.0
-calls=10 0 
-0 412
-0 52
+0 3644
+
+fn=check_match
+0 6236
+cfn=strcmp
+calls=134 0 
+0 8301
+0 7406
+cfn=strcmp
+calls=219 0 
+0 12282
+0 306
+cfn=strcmp
+calls=3 0 
+0 253
+0 42
+cfn=strcmp
+calls=3 0 
+0 229
+0 45
+
+fn=strlen
+0 490
+
+fn=_dl_new_object
+0 28
+cfn=_dl_new_object'2
+calls=1 0 
+0 263
+0 10
+cfn=_dl_add_to_namespace_list
+calls=1 0 
+0 50
+0 46
+cfn=dl_main'2
+calls=1 0 
+0 201626
+
+fn=_dl_new_object'2
+0 168
+cfn=_dl_map_object_from_fd'2
+calls=3 0 
+0 1712
+0 223
+cfn=_dl_map_object_from_fd'2
+calls=3 0 
+0 1691
+0 60
+cfn=strlen
+calls=3 0 
+0 79
+0 30
+cfn=__minimal_calloc
+calls=3 0 
+0 247
+0 4
+cfn=__minimal_calloc
+calls=1 0 
+0 259
+0 39
+cfn=memcpy
+calls=3 0 
+0 50
+0 262
+cfn=strlen
+calls=3 0 
+0 118
+0 21
+cfn=memcpy
+calls=3 0 
+0 56
+0 316
+cfn=_dl_new_object'2
+calls=3 0 
+0 696
+0 10
+cfn=_dl_new_object'2
+calls=1 0 
+0 21
+0 24
+cfn=__minimal_malloc
+calls=3 0 
+0 93
+0 6
+
+fn=_dl_init_paths
+0 18
+cfn=_dl_important_hwcaps
+calls=1 0 
+0 3272
+0 5
+cfn=_dl_debug_initialize
+calls=1 0 
+0 197616
+
+fn=_dl_audit_activity_map
+0 19
+
+fn=open_path
+0 108
 cfn=memcpy
 calls=2 0 
 0 28
-0 2
-cfn=_dl_sort_maps
+0 34
+cfn=memcpy
 calls=2 0 
+0 26
+0 10
+cfn=memcpy
+calls=2 0 
+0 30
+0 22
+cfn=open_verify.constprop.0
+calls=2 0 
+0 200
+0 13
+cfn=__minimal_malloc
+calls=1 0 
+0 31
+0 7
+cfn=memcpy
+calls=1 0 
+0 18
+0 41
+cfn=stat
+calls=1 0 
+0 23
+0 11
+cfn=open_path'2
+calls=1 0 
+0 322
+0 7
+cfn=_dl_map_object'2
+calls=1 0 
+0 1734
+0 3
+
+fn=open_path'2
+0 10
+cfn=memcpy
+calls=1 0 
+0 14
+0 20
+cfn=memcpy
+calls=1 0 
+0 13
+0 5
+cfn=memcpy
+calls=1 0 
+0 15
+0 11
+cfn=open_verify.constprop.0
+calls=1 0 
+0 128
+0 14
+cfn=__minimal_malloc
+calls=1 0 
+0 31
+0 7
+cfn=memcpy
+calls=1 0 
+0 18
+0 36
+
+fn=lookup_malloc_symbol
+0 15
+cfn=_dl_lookup_symbol_x
+calls=1 0 
+0 634
+0 6
+cfn=lookup_malloc_symbol'2
+calls=1 0 
+0 1962
+
+fn=lookup_malloc_symbol'2
+0 45
+cfn=_dl_lookup_symbol_x
+calls=3 0 
+0 1888
+0 6
+cfn=lookup_malloc_symbol'2
+calls=1 0 
+0 1290
+0 7
+cfn=lookup_malloc_symbol'2
+calls=1 0 
+0 630
+0 16
+
+fn=call_init
+0 32
+cob=???
+cfi=???
+cfn=0x00000000048c0578
+calls=1 0 
+0 10
+0 14
+cfn=call_init'2
+calls=1 0 
+0 31
+0 2
+cfn=_dl_init'2
+calls=1 0 
+0 907
+
+fn=call_init'2
+0 116
+cob=???
+cfi=???
+cfn=0x00000000048f3748
+calls=1 0 
+0 10
+0 42
+cfn=call_init'2
+calls=3 0 
+0 650
+0 20
+cob=/nix/store/l8wljp091lkvnvx6xfnvfpgr6j568idc-gcc-14.3.0-libgcc/lib/libgcc_s.so.1
+cfi=???
+cfn=init_have_sme
+calls=1 0 
+0 362
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
+cfi=???
+cfn=init_have_lse_atomics
+calls=1 0 
+0 223
+cfn=init_have_lse_atomics
+calls=1 0 
+0 50
+cob=/nix/store/skvxpqppwwsfqgb4c8jhsk8s9v4cxbm6-valgrind-3.26.0/libexec/valgrind/vgpreload_core-arm64-linux.so
+cfi=???
+cfn=0x00000000000006e0
+calls=1 0 
+0 11
+0 67
+cfn=call_init'2
+calls=4 0 
+0 1362
+0 23
+
+fn=__getauxval2
+0 7
+cfn=__getauxval2'2
+calls=1 0 
+0 7
+0 8
+
+fn=__getauxval2'2
+0 7
+
+fn=_dl_fini
+0 25
+cfn=_dl_fini'2
+calls=1 0 
+0 1544
 0 12
+fi=???
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
+cfi=???
+cfn=__aarch64_swp4_rel
+calls=1 0 
+0 5
+0 7
+fi=???
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
+cfi=???
+cfn=__aarch64_cas4_acq
+calls=1 0 
+0 5
+0 5
+fi=???
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
+cfi=???
+cfn=_IO_cleanup
+calls=1 0 
+0 431
+fe=???
+
+fn=_dl_fini'2
+0 3
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
+cfi=???
+cfn=pthread_mutex_lock@@GLIBC_2.17
+calls=1 0 
+0 1541
+0 25
+cfn=_dl_call_fini
+calls=5 0 
+0 672
+0 10
+cfn=_dl_audit_objclose
+calls=5 0 
+0 80
+0 33
+cfn=_dl_audit_activity_nsid
+calls=1 0 
+0 21
+0 6
+
+fn=_dl_add_to_namespace_list
+0 44
+cfn=rtld_mutex_dummy
+calls=4 0 
+0 20
+0 122
+cfn=rtld_mutex_dummy
+calls=3 0 
+0 15
+0 2
+cfn=_dl_add_to_namespace_list'2
+calls=1 0 
+0 19
+0 5
+
+fn=_dl_add_to_namespace_list'2
+0 19
+
+fn=_dl_add_to_slotinfo
+0 16
+cfn=_dl_add_to_slotinfo'2
+calls=1 0 
+0 27
+0 18
+cfn=_dl_relocate_object'2
+calls=1 0 
+0 111193
+0 2
+
+fn=_dl_add_to_slotinfo'2
+0 32
+cfn=_dl_add_to_slotinfo'2
+calls=2 0 
+0 54
+0 81
+cfn=_dl_add_to_slotinfo'2
+calls=3 0 
+0 33
+0 18
+cfn=_dl_relocate_object'2
+calls=1 0 
+0 69914
+0 23
+cfn=_dl_allocate_tls_init
+calls=1 0 
+0 315
+0 14
+cfn=_dl_find_object_init
+calls=1 0 
+0 5967
+
+fn=strcmp
+0 6069
+cfn=strcmp'2
+calls=141 0 
+0 3481
+0 14075
+cfn=strcmp'2
+calls=74 0 
+0 666
+0 148
+
+fn=strcmp'2
+0 4147
+
+fn=strdup
+0 20
+cfn=strlen
+calls=4 0 
+0 170
+0 20
+cfn=__minimal_malloc
+calls=4 0 
+0 124
+0 24
+cfn=memcpy
+calls=4 0 
+0 68
+
+fn=_dl_name_match_p
+0 273
+cfn=strcmp
+calls=39 0 
+0 577
+0 375
+cfn=strcmp
+calls=47 0 
+0 1446
+0 320
+
+fn=_dl_debug_update
+0 52
+
+fn=stat
+0 8
+cfn=fstatat
+calls=1 0 
+0 15
 
 fn=_dl_allocate_tls_init
 0 18
@@ -199,55 +3933,45 @@ calls=1 0
 0 5
 0 16
 
-fn=_dl_unload_cache
-0 17
-
-fn=do_lookup_x
-0 7821
-cfn=do_lookup_x
-calls=237 0 
-0 91558
-0 47982
-cfn=do_lookup_x
-calls=244 0 
-0 59566
-0 6172
-cfn=check_match
-calls=228 0 
-0 34444
-0 238
-cfn=do_lookup_x
-calls=5 0 
-0 1400
-0 715
-cfn=do_lookup_x
-calls=21 0 
-0 6542
-0 2007
-cfn=do_lookup_x
-calls=223 0 
-0 9995
-0 9772
-cfn=_dl_lookup_symbol_x
-calls=14 0 
-0 322
-0 3
-cfn=_dl_lookup_symbol_x
+fn=_dl_call_libc_early_init
+0 15
+cfn=_dl_lookup_direct
 calls=1 0 
-0 25
-
-fn=__rtld_malloc_init_stubs
-0 21
-
-fn=_dl_sysdep_parse_arguments
-0 44
-cfn=memset
+0 263
+0 13
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
+cfi=???
+cfn=__libc_early_init
 calls=1 0 
-0 47
-0 203
+0 359
 
-fn=sbrk
-0 18
+fn=_dl_audit_preinit
+0 15
+
+fn=_dl_call_fini
+0 102
+cob=/nix/store/l8wljp091lkvnvx6xfnvfpgr6j568idc-gcc-14.3.0-libgcc/lib/libgcc_s.so.1
+cfi=???
+cfn=release_registered_frames
+calls=1 0 
+0 50
+cob=/nix/store/skvxpqppwwsfqgb4c8jhsk8s9v4cxbm6-valgrind-3.26.0/libexec/valgrind/vgpreload_core-arm64-linux.so
+cfi=???
+cfn=0x000000000000068c
+calls=1 0 
+0 160
+cob=/work/benchmark-tests-exit
+cfi=???
+cfn=0x00000000000088cc
+calls=1 0 
+0 160
+0 2
+cob=/nix/store/l8wljp091lkvnvx6xfnvfpgr6j568idc-gcc-14.3.0-libgcc/lib/libgcc_s.so.1
+cfi=???
+cfn=0x0000000000003dcc
+calls=1 0 
+0 160
+0 38
 
 fn=dl_main
 0 34
@@ -258,12 +3982,18 @@ calls=1 0
 cfn=_dl_next_ld_env_entry
 calls=1 0 
 0 63
+0 67
+cfn=dl_main'2
+calls=1 0 
+0 202063
+
+fn=dl_main'2
 0 2
 cfn=_dl_next_ld_env_entry
 calls=1 0 
 0 202061
-0 191
-cfn=dl_main
+0 143
+cfn=dl_main'2
 calls=1 0 
 0 201414
 0 79
@@ -315,225 +4045,292 @@ cfn=_dl_call_libc_early_init
 calls=1 0 
 0 650
 0 38
-cfn=dl_main
+cfn=dl_main'2
 calls=1 0 
 0 201462
 0 9
-cfn=dl_main
+cfn=dl_main'2
 calls=1 0 
 0 201606
 0 11
-cfn=dl_main
+cfn=dl_main'2
 calls=1 0 
 0 201508
 0 5
-cfn=dl_main
+cfn=dl_main'2
 calls=1 0 
 0 201421
 0 3
-cfn=dl_main
+cfn=dl_main'2
 calls=1 0 
 0 201437
 0 28
-cfn=dl_main
+cfn=dl_main'2
 calls=5 0 
 0 1005430
 0 3
-cfn=dl_main
+cfn=dl_main'2
 calls=1 0 
 0 197506
-0 24
-cfn=dl_main
+0 15
+cfn=dl_main'2
 calls=1 0 
 0 201538
 0 9
-cfn=dl_main
+cfn=dl_main'2
 calls=1 0 
 0 200919
 0 7
-cfn=dl_main
+cfn=dl_main'2
 calls=1 0 
 0 201190
-0 10
-cfn=dl_main
-calls=1 0 
-0 202063
 0 5
 cfn=handle_preload_list
 calls=1 0 
 0 197433
 0 22
 
-fn=__tls_pre_init_tp
-0 30
+fn=memcpy
+0 579
 
-fn=_dl_dst_count
-0 48
-cfn=index
-calls=8 0 
-0 284
-0 72
-
-fn=_dl_catch_exception
-0 90
-cfn=__sigsetjmp
-calls=6 0 
-0 126
-0 18
-cfn=openaux
-calls=5 0 
-0 6939
-cfn=map_doit
+fn=do_preload
+0 21
+cfn=_dl_catch_error
 calls=1 0 
-0 2489
-0 90
-cfn=_dl_catch_exception
-calls=6 0 
-0 9644
-0 44
-cfn=__minimal_malloc
-calls=2 0 
-0 62
-0 16
-cfn=memcpy
-calls=2 0 
-0 28
-0 8
-cfn=memcpy
-calls=2 0 
-0 28
-0 67
-cfn=__libc_scratch_buffer_set_array_size
-calls=2 0 
-0 42
-0 6
-cfn=_dl_map_object_deps
-calls=2 0 
-0 4126
-0 24
-cfn=_dl_map_object_deps
-calls=1 0 
-0 578
-0 10
-cfn=_dl_dst_count
-calls=2 0 
-0 88
-0 842
-cfn=_dl_catch_exception
-calls=2 0 
-0 9914
-0 15
-
-fn=__GI___close_nocancel
-0 36
-
-fn=open_path
-0 118
-cfn=memcpy
-calls=3 0 
-0 42
-0 54
-cfn=memcpy
-calls=3 0 
-0 39
-0 15
-cfn=memcpy
-calls=3 0 
-0 45
-0 33
-cfn=open_verify.constprop.0
-calls=3 0 
-0 328
-0 27
-cfn=__minimal_malloc
-calls=2 0 
-0 62
-0 14
-cfn=memcpy
-calls=2 0 
-0 36
-0 77
-cfn=stat
-calls=1 0 
-0 23
-0 11
-cfn=open_path
-calls=1 0 
-0 322
-0 7
-cfn=_dl_map_object
-calls=1 0 
-0 1734
-0 3
-
-fn=__libc_scratch_buffer_set_array_size
-0 63
-
-fn=version_check_doit
-0 26
-cfn=_dl_check_all_versions
-calls=1 0 
-0 6886
-
-fn=decompose_rpath
-0 16
-cfn=strdup
-calls=1 0 
-0 123
-0 507
-cfn=__minimal_malloc
-calls=1 0 
-0 31
-0 11
-cfn=fillin_rpath.isra.0
-calls=1 0 
-0 1965
-0 23
-
-fn=cache_rpath
-0 38
-
-fn=_dl_determine_tlsoffset
+0 2579
 0 17
-cfn=_dl_determine_tlsoffset
-calls=1 0 
-0 128
-0 129
-cfn=_dl_allocate_tls_storage
-calls=1 0 
-0 574
 
-fn=_dl_sort_maps_init
-0 6
-cfn=__tunable_get_val
-calls=1 0 
-0 32
-0 12
-
-fn=_dl_audit_activity_map
-0 19
-
-fn=mprotect
-0 48
-
-fn=stat
-0 8
-cfn=fstatat
-calls=1 0 
+fn=fstatat
 0 15
 
 fn=_dl_tls_initial_modid_limit_setup
 0 9
-cfn=_dl_tls_initial_modid_limit_setup
+cfn=_dl_tls_initial_modid_limit_setup'2
 calls=1 0 
 0 35
-0 39
+0 4
 cfn=__tls_init_tp
 calls=1 0 
 0 148
 
+fn=_dl_tls_initial_modid_limit_setup'2
+0 35
+
+fn=_dl_start
+0 25
+cfn=_dl_start'2
+calls=1 0 
+0 205361
+0 9
+cfn=_dl_init
+calls=1 0 
+0 89659
+
+fn=_dl_start'2
+0 158
+cfn=_dl_start'2
+calls=4 0 
+0 820932
+0 383
+cfn=_dl_start'2
+calls=1 0 
+0 204612
+0 39
+cfn=_dl_start'2
+calls=1 0 
+0 204628
+0 17
+cfn=_dl_start'2
+calls=1 0 
+0 205313
+0 150
+cfn=_dl_start'2
+calls=50 0 
+0 10244124
+0 8
+cfn=__rtld_malloc_init_stubs
+calls=1 0 
+0 21
+0 7
+cfn=_dl_setup_hash
+calls=1 0 
+0 32
+0 11
+cfn=_dl_sysdep_start
+calls=1 0 
+0 204532
+0 3
+cfn=_dl_start'2
+calls=1 0 
+0 205133
+
+fn=__minimal_free
+0 44
+cfn=memset
+calls=1 0 
+0 15
+0 9
+
+fn=open_verify.constprop.0
+0 68
+cfn=__open_nocancel
+calls=4 0 
+0 104
+0 42
+cfn=__read_nocancel
+calls=3 0 
+0 36
+0 206
+
+fn=openaux
+0 96
+cfn=_dl_map_object
+calls=2 0 
+0 881
+0 9
+cfn=_dl_map_object
+calls=3 0 
+0 5917
+0 36
+
+fn=_dl_check_map_versions
+0 74
+cfn=_dl_name_match_p
+calls=5 0 
+0 374
+0 75
+cfn=strcmp
+calls=1 0 
+0 53
+0 13
+cfn=_dl_check_map_versions'2
+calls=1 0 
+0 2759
+0 6
+cfn=_dl_check_map_versions'2
+calls=1 0 
+0 3504
+0 3
+
+fn=_dl_check_map_versions'2
+0 232
+cfn=_dl_name_match_p
+calls=16 0 
+0 1146
+0 1830
+cfn=_dl_check_map_versions'2
+calls=12 0 
+0 13881
+0 80
+cfn=strcmp
+calls=16 0 
+0 947
+0 118
+cfn=_dl_check_map_versions'2
+calls=1 0 
+0 2016
+0 27
+cfn=_dl_check_map_versions'2
+calls=3 0 
+0 1508
+0 339
+cfn=__minimal_calloc
+calls=4 0 
+0 180
+0 67
+cfn=_dl_check_map_versions'2
+calls=3 0 
+0 1136
+0 6
+cfn=_dl_check_map_versions'2
+calls=2 0 
+0 366
+0 315
+cfn=_dl_check_map_versions'2
+calls=2 0 
+0 372
+0 7
+cfn=_dl_check_map_versions'2
+calls=1 0 
+0 21
+0 15
+cfn=_dl_check_map_versions'2
+calls=3 0 
+0 865
+0 767
+cfn=_dl_check_map_versions'2
+calls=1 0 
+0 90
+0 11
+cfn=_dl_check_map_versions'2
+calls=1 0 
+0 158
+0 113
+cfn=strncmp
+calls=1 0 
+0 23
+0 19
+cfn=_dl_check_map_versions'2
+calls=3 0 
+0 5555
+0 21
+
+fn=_dl_tls_static_surplus_init
+0 9
+cfn=__tunable_get_val'2
+calls=1 0 
+0 32
+0 5
+cfn=__tunable_get_val'2
+calls=1 0 
+0 32
+0 23
+
+fn=_dl_find_object_from_map
+0 38
+cfn=_dl_find_object_from_map'2
+calls=2 0 
+0 116
+0 18
+cfn=_dlfo_process_initial'2
+calls=2 0 
+0 625
+
+fn=_dl_find_object_from_map'2
+0 76
+cfn=_dl_find_object_from_map'2
+calls=4 0 
+0 184
+0 308
+cfn=_dlfo_process_initial'2
+calls=4 0 
+0 622
+
+fn=_dl_check_all_versions
+0 10
+cfn=_dl_check_all_versions'2
+calls=1 0 
+0 6867
+0 9
+
+fn=_dl_check_all_versions'2
+0 6
+cfn=_dl_check_map_versions
+calls=1 0 
+0 6861
+
+fn=strncmp
+0 23
+
+fn=_dl_sysdep_parse_arguments
+0 44
+cfn=memset
+calls=1 0 
+0 47
+0 203
+
 fn=__minimal_malloc
-0 615
+0 586
 cfn=mmap
 calls=2 0 
 0 38
@@ -541,12 +4338,12 @@ calls=2 0
 cfn=__set_vma_name
 calls=2 0 
 0 82
-0 396
-cfn=__minimal_malloc
+0 360
+cfn=__minimal_malloc'2
 calls=1 0 
 0 22
 0 6
-cfn=__minimal_malloc
+cfn=__minimal_malloc'2
 calls=1 0 
 0 12
 0 13
@@ -554,7 +4351,7 @@ cfn=memcpy
 calls=1 0 
 0 20
 0 17
-cfn=_dl_new_object
+cfn=_dl_new_object'2
 calls=1 0 
 0 156
 0 10
@@ -571,856 +4368,8 @@ calls=1 0
 0 9
 0 10
 
-fn=strcmp
-0 10216
-cfn=strcmp
-calls=141 0 
-0 3481
-0 14075
-cfn=strcmp
-calls=74 0 
-0 666
-0 148
-
-fn=bcmp
-0 43
-
-fn=init_tls
-0 18
-cfn=__minimal_calloc
-calls=1 0 
-0 45
-0 48
-cfn=_dl_tls_static_surplus_init
-calls=1 0 
-0 101
-0 1
-cfn=_dl_determine_tlsoffset
-calls=1 0 
-0 720
-0 3
-cfn=dl_main
-calls=1 0 
-0 176751
-
-fn=_dl_add_to_slotinfo
-0 48
-cfn=_dl_add_to_slotinfo
-calls=3 0 
-0 81
-0 81
-cfn=_dl_add_to_slotinfo
-calls=3 0 
-0 33
-0 36
-cfn=_dl_relocate_object
-calls=2 0 
-0 181107
-0 25
-cfn=_dl_allocate_tls_init
-calls=1 0 
-0 315
-0 14
-cfn=_dl_find_object_init
-calls=1 0 
-0 5967
-
-fn=_dl_sysdep_start_cleanup
-0 4
-
-fn=rtld_mutex_dummy
-0 45
-
-fn=_dl_init_paths
-0 18
-cfn=_dl_important_hwcaps
-calls=1 0 
-0 3272
-0 5
-cfn=_dl_debug_initialize
-calls=1 0 
-0 197616
-
-fn=fillin_rpath.isra.0
-0 21
-cfn=strsep
-calls=1 0 
-0 573
-0 6
-cfn=strsep
-calls=2 0 
-0 591
-0 16
-cfn=expand_dynamic_string_token
-calls=2 0 
-0 337
-0 6
-cfn=strlen
-calls=2 0 
-0 64
-0 53
-cfn=bcmp
-calls=1 0 
-0 43
-0 4
-cfn=fillin_rpath.isra.0
-calls=1 0 
-0 1056
-0 6
-cfn=__minimal_free
-calls=2 0 
-0 52
-0 2
-cfn=fillin_rpath.isra.0
-calls=2 0 
-0 1048
-0 4
-cfn=strlen
-calls=1 0 
-0 13
-0 11
-cfn=__minimal_malloc
-calls=1 0 
-0 31
-0 9
-cfn=memcpy
-calls=1 0 
-0 14
-0 28
-cfn=memcpy
-calls=1 0 
-0 20
-0 7
-cfn=fillin_rpath.isra.0
-calls=1 0 
-0 55
-0 3
-cfn=fillin_rpath.isra.0
-calls=1 0 
-0 1053
-0 10
-cfn=fillin_rpath.isra.0
-calls=2 0 
-0 1316
-0 3
-cfn=__minimal_free
-calls=1 0 
-0 16
-0 22
-
-fn=do_preload
-0 21
-cfn=_dl_catch_error
-calls=1 0 
-0 2579
-0 17
-
-fn=openaux
-0 96
-cfn=_dl_map_object
-calls=2 0 
-0 881
-0 9
-cfn=_dl_map_object
-calls=3 0 
-0 5917
-0 36
-
-fn=__aarch64_ldadd4_relax
-0 18
-
-fn=allocate_dtv
-0 13
-cfn=__minimal_calloc
-calls=1 0 
-0 45
-0 12
-
-fn=_dl_protect_relro
-0 140
-cfn=mprotect
-calls=5 0 
-0 30
-0 5
-
-fn=_dl_fini
-0 25
-cfn=_dl_fini
-calls=1 0 
-0 1544
-0 3
-cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
-cfi=???
-cfn=pthread_mutex_lock@@GLIBC_2.17
-calls=1 0 
-0 1541
-0 25
-cfn=_dl_call_fini
-calls=5 0 
-0 672
-0 10
-cfn=_dl_audit_objclose
-calls=5 0 
-0 80
-0 33
-cfn=_dl_audit_activity_nsid
-calls=1 0 
-0 21
-0 18
-fi=???
-cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
-cfi=???
-cfn=__aarch64_swp4_rel
-calls=1 0 
-0 5
-0 7
-fi=???
-cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
-cfi=???
-cfn=__aarch64_cas4_acq
-calls=1 0 
-0 5
-0 5
-fi=???
-cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
-cfi=???
-cfn=_IO_cleanup
-calls=1 0 
-0 431
-fe=???
-
-fn=_dl_next_ld_env_entry
-0 13
-cfn=_dl_next_ld_env_entry
-calls=1 0 
-0 5
-0 88
-cfn=_dl_new_object
-calls=1 0 
-0 202023
-
-fn=copy_hwcaps
-0 26
-cfn=copy_hwcaps
-calls=2 0 
-0 93
-0 4
-cfn=_dl_hwcaps_split_masked
-calls=2 0 
-0 67
-0 28
-cfn=copy_hwcaps
-calls=1 0 
-0 82
-0 19
-
-fn=_dl_debug_initialize
-0 41
-cfn=_dl_debug_initialize
-calls=1 0 
-0 11
-0 9
-cfn=dl_main
-calls=1 0 
-0 197566
-
-fn=munmap
-0 36
-
-fn=_dl_debug_update
-0 52
-
-fn=_dl_map_object_deps
-0 96
-cfn=__minimal_malloc
-calls=1 0 
-0 31
-0 8
-cfn=memcpy
-calls=1 0 
-0 15
-0 4
-cfn=memcpy
-calls=1 0 
-0 15
-0 28
-cfn=__libc_scratch_buffer_set_array_size
-calls=1 0 
-0 21
-0 3
-cfn=_dl_map_object_deps
-calls=1 0 
-0 2590
-0 105
-cfn=_dl_dst_count
-calls=3 0 
-0 122
-0 24
-cfn=_dl_catch_exception
-calls=3 0 
-0 13185
-0 20
-cfn=__minimal_malloc
-calls=1 0 
-0 31
-0 11
-cfn=_dl_map_object_deps
-calls=1 0 
-0 512
-0 85
-cfn=_dl_sort_maps
-calls=1 0 
-0 379
-0 33
-cfn=memcpy
-calls=1 0 
-0 14
-0 1
-cfn=_dl_map_object_deps
-calls=1 0 
-0 423
-0 4
-cfn=_dl_map_object_deps
-calls=1 0 
-0 564
-0 55
-cfn=dl_main
-calls=1 0 
-0 184689
-
-fn=_dl_check_all_versions
-0 10
-cfn=_dl_check_all_versions
-calls=1 0 
-0 6867
-0 6
-cfn=_dl_check_map_versions
-calls=1 0 
-0 6861
-0 9
-
-fn=_dl_bti_check
-0 12
-
-fn=_dl_find_object_from_map
-0 114
-cfn=_dl_find_object_from_map
-calls=6 0 
-0 300
-0 308
-cfn=_dlfo_process_initial
-calls=4 0 
-0 622
-0 18
-cfn=_dlfo_process_initial
-calls=2 0 
-0 625
-
-fn=_dl_init
-0 29
-cfn=call_init
-calls=1 0 
-0 893
-0 1
-cfn=call_init
-calls=1 0 
-0 996
-0 4
-cob=/work/benchmark-tests-exit
-cfi=???
-cfn=(below main)
-calls=1 0 
-0 88643
-
-fn=_dl_sysdep_start
-0 13
-cfn=_dl_sysdep_parse_arguments
-calls=1 0 
-0 294
-0 3
-cfn=__GI___tunables_init
-calls=1 0 
-0 204204
-0 18
-
-fn=memset
-0 528
-
-fn=__GI___tunables_init
-0 459
-cfn=__GI___tunables_init
-calls=9 0 
-0 8267
-0 1158
-cfn=__GI___tunables_init
-calls=1 0 
-0 72
-0 73
-cfn=_dl_sort_maps_init
-calls=1 0 
-0 50
-0 2
-cfn=brk
-calls=1 0 
-0 15
-0 9
-cfn=__tunable_get_val
-calls=1 0 
-0 202438
-
-fn=brk
-0 15
-
-fn=_dl_hwcaps_split_masked
-0 30
-cfn=_dl_hwcaps_split
-calls=5 0 
-0 91
-0 50
-
-fn=_dl_name_match_p
-0 273
-cfn=strcmp
-calls=39 0 
-0 577
-0 375
-cfn=strcmp
-calls=47 0 
-0 1446
-0 320
-
-fn=_dl_receive_error
-0 17
-cfn=version_check_doit
-calls=1 0 
-0 6912
-0 6
-cfn=init_tls
-calls=1 0 
-0 177687
-
-fn=_dl_check_map_versions
-0 306
-cfn=_dl_name_match_p
-calls=21 0 
-0 1520
-0 1900
-cfn=_dl_check_map_versions
-calls=12 0 
-0 13881
-0 85
-cfn=strcmp
-calls=17 0 
-0 1000
-0 131
-cfn=_dl_check_map_versions
-calls=2 0 
-0 4775
-0 27
-cfn=_dl_check_map_versions
-calls=3 0 
-0 1508
-0 339
-cfn=__minimal_calloc
-calls=4 0 
-0 180
-0 67
-cfn=_dl_check_map_versions
-calls=3 0 
-0 1136
-0 6
-cfn=_dl_check_map_versions
-calls=2 0 
-0 366
-0 315
-cfn=_dl_check_map_versions
-calls=2 0 
-0 372
-0 7
-cfn=_dl_check_map_versions
-calls=1 0 
-0 21
-0 15
-cfn=_dl_check_map_versions
-calls=3 0 
-0 865
-0 767
-cfn=_dl_check_map_versions
-calls=1 0 
-0 90
-0 11
-cfn=_dl_check_map_versions
-calls=1 0 
-0 158
-0 113
-cfn=strncmp
-calls=1 0 
-0 23
-0 25
-cfn=_dl_check_map_versions
-calls=4 0 
-0 9059
-0 24
-
-fn=_dl_important_hwcaps
-0 5
-cfn=__minimal_malloc
-calls=1 0 
-0 31
-0 14
-cfn=__minimal_malloc
-calls=1 0 
-0 31
-0 25
-cfn=memset
-calls=1 0 
-0 14
-0 11
-cfn=memset
-calls=1 0 
-0 14
-0 29
-cfn=decompose_rpath
-calls=1 0 
-0 2676
-0 14
-cfn=_dl_hwcaps_subdirs_active
-calls=1 0 
-0 5
-0 6
-cfn=_dl_important_hwcaps
-calls=1 0 
-0 397
-0 2
-cfn=_dl_hwcaps_split_masked
-calls=1 0 
-0 30
-0 9
-cfn=_dl_important_hwcaps
-calls=1 0 
-0 356
-0 2
-cfn=_dl_hwcaps_split_masked
-calls=1 0 
-0 37
-0 7
-cfn=__minimal_malloc
-calls=1 0 
-0 31
-0 8
-cfn=_dl_important_hwcaps
-calls=1 0 
-0 271
-0 2
-cfn=_dl_hwcaps_split
-calls=1 0 
-0 14
-0 9
-cfn=_dl_important_hwcaps
-calls=1 0 
-0 246
-0 2
-cfn=_dl_hwcaps_split_masked
-calls=1 0 
-0 37
-0 22
-cfn=__minimal_malloc
-calls=1 0 
-0 31
-0 10
-cfn=copy_hwcaps
-calls=1 0 
-0 144
-
-fn=strcspn
-0 410
-
-fn=_dl_catch_error
-0 11
-cfn=_dl_catch_exception
-calls=1 0 
-0 2551
-0 17
-
-fn=__rtld_malloc_init_real
-0 53
-cfn=lookup_malloc_symbol
-calls=1 0 
-0 2617
-0 1
-cfn=__rtld_mutex_init
-calls=1 0 
-0 626
-0 10
-cfn=_dl_relocate_object
-calls=1 0 
-0 1540
-
-fn=_dl_lookup_symbol_x
-0 22551
-cfn=_dl_lookup_symbol_x
-calls=237 0 
-0 112345
-0 2844
-cfn=do_lookup_x
-calls=237 0 
-0 109501
-0 1436
-cfn=_dl_lookup_symbol_x
-calls=18 0 
-0 5924
-0 9294
-cfn=_dl_lookup_symbol_x
-calls=145 0 
-0 2860882
-0 7535
-cfn=_dl_relocate_object
-calls=2 0 
-0 198
-0 388
-cfn=_dl_relocate_object
-calls=8 0 
-0 308558
-0 44
-cfn=_dl_relocate_object
-calls=2 0 
-0 83255
-0 232
-cfn=_dl_relocate_object
-calls=58 0 
-0 2144993
-0 13
-cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
-cfi=???
-cfn=memchr
-calls=1 0 
-0 14
-0 4
-cfn=_dl_relocate_object
-calls=1 0 
-0 193
-0 14
-cfn=_dl_relocate_object
-calls=1 0 
-0 118
-0 112
-cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
-cfi=???
-cfn=memset
-calls=2 0 
-0 58
-cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
-cfi=???
-cfn=strlen
-calls=2 0 
-0 30
-cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
-cfi=???
-cfn=memmove
-calls=2 0 
-0 42
-cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
-cfi=???
-cfn=memcpy
-calls=2 0 
-0 85728
-0 220
-cfn=_dl_lookup_symbol_x
-calls=2 0 
-0 2171
-0 220
-cfn=_dl_relocate_object
-calls=6 0 
-0 14691
-0 8
-cfn=_dl_relocate_object
-calls=2 0 
-0 8113
-0 12
-cfn=_dl_relocate_object
-calls=4 0 
-0 125260
-0 144
-
-fn=check_match
-0 6236
-cfn=strcmp
-calls=134 0 
-0 8301
-0 7406
-cfn=strcmp
-calls=219 0 
-0 12282
-0 306
-cfn=strcmp
-calls=3 0 
-0 253
-0 42
-cfn=strcmp
-calls=3 0 
-0 229
-0 45
-
-fn=open_verify.constprop.0
-0 68
-cfn=__open_nocancel
-calls=4 0 
-0 104
-0 42
-cfn=__read_nocancel
-calls=3 0 
-0 36
-0 206
-
-fn=getauxval
-0 9
-cfn=__getauxval2
-calls=1 0 
-0 22
-
-fn=access
-0 18
-
-fn=_dl_tls_static_surplus_init
-0 9
-cfn=__tunable_get_val
-calls=1 0 
-0 32
-0 5
-cfn=__tunable_get_val
-calls=1 0 
-0 32
-0 23
-
-fn=__tls_init_tp
-0 40
-cfn=__tunable_get_val
-calls=1 0 
-0 32
-0 34
-cfn=memset
-calls=1 0 
-0 15
-0 13
-cfn=__tls_init_tp
-calls=1 0 
-0 21
-0 14
-
-fn=__minimal_calloc
-0 140
-cfn=__minimal_malloc
-calls=10 0 
-0 636
-
-fn=memcpy
-0 579
-
-fn=__read_nocancel
-0 36
-
-fn=mmap
-0 228
-
-fn=dfs_traversal.part.0
-0 412
-
-fn=_dl_allocate_tls_storage
-0 13
-cfn=__aarch64_ldadd4_relax
-calls=1 0 
-0 9
-0 5
-cfn=__minimal_malloc
-calls=1 0 
-0 348
-0 3
-cfn=_dl_tls_initial_modid_limit_setup
-calls=1 0 
-0 196
-
-fn=_dl_find_object_init
-0 3
-cfn=__rtld_malloc_init_real
-calls=1 0 
-0 4847
-0 15
-cfn=_dlfo_process_initial
-calls=1 0 
-0 1102
-0 9
-
-fn=lookup_malloc_symbol
-0 60
-cfn=_dl_lookup_symbol_x
-calls=4 0 
-0 2522
-0 6
-cfn=lookup_malloc_symbol
-calls=1 0 
-0 1962
-0 6
-cfn=lookup_malloc_symbol
-calls=1 0 
-0 1290
-0 7
-cfn=lookup_malloc_symbol
-calls=1 0 
-0 630
-0 16
-
-fn=call_init
-0 148
-cob=???
-cfi=???
-cfn=0x00000000048f3748
-calls=1 0 
-0 10
-cob=???
-cfi=???
-cfn=0x00000000048c0578
-calls=1 0 
-0 10
-0 56
-cfn=call_init
-calls=4 0 
-0 681
-0 20
-cob=/nix/store/l8wljp091lkvnvx6xfnvfpgr6j568idc-gcc-14.3.0-libgcc/lib/libgcc_s.so.1
-cfi=???
-cfn=init_have_sme
-calls=1 0 
-0 362
-cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
-cfi=???
-cfn=init_have_lse_atomics
-calls=1 0 
-0 223
-cfn=init_have_lse_atomics
-calls=1 0 
-0 50
-cob=/nix/store/skvxpqppwwsfqgb4c8jhsk8s9v4cxbm6-valgrind-3.26.0/libexec/valgrind/vgpreload_core-arm64-linux.so
-cfi=???
-cfn=0x00000000000006e0
-calls=1 0 
-0 11
-0 67
-cfn=call_init
-calls=4 0 
-0 1362
-0 25
-cfn=_dl_init
-calls=1 0 
-0 907
-
-fn=(below main)
-0 5
-cfn=_dl_start
-calls=1 0 
-0 295054
-
-fn=strlen
-0 490
+fn=__minimal_malloc'2
+0 65
 
 fn=map_doit
 0 30
@@ -1429,8 +4378,22 @@ calls=1 0
 0 2459
 
 fn=_dl_map_object_from_fd
-0 96
-cfn=_dl_new_object
+0 72
+cfn=fstat
+calls=3 0 
+0 36
+0 36
+cfn=_dl_map_object_from_fd'2
+calls=3 0 
+0 5160
+0 6
+cfn=_dl_map_object'2
+calls=3 0 
+0 63
+
+fn=_dl_map_object_from_fd'2
+0 36
+cfn=_dl_new_object'2
 calls=3 0 
 0 5049
 0 660
@@ -1445,32 +4408,24 @@ calls=3 0
 cfn=mmap
 calls=3 0 
 0 57
-0 21
-cfn=fstat
-calls=3 0 
-0 36
-0 36
-cfn=_dl_map_object_from_fd
-calls=3 0 
-0 5160
-0 156
-cfn=_dl_map_object_from_fd
+0 165
+cfn=_dl_map_object_from_fd'2
 calls=1 0 
 0 703
 0 42
-cfn=_dl_map_object_from_fd
+cfn=_dl_map_object_from_fd'2
 calls=3 0 
 0 1313
 0 45
-cfn=_dl_map_object_from_fd
+cfn=_dl_map_object_from_fd'2
 calls=3 0 
 0 1157
 0 558
-cfn=_dl_map_object_from_fd
+cfn=_dl_map_object_from_fd'2
 calls=15 0 
 0 7384
 0 32
-cfn=_dl_map_object_from_fd
+cfn=_dl_map_object_from_fd'2
 calls=2 0 
 0 235
 0 8
@@ -1502,7 +4457,7 @@ cfn=_dl_audit_objopen
 calls=3 0 
 0 51
 0 3
-cfn=_dl_map_object_from_fd
+cfn=_dl_map_object_from_fd'2
 calls=3 0 
 0 81
 0 45
@@ -1518,7 +4473,7 @@ cfn=munmap
 calls=3 0 
 0 18
 0 18
-cfn=_dl_map_object_from_fd
+cfn=_dl_map_object_from_fd'2
 calls=3 0 
 0 647
 0 28
@@ -1526,7 +4481,7 @@ cfn=strcmp
 calls=2 0 
 0 68
 0 8
-cfn=_dl_map_object_from_fd
+cfn=_dl_map_object_from_fd'2
 calls=1 0 
 0 174
 0 24
@@ -1534,240 +4489,665 @@ cfn=munmap
 calls=3 0 
 0 18
 0 15
-cfn=_dl_map_object_from_fd
+cfn=_dl_map_object_from_fd'2
 calls=3 0 
 0 728
-0 6
-cfn=_dl_map_object
-calls=3 0 
+
+fn=access
+0 18
+
+fn=_dl_sort_maps
+0 208
+cfn=_dl_sort_maps'2
+calls=2 0 
+0 596
+
+fn=_dl_sort_maps'2
+0 102
+cfn=dfs_traversal.part.0
+calls=10 0 
+0 412
+0 52
+cfn=memcpy
+calls=2 0 
+0 28
+0 2
+cfn=_dl_sort_maps'2
+calls=2 0 
+0 12
+
+fn=dfs_traversal.part.0
+0 412
+
+fn=version_check_doit
+0 26
+cfn=_dl_check_all_versions
+calls=1 0 
+0 6886
+
+fn=_dlfo_sort_mappings
+0 220
+
+fn=_dl_audit_activity_nsid
 0 63
 
-fn=_dl_assign_tls_modid
-0 50
-
-fn=strncmp
-0 23
-
-fn=_dl_call_fini
-0 102
-cob=/nix/store/l8wljp091lkvnvx6xfnvfpgr6j568idc-gcc-14.3.0-libgcc/lib/libgcc_s.so.1
-cfi=???
-cfn=release_registered_frames
+fn=copy_hwcaps
+0 13
+cfn=copy_hwcaps'2
 calls=1 0 
-0 50
-cob=/nix/store/skvxpqppwwsfqgb4c8jhsk8s9v4cxbm6-valgrind-3.26.0/libexec/valgrind/vgpreload_core-arm64-linux.so
-cfi=???
-cfn=0x000000000000068c
-calls=1 0 
-0 160
-cob=/work/benchmark-tests-exit
-cfi=???
-cfn=0x00000000000088cc
-calls=1 0 
-0 160
-0 2
-cob=/nix/store/l8wljp091lkvnvx6xfnvfpgr6j568idc-gcc-14.3.0-libgcc/lib/libgcc_s.so.1
-cfi=???
-cfn=0x0000000000003dcc
-calls=1 0 
-0 160
-0 38
-
-fn=_dl_hwcaps_split
-0 105
-
-fn=index
-0 351
-
-fn=handle_preload_list
-0 20
-cfn=handle_preload_list
-calls=1 0 
-0 3071
+0 43
 0 6
-cfn=do_preload
+cfn=copy_hwcaps'2
 calls=1 0 
-0 2617
-0 3
-cfn=strcspn
+0 82
+
+fn=copy_hwcaps'2
+0 13
+cfn=copy_hwcaps'2
 calls=1 0 
-0 410
+0 50
+0 4
+cfn=_dl_hwcaps_split_masked
+calls=2 0 
+0 67
+0 41
+
+fn=strsep
+0 25
+cfn=strsep'2
+calls=2 0 
+0 1130
 0 9
-cfn=memcpy
-calls=1 0 
-0 20
-0 9
-cfn=dl_main
-calls=1 0 
-0 194339
+
+fn=strsep'2
+0 244
+cfn=strsep'2
+calls=122 0 
+0 34892
+0 886
+
+fn=_dl_count_modids
+0 15
 
 fn=__sigsetjmp
 0 126
 
-fn=__set_vma_name
-0 34
-cfn=__tunable_get_val
+fn=cache_rpath
+0 38
+
+fn=_dl_determine_tlsoffset
+0 17
+cfn=_dl_determine_tlsoffset'2
 calls=1 0 
-0 32
-0 16
+0 128
+0 1
+cfn=_dl_allocate_tls_storage
+calls=1 0 
+0 574
+
+fn=_dl_determine_tlsoffset'2
+0 128
+
+fn=__rtld_malloc_init_stubs
+0 21
+
+fn=_dl_hwcaps_subdirs_active
+0 5
+
+fn=index
+0 351
+
+fn=_dl_catch_error
+0 11
+cfn=_dl_catch_exception
+calls=1 0 
+0 2551
+0 17
+
+fn=__aarch64_ldadd4_relax
+0 18
+
+fn=allocate_dtv
+0 13
+cfn=__minimal_calloc
+calls=1 0 
+0 45
+0 12
+
+fn=_dl_find_object_init
+0 3
+cfn=__rtld_malloc_init_real
+calls=1 0 
+0 4847
+0 15
+cfn=_dlfo_process_initial
+calls=1 0 
+0 1102
+
+fn=_dl_find_object_init'2
+0 9
+
+fn=_dl_unload_cache
+0 17
+
+fn=_dl_next_ld_env_entry
+0 13
+cfn=_dl_next_ld_env_entry'2
+calls=1 0 
+0 5
+0 83
+cfn=_dl_new_object
+calls=1 0 
+0 202023
+
+fn=_dl_next_ld_env_entry'2
+0 5
+
+fn=__read_nocancel
+0 36
+
+fn=init_tls
+0 18
+cfn=__minimal_calloc
+calls=1 0 
+0 45
+0 48
+cfn=_dl_tls_static_surplus_init
+calls=1 0 
+0 101
+0 1
+cfn=_dl_determine_tlsoffset
+calls=1 0 
+0 720
+0 3
+cfn=dl_main'2
+calls=1 0 
+0 176751
+
+fn=_dl_allocate_tls_storage
+0 13
+cfn=__aarch64_ldadd4_relax
+calls=1 0 
+0 9
+0 5
+cfn=__minimal_malloc
+calls=1 0 
+0 348
+0 3
+cfn=_dl_tls_initial_modid_limit_setup
+calls=1 0 
+0 196
+
+fn=_dl_setup_hash
+0 160
+
+fn=brk
+0 15
+
+fn=__tls_pre_init_tp
+0 30
+
+fn=_dl_debug_initialize
+0 30
+cfn=_dl_debug_initialize'2
+calls=1 0 
+0 11
+0 9
+cfn=dl_main'2
+calls=1 0 
+0 197566
+
+fn=_dl_debug_initialize'2
+0 11
+
+fn=__open_nocancel
+0 104
+
+fn=fstat
+0 36
 
 fn=_dlfo_process_initial
-0 212
+0 12
 cfn=_dl_find_object_from_map
-calls=4 0 
-0 890
-0 8
-cfn=_dlfo_process_initial
-calls=4 0 
-0 202
-0 8
-cfn=_dl_find_object_from_map
-calls=2 0 
-0 797
-0 149
-cfn=_dlfo_process_initial
 calls=1 0 
-0 423
-0 4
-cfn=_dlfo_process_initial
-calls=2 0 
-0 287
+0 252
 0 5
 cfn=__minimal_malloc
 calls=1 0 
 0 31
 0 6
-cfn=_dlfo_process_initial
+cfn=_dlfo_process_initial'2
 calls=1 0 
 0 796
+
+fn=_dlfo_process_initial'2
+0 204
+cfn=_dl_find_object_from_map'2
+calls=4 0 
+0 890
+0 8
+cfn=_dlfo_process_initial'2
+calls=4 0 
+0 202
+0 4
+cfn=_dl_find_object_from_map
+calls=1 0 
+0 545
+0 149
+cfn=_dlfo_process_initial'2
+calls=1 0 
+0 423
+0 4
+cfn=_dlfo_process_initial'2
+calls=2 0 
+0 287
 0 4
 cfn=_dlfo_sort_mappings
 calls=1 0 
 0 220
 0 6
-cfn=_dl_find_object_init
+cfn=_dl_find_object_init'2
 calls=1 0 
 0 9
 
-fn=_dl_call_libc_early_init
-0 15
-cfn=_dl_lookup_direct
+fn=sbrk
+0 18
+
+fn=_dl_audit_objopen
+0 51
+
+fn=_dl_map_object_deps
+0 113
+cfn=_dl_dst_count
 calls=1 0 
-0 263
+0 34
+0 8
+cfn=_dl_catch_exception
+calls=1 0 
+0 9376
+0 55
+cfn=dl_main'2
+calls=1 0 
+0 184689
+
+fn=_dl_map_object_deps'2
+0 20
+cfn=__minimal_malloc
+calls=1 0 
+0 31
+0 8
+cfn=memcpy
+calls=1 0 
+0 15
+0 4
+cfn=memcpy
+calls=1 0 
+0 15
+0 24
+cfn=__libc_scratch_buffer_set_array_size
+calls=1 0 
+0 21
+0 3
+cfn=_dl_map_object_deps'2
+calls=1 0 
+0 2590
+0 72
+cfn=_dl_dst_count
+calls=2 0 
+0 88
+0 16
+cfn=_dl_catch_exception'2
+calls=2 0 
+0 3809
+0 20
+cfn=__minimal_malloc
+calls=1 0 
+0 31
+0 11
+cfn=_dl_map_object_deps'2
+calls=1 0 
+0 512
+0 85
+cfn=_dl_sort_maps
+calls=1 0 
+0 379
+0 33
+cfn=memcpy
+calls=1 0 
+0 14
+0 1
+cfn=_dl_map_object_deps'2
+calls=1 0 
+0 423
+0 4
+cfn=_dl_map_object_deps'2
+calls=1 0 
+0 564
+
+fn=_dl_protect_relro
+0 140
+cfn=mprotect
+calls=5 0 
+0 30
+0 5
+
+fn=_dl_lookup_symbol_x
+0 779
+cfn=_dl_lookup_symbol_x'2
+calls=6 0 
+0 2987
+0 57
+cfn=_dl_lookup_symbol_x'2
+calls=3 0 
+0 1032
+0 123
+cfn=_dl_relocate_object'2
+calls=1 0 
+0 98
+0 26
+cfn=_dl_relocate_object'2
+calls=2 0 
+0 93477
+0 19
+cfn=_dl_relocate_object'2
+calls=1 0 
+0 55002
+0 63
+cfn=_dl_relocate_object'2
+calls=1 0 
+0 4872
+0 144
+
+fn=_dl_lookup_symbol_x'2
+0 21772
+cfn=_dl_lookup_symbol_x'2
+calls=231 0 
+0 109358
+0 2844
+cfn=do_lookup_x
+calls=237 0 
+0 109501
+0 1379
+cfn=_dl_lookup_symbol_x'2
+calls=15 0 
+0 4892
+0 9277
+cfn=_dl_lookup_symbol_x'2
+calls=145 0 
+0 2860882
+0 7429
+cfn=_dl_relocate_object'2
+calls=1 0 
+0 100
+0 362
+cfn=_dl_relocate_object'2
+calls=6 0 
+0 215081
+0 25
+cfn=_dl_relocate_object'2
+calls=1 0 
+0 28253
+0 232
+cfn=_dl_relocate_object'2
+calls=58 0 
+0 2144993
 0 13
 cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
 cfi=???
-cfn=__libc_early_init
+cfn=memchr
 calls=1 0 
-0 359
-
-fn=_dl_audit_preinit
-0 15
-
-fn=_dl_setup_hash
-0 160
-
-fn=_dl_new_object
-0 168
-cfn=_dl_map_object_from_fd
-calls=3 0 
-0 1712
-0 223
-cfn=_dl_map_object_from_fd
-calls=3 0 
-0 1691
-0 76
-cfn=strlen
-calls=3 0 
-0 79
-0 30
-cfn=__minimal_calloc
-calls=3 0 
-0 247
+0 14
 0 4
-cfn=__minimal_calloc
+cfn=_dl_relocate_object'2
 calls=1 0 
-0 259
-0 39
-cfn=memcpy
-calls=3 0 
-0 50
-0 262
-cfn=strlen
-calls=3 0 
+0 193
+0 14
+cfn=_dl_relocate_object'2
+calls=1 0 
 0 118
-0 21
+0 112
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
+cfi=???
+cfn=memset
+calls=2 0 
+0 58
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
+cfi=???
+cfn=strlen
+calls=2 0 
+0 30
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
+cfi=???
+cfn=memmove
+calls=2 0 
+0 42
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
+cfi=???
 cfn=memcpy
-calls=3 0 
-0 56
-0 316
-cfn=_dl_new_object
-calls=3 0 
-0 696
-0 10
-cfn=_dl_new_object
+calls=2 0 
+0 85728
+0 194
+cfn=_dl_lookup_symbol_x'2
+calls=2 0 
+0 2171
+0 187
+cfn=_dl_relocate_object'2
+calls=6 0 
+0 14691
+0 4
+cfn=_dl_relocate_object'2
 calls=1 0 
-0 21
-0 24
-cfn=__minimal_malloc
-calls=3 0 
-0 93
+0 3241
+0 12
+cfn=_dl_relocate_object'2
+calls=4 0 
+0 125260
+
+fn=do_lookup_x
+0 7821
+cfn=do_lookup_x'2
+calls=237 0 
+0 91558
+0 9772
+cfn=_dl_lookup_symbol_x'2
+calls=14 0 
+0 322
+0 3
+cfn=_dl_lookup_symbol_x'2
+calls=1 0 
+0 25
+
+fn=do_lookup_x'2
+0 47982
+cfn=do_lookup_x'2
+calls=244 0 
+0 59566
+0 6172
+cfn=check_match
+calls=228 0 
+0 34444
+0 238
+cfn=do_lookup_x'2
+calls=5 0 
+0 1400
+0 715
+cfn=do_lookup_x'2
+calls=21 0 
+0 6542
+0 2007
+cfn=do_lookup_x'2
+calls=223 0 
+0 9995
+
+fn=_dl_sysdep_start
+0 13
+cfn=_dl_sysdep_parse_arguments
+calls=1 0 
+0 294
+0 3
+cfn=__GI___tunables_init
+calls=1 0 
+0 204204
 0 18
-cfn=_dl_new_object
+
+fn=memset
+0 528
+
+fn=__GI___tunables_init
+0 82
+cfn=__GI___tunables_init'2
 calls=1 0 
-0 263
-0 10
-cfn=_dl_add_to_namespace_list
+0 1607
+0 1
+cfn=_dl_sort_maps_init
 calls=1 0 
 0 50
-0 46
+0 2
+cfn=brk
+calls=1 0 
+0 15
+0 9
+cfn=__tunable_get_val
+calls=1 0 
+0 202438
+
+fn=__GI___tunables_init'2
+0 377
+cfn=__GI___tunables_init'2
+calls=8 0 
+0 6660
+0 1158
+cfn=__GI___tunables_init'2
+calls=1 0 
+0 72
+0 72
+
+fn=__tunable_get_val
+0 430
+cfn=__tunable_get_val'2
+calls=1 0 
+0 20
+0 89
+cfn=strlen
+calls=1 0 
+0 13
+0 3
+cfn=sbrk
+calls=1 0 
+0 18
+0 12
 cfn=dl_main
 calls=1 0 
-0 201626
+0 202269
 
-fn=_dl_hwcaps_subdirs_active
-0 5
+fn=__tunable_get_val'2
+0 244
 
-fn=strdup
-0 20
-cfn=strlen
-calls=4 0 
-0 170
-0 20
-cfn=__minimal_malloc
-calls=4 0 
-0 124
-0 24
-cfn=memcpy
-calls=4 0 
-0 68
-
-fn=_dl_count_modids
-0 15
-
-fn=init_have_lse_atomics
-0 4
-cfn=getauxval
+fn=__minimal_calloc
+0 140
+cfn=__minimal_malloc'2
 calls=1 0 
 0 31
-0 15
+cfn=__minimal_malloc
+calls=9 0 
+0 605
 
-fn=_dl_audit_objclose
-0 80
+fn=rtld_mutex_dummy
+0 45
 
-fn=strsep
-0 25
+fn=fillin_rpath.isra.0
+0 21
+cfn=strsep
+calls=1 0 
+0 573
+0 7
+cfn=expand_dynamic_string_token
+calls=1 0 
+0 163
+0 3
+cfn=strlen
+calls=1 0 
+0 32
+0 13
+cfn=fillin_rpath.isra.0'2
+calls=1 0 
+0 1112
+0 3
+cfn=__minimal_free
+calls=1 0 
+0 16
+0 22
+
+fn=fillin_rpath.isra.0'2
+0 6
 cfn=strsep
 calls=2 0 
-0 1130
-0 244
-cfn=strsep
-calls=122 0 
-0 34892
-0 895
+0 591
+0 9
+cfn=expand_dynamic_string_token
+calls=1 0 
+0 174
+0 3
+cfn=strlen
+calls=1 0 
+0 32
+0 45
+cfn=bcmp
+calls=1 0 
+0 43
+0 4
+cfn=fillin_rpath.isra.0'2
+calls=1 0 
+0 1056
+0 6
+cfn=__minimal_free
+calls=2 0 
+0 52
+0 2
+cfn=fillin_rpath.isra.0'2
+calls=2 0 
+0 1048
+0 4
+cfn=strlen
+calls=1 0 
+0 13
+0 11
+cfn=__minimal_malloc
+calls=1 0 
+0 31
+0 9
+cfn=memcpy
+calls=1 0 
+0 14
+0 28
+cfn=memcpy
+calls=1 0 
+0 20
+0 7
+cfn=fillin_rpath.isra.0'2
+calls=1 0 
+0 55
+0 3
+cfn=fillin_rpath.isra.0'2
+calls=1 0 
+0 1053
+0 5
+cfn=fillin_rpath.isra.0'2
+calls=1 0 
+0 204
 
-fn=_dlfo_sort_mappings
-0 220
+fn=__libc_scratch_buffer_set_array_size
+0 63
+
+fn=_dl_receive_error
+0 17
+cfn=version_check_doit
+calls=1 0 
+0 6912
+0 6
+cfn=init_tls
+calls=1 0 
+0 177687
 
 fn=__rtld_mutex_init
 0 16
@@ -1780,1588 +5160,69 @@ calls=1 0
 0 284
 0 23
 
-fn=__getauxval2
-0 14
+fn=_dl_sysdep_start_cleanup
+0 4
+
+fn=init_have_lse_atomics
+0 4
+cfn=getauxval
+calls=1 0 
+0 31
+0 15
+
+fn=getauxval
+0 9
 cfn=__getauxval2
 calls=1 0 
-0 7
-0 8
+0 22
 
-fn=__open_nocancel
-0 104
+fn=_dl_audit_objclose
+0 80
 
-fn=fstat
+fn=decompose_rpath
+0 16
+cfn=strdup
+calls=1 0 
+0 123
+0 507
+cfn=__minimal_malloc
+calls=1 0 
+0 31
+0 11
+cfn=fillin_rpath.isra.0
+calls=1 0 
+0 1965
+0 23
+
+fn=bcmp
+0 43
+
+fn=mmap
+0 228
+
+fn=munmap
 0 36
 
-fn=__minimal_free
-0 44
+fn=mprotect
+0 48
+
+fn=__tls_init_tp
+0 40
+cfn=__tunable_get_val'2
+calls=1 0 
+0 32
+0 13
 cfn=memset
 calls=1 0 
 0 15
-0 9
-
-fn=fstatat
-0 15
-
-fn=_dl_relocate_object
-0 251
-cfn=_dl_relocate_object
-calls=1 0 
-0 65284
-0 9988
-cfn=_dl_relocate_object
-calls=675 0 
-0 40077581
-0 6967
-cfn=_dl_lookup_symbol_x
-calls=76 0 
-0 2809576
-0 540
-cfn=_dl_relocate_object
-calls=3 0 
-0 297
-0 313
-cfn=_dl_relocate_object
-calls=11 0 
-0 601194
-0 56
-cfn=_dl_relocate_object
-calls=14 0 
-0 541008
 0 13
-cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
-cfi=???
-cfn=strlen
-calls=1 0 
-0 15
-0 4
-cfn=_dl_relocate_object
-calls=1 0 
-0 118
-0 75
-cfn=_dl_relocate_object
-calls=7 0 
-0 229409
-0 10
-cfn=_dl_protect_relro
-calls=5 0 
-0 175
-0 138
-cfn=_dl_relocate_object
-calls=4 0 
-0 160148
-0 307
-cfn=_dl_lookup_symbol_x
-calls=8 0 
-0 27844
-0 60
-cfn=_dl_relocate_object
-calls=1 0 
-0 104
-0 20
-cfn=_dl_relocate_object
-calls=4 0 
-0 16437
-0 9
-cfn=_dl_relocate_object
-calls=3 0 
-0 104212
-0 10
-cfn=_dl_relocate_object
-calls=5 0 
-0 170836
-0 62
-cfn=_dl_relocate_object
-calls=2 0 
-0 64257
-0 31
-cfn=_dl_add_to_slotinfo
-calls=3 0 
-0 187593
-0 4
-cfn=dl_main
-calls=1 0 
-0 655
-
-fn=_dl_lookup_direct
-0 125
-cfn=check_match
-calls=3 0 
-0 656
-0 46
-
-fn=_dl_audit_activity_nsid
-0 63
-
-ob=???
-fl=???
-fn=0x00000000040051d0
-0 4
-cob=/work/benchmark-tests-exit
-cfi=???
-cfn=call_weak_fn
-calls=1 0 
-0 4
-0 2
-
-fn=0x00000000048c0578
-0 4
-cob=/nix/store/skvxpqppwwsfqgb4c8jhsk8s9v4cxbm6-valgrind-3.26.0/libexec/valgrind/vgpreload_core-arm64-linux.so
-cfi=???
-cfn=call_weak_fn
-calls=1 0 
-0 4
-0 2
-
-fn=0x00000000048f3748
-0 4
-cob=/nix/store/l8wljp091lkvnvx6xfnvfpgr6j568idc-gcc-14.3.0-libgcc/lib/libgcc_s.so.1
-cfi=???
-cfn=call_weak_fn
-calls=1 0 
-0 4
-0 2
-
-ob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
-fl=???
-fn=pthread_self
-0 3
-
-fn=_IO_link_in
-0 83
-cfn=__libc_cleanup_push_defer
-calls=1 0 
-0 24
-0 30
-cfn=_IO_link_in
-calls=1 0 
-0 44
-0 2
-cfn=__libc_cleanup_pop_restore
+cfn=__tls_init_tp'2
 calls=1 0 
 0 21
-0 3
-cfn=_IO_link_in
-calls=1 0 
-0 18
-0 15
-cfn=_IO_link_in
-calls=1 0 
-0 69
+0 14
 
-fn=_IO_file_doallocate
-0 22
-cfn=_IO_file_stat
-calls=1 0 
-0 18
-0 13
-cfn=malloc
-calls=1 0 
-0 253
-0 4
-0 10
-
-fn=_IO_setb
-0 6
-cfn=_IO_un_link
-calls=1 0 
-0 10
-0 1001
-cfn=free
-calls=1 0 
-0 124
-0 4
-
-fn=_IO_file_read
-0 24
-cfn=__read_nocancel
-calls=4 0 
-0 52
-
-fn=_IO_file_close
-0 5
-cfn=__close_nocancel
-calls=1 0 
-0 13
-
-fn=_IO_default_finish
-0 19
-
-fn=rindex
-0 53
-
-fn=malloc
-0 9
-fi=???
-cob=/work/benchmark-tests-exit
-cfi=???
-cfn=std::sys::pal::unix::stack_overflow::thread_info::set_current_info
-calls=1 0 
-0 620
-0 15
-fi=???
-cob=/work/benchmark-tests-exit
-cfi=???
-cfn=__rustc::__rust_no_alloc_shim_is_unstable_v2
-calls=1 0 
-0 588
-cfn=__strlen_asimd
-calls=1 0 
-0 31
-fi=???
-0 8
-fe=???
-0 12
-fi=???
-cob=/work/benchmark-tests-exit
-cfi=???
-cfn=std::sys::args::unix::args
-calls=1 0 
-0 12
-cob=/work/benchmark-tests-exit
-cfi=???
-cfn=__rustc::__rust_no_alloc_shim_is_unstable_v2
-calls=1 0 
-0 288
-cfn=__strlen_asimd
-calls=1 0 
+fn=__tls_init_tp'2
 0 21
-cfn=__GI_memcpy
-calls=2 0 
-0 34
-fi=???
-0 45
-fe=???
-0 26
-cfn=_IO_setb
-calls=1 0 
-0 28
-0 30
-cfn=_IO_no_init
-calls=1 0 
-0 58
-0 5
-cfn=_IO_new_file_init_internal
-calls=1 0 
-0 445
-0 8
-cfn=__underflow
-calls=1 0 
-0 607
-0 6
-cfn=__GI_memcpy
-calls=1 0 
-0 14
-0 2
-cfn=pthread_attr_setaffinity_np@@GLIBC_2.32
-calls=1 0 
-0 8
-0 6
-cfn=pthread_getaffinity_np@@GLIBC_2.32
-calls=1 0 
-0 41
-0 9
-cfn=pthread_attr_setaffinity_np@@GLIBC_2.32
-calls=1 0 
-0 709
-0 270
-cfn=ptmalloc_init.part.0
-calls=1 0 
-0 1808
-0 72
-cfn=_int_malloc
-calls=9 0 
-0 1594
-
-fn=alloc_perturb
-0 169
-
-fn=getdelim
-0 885
-cfn=getdelim
-calls=33 0 
-0 5404
-0 221
-cfn=realloc
-calls=1 0 
-0 459
-0 4
-0 140
-cfn=__GI_memcpy
-calls=35 0 
-0 757
-0 146
-cfn=__underflow
-calls=3 0 
-0 390
-0 27
-cfn=__GI_memchr
-calls=3 0 
-0 143
-0 132
-cfn=__GI_memchr
-calls=33 0 
-0 2157
-0 750
-cfn=malloc
-calls=1 0 
-0 831
-0 4
-0 128
-cfn=getdelim
-calls=32 0 
-0 448
-0 264
-cfn=__isoc23_sscanf
-calls=33 0 
-0 1352034
-
-fn=fstat
-0 13
-
-fn=__GI_memchr
-0 2300
-
-fn=__GI__IO_un_link.part.0
-0 4
-cfn=fclose@@GLIBC_2.17
-calls=1 0 
-0 438
-0 22
-cfn=__libc_cleanup_push_defer
-calls=1 0 
-0 24
-0 21
-cfn=__libc_cleanup_pop_restore
-calls=1 0 
-0 21
-0 29
-cfn=__GI__IO_un_link.part.0
-calls=1 0 
-0 41
-0 4
-cfn=__GI__IO_un_link.part.0
-calls=1 0 
-0 66
-
-fn=mprotect
-0 6
-
-fn=__GI_memmove
-0 26
-
-fn=pthread_mutex_unlock@@GLIBC_2.17
-0 5
-cfn=__pthread_mutex_unlock_usercnt
-calls=1 0 
-0 903
-
-fn=__libc_early_init
-0 1
-fi=???
-cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/ld-linux-aarch64.so.1
-cfi=???
-cfn=_dl_sysdep_start_cleanup
-calls=1 0 
-0 4
-0 3
-fi=???
-cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/ld-linux-aarch64.so.1
-cfi=???
-cfn=_dl_audit_activity_nsid
-calls=1 0 
-0 21
-0 2
-fi=???
-cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/ld-linux-aarch64.so.1
-cfi=???
-cfn=_dl_debug_update
-calls=1 0 
-0 13
-0 2
-fi=???
-cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/ld-linux-aarch64.so.1
-cfi=???
-cfn=_dl_debug_state
-calls=1 0 
-0 4
-0 1
-fi=???
-cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/ld-linux-aarch64.so.1
-cfi=???
-cfn=_dl_unload_cache
-calls=1 0 
-0 17
-0 37
-cfn=__ctype_init
-calls=1 0 
-0 30
-0 10
-cfn=getrlimit
-calls=1 0 
-0 16
-0 29
-cfn=__pthread_tunables_init
-calls=1 0 
-0 169
-
-fn=sigaction
-0 50
-cfn=__libc_sigaction
-calls=5 0 
-0 311
-
-fn=__aarch64_cas4_acq
-0 55
-
-fn=__aarch64_swp4_rel
-0 55
-
-fn=pthread_getattr_np@@GLIBC_2.32
-0 9
-fi=???
-cfn=pthread_attr_destroy
-calls=1 0 
-0 1435
-cfn=pthread_attr_getstack@@GLIBC_2.34
-calls=1 0 
-0 14
-fi=???
-0 13
-fe=???
-0 14
-cfn=pthread_attr_init@@GLIBC_2.17
-calls=1 0 
-0 27
-0 7
-cfn=__aarch64_cas4_acq
-calls=1 0 
-0 5
-0 23
-cfn=realloc
-calls=1 0 
-0 999
-0 4
-0 24
-cfn=fopen@@GLIBC_2.17
-calls=1 0 
-0 80938
-0 2
-cfn=fclose@@GLIBC_2.17
-calls=1 0 
-0 1596
-0 1
-cfn=free
-calls=1 0 
-0 1705
-0 4
-
-fn=sysmalloc
-0 110
-cfn=__glibc_morecore
-calls=1 0 
-0 227
-0 20
-cfn=__glibc_morecore
-calls=1 0 
-0 36
-0 11
-cfn=sysmalloc
-calls=1 0 
-0 54
-0 12
-cfn=sysmalloc
-calls=1 0 
-0 131
-0 3
-cfn=sysmalloc
-calls=1 0 
-0 113
-0 4
-cfn=_int_malloc
-calls=1 0 
-0 38
-
-fn=__libc_cleanup_push_defer
-0 888
-
-fn=____strtoul_l_internal
-0 3258
-cfn=____strtoul_l_internal
-calls=66 0 
-0 11923
-0 12067
-cfn=____strtoul_l_internal
-calls=24 0 
-0 5222
-0 630
-cfn=____strtoul_l_internal
-calls=42 0 
-0 7889
-0 2178
-cfn=__vfscanf_internal
-calls=66 0 
-0 33529
-
-fn=_int_free
-0 690
-cfn=_int_free
-calls=10 0 
-0 170
-0 131
-
-fn=_IO_un_link
-0 16
-cfn=__GI__IO_un_link.part.0
-calls=1 0 
-0 563
-
-fn=__pthread_attr_extension
-0 9
-cfn=calloc
-calls=1 0 
-0 256
-0 13
-0 7
-cfn=realloc
-calls=1 0 
-0 264
-0 4
-
-fn=pthread_attr_destroy
-0 21
-fi=???
-cob=/work/benchmark-tests-exit
-cfi=???
-cfn=std::sys::pal::unix::stack_overflow::imp::make_handler
-calls=1 0 
-0 1096
-cfn=sigaction
-calls=1 0 
-0 68
-fi=???
-0 16
-fe=???
-0 8
-cfn=free
-calls=1 0 
-0 222
-0 4
-
-fn=exit
-0 7
-cfn=__run_exit_handlers
-calls=1 0 
-0 2112
-
-fn=__cxa_finalize
-0 39
-cfn=__aarch64_cas4_acq
-calls=3 0 
-0 15
-0 99
-cfn=__unregister_atfork
-calls=3 0 
-0 129
-0 12
-cfn=__aarch64_swp4_rel
-calls=3 0 
-0 15
-0 45
-
-fn=memset
-0 58
-
-fn=__ctype_init
-0 30
-
-fn=__sigsetjmp
-0 21
-cfn=__sigjmp_save
-calls=1 0 
-0 14
-
-fn=memcpy
-0 102
-fi=???
-cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/ld-linux-aarch64.so.1
-cfi=???
-cfn=_dl_lookup_symbol_x
-calls=2 0 
-0 85534
-0 92
-cfn=memcpy
-calls=2 0 
-0 10
-
-fn=_IO_file_fopen@@GLIBC_2.17
-0 58
-cfn=_IO_file_open
-calls=1 0 
-0 203
-0 34
-cfn=_IO_file_fopen@@GLIBC_2.17
-calls=1 0 
-0 217
-0 4
-cfn=_IO_file_fopen@@GLIBC_2.17
-calls=1 0 
-0 234
-0 5
-cfn=_IO_file_fopen@@GLIBC_2.17
-calls=1 0 
-0 243
-
-fn=_IO_file_open
-0 25
-cfn=_IO_link_in
-calls=1 0 
-0 30
-0 13
-cfn=__open_nocancel
-calls=1 0 
-0 41
-0 2
-cfn=_IO_file_open
-calls=1 0 
-0 56
-0 6
-cfn=strstr
-calls=1 0 
-0 60
-0 3
-cfn=_IO_file_fopen@@GLIBC_2.17
-calls=1 0 
-0 23
-
-fn=__underflow
-0 110
-cfn=_IO_file_underflow@@GLIBC_2.17
-calls=4 0 
-0 873
-0 14
-
-fn=_IO_file_stat
-0 5
-cfn=fstat
-calls=1 0 
-0 13
-
-fn=__read_nocancel
-0 52
-
-fn=__GI_strlen
-0 1608
-
-fn=realloc
-0 8
-cfn=__GI_memcpy
-calls=1 0 
-0 30
-0 8
-cfn=getdelim
-calls=1 0 
-0 14
-0 78
-cfn=realloc
-calls=1 0 
-0 363
-0 5
-cfn=_int_realloc
-calls=1 0 
-0 342
-0 10
-cfn=malloc
-calls=2 0 
-0 1227
-
-fn=_int_realloc
-0 37
-cfn=_int_malloc
-calls=1 0 
-0 279
-0 26
-
-fn=sigaltstack
-0 18
-
-fn=__errno_location
-0 27
-
-fn=__unregister_atfork
-0 33
-cfn=__aarch64_cas4_acq
-calls=3 0 
-0 15
-0 24
-cfn=__aarch64_swp4_rel
-calls=3 0 
-0 15
-0 42
-
-fn=_IO_cleanup
-0 1
-cfn=__run_exit_handlers
-calls=1 0 
-0 2
-0 18
-cfn=_IO_flush_all
-calls=1 0 
-0 410
-0 96
-cfn=__libc_cleanup_pop_restore
-calls=1 0 
-0 21
-0 32
-cfn=_IO_cleanup
-calls=3 0 
-0 328
-0 6
-cfn=_IO_cleanup
-calls=1 0 
-0 43
-
-fn=(below main)
-0 13
-cfn=_setjmp
-calls=1 0 
-0 38
-0 16
-cob=/work/benchmark-tests-exit
-cfi=???
-cfn=main
-calls=1 0 
-0 88038
-
-fn=__new_exitfn
-0 40
-cfn=__new_exitfn
-calls=1 0 
-0 18
-0 13
-cfn=__aarch64_swp4_rel
-calls=1 0 
-0 5
-0 13
-
-fn=_IO_file_underflow@@GLIBC_2.17
-0 5
-cfn=getdelim
-calls=1 0 
-0 128
-0 76
-cfn=_IO_switch_to_get_mode
-calls=4 0 
-0 112
-0 52
-cfn=_IO_file_read
-calls=4 0 
-0 76
-0 80
-cfn=_IO_doallocbuf
-calls=1 0 
-0 426
-
-fn=_IO_str_init_static_internal
-0 330
-cfn=__GI_strlen
-calls=33 0 
-0 1608
-0 198
-cfn=_IO_setb
-calls=33 0 
-0 924
-0 594
-
-fn=pthread_getaffinity_np@@GLIBC_2.32
-0 16
-cfn=__GI_memset
-calls=1 0 
-0 15
-0 10
-
-fn=pthread_attr_getstack@@GLIBC_2.34
-0 14
-
-fn=__run_exit_handlers
-0 16
-cfn=__aarch64_cas4_acq
-calls=1 0 
-0 5
-0 28
-cfn=__aarch64_swp4_rel
-calls=1 0 
-0 5
-0 5
-cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/ld-linux-aarch64.so.1
-cfi=???
-cfn=_dl_fini
-calls=1 0 
-0 2034
-0 1
-cfn=__call_tls_dtors
-calls=1 0 
-0 19
-0 1
-cfn=__run_exit_handlers
-calls=1 0 
-0 2080
-
-fn=__call_tls_dtors
-0 19
-
-fn=memmove
-0 42
-
-fn=getauxval
-0 330
-
-fn=_init_first
-0 26
-cfn=__init_misc
-calls=1 0 
-0 80
-
-fn=__sigjmp_save
-0 14
-
-fn=__libc_sigaction
-0 311
-
-fn=getpagesize
-0 20
-
-fn=__fopen_internal
-0 10
-cfn=malloc
-calls=1 0 
-0 2336
-0 4
-0 5
-cfn=getrlimit
-calls=1 0 
-0 16
-0 30
-cfn=getline
-calls=1 0 
-0 78532
-
-fn=strstr
-0 17
-cfn=index
-calls=1 0 
-0 19
-0 24
-
-fn=getline
-0 198
-cfn=getdelim
-calls=33 0 
-0 1359330
-
-fn=__strtoul_internal
-0 594
-cfn=____strtoul_l_internal
-calls=66 0 
-0 51662
-
-fn=free
-fi=/build/rustc-1.91.1-src/library/core/src/ptr/mod.rs
-804 3
-fi=/build/rustc-1.91.1-src/library/alloc/src/raw_vec/mod.rs
-407 3
-fe=???
-0 9
-fi=???
-cob=/work/benchmark-tests-exit
-cfi=???
-cfn=__aarch64_swp4_rel
-calls=1 0 
-0 5
-0 20
-cfn=_IO_setb
-calls=1 0 
-0 17
-0 2
-cfn=free
-calls=1 0 
-0 111
-0 4
-0 9
-cfn=__aarch64_swp4_rel
-calls=1 0 
-0 5
-0 6
-cfn=pthread_getattr_np@@GLIBC_2.32
-calls=1 0 
-0 19
-0 2
-cfn=pthread_getattr_np@@GLIBC_2.32
-calls=1 0 
-0 1598
-0 180
-cfn=_int_free
-calls=9 0 
-0 738
-0 27
-cfn=free
-calls=9 0 
-0 756
-
-fn=_IO_file_close_it@@GLIBC_2.17
-0 4
-cfn=fclose@@GLIBC_2.17
-calls=1 0 
-0 187
-0 16
-cfn=_IO_unsave_markers
-calls=1 0 
-0 14
-0 12
-cfn=_IO_file_close
-calls=1 0 
-0 18
-0 9
-cfn=_IO_setb
-calls=1 0 
-0 176
-
-fn=_IO_file_finish@@GLIBC_2.17
-0 12
-cfn=_IO_default_finish
-calls=1 0 
-0 19
-
-fn=mmap
-0 19
-
-fn=munmap
-0 6
-
-fn=pthread_mutex_lock@@GLIBC_2.17
-0 12
-fi=???
-cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/ld-linux-aarch64.so.1
-cfi=???
-cfn=_dl_audit_activity_nsid
-calls=1 0 
-0 21
-0 95
-fi=???
-cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/ld-linux-aarch64.so.1
-cfi=???
-cfn=_dl_sort_maps
-calls=1 0 
-0 425
-0 3
-fi=???
-cfn=pthread_mutex_unlock@@GLIBC_2.17
-calls=1 0 
-0 908
-0 77
-cfn=pthread_mutex_lock@@GLIBC_2.17
-calls=1 0 
-0 14
-
-fn=init_have_lse_atomics
-0 12
-fi=???
-cfn=check_stdfiles_vtables
-calls=1 0 
-0 74
-cfn=_init_first
-calls=1 0 
-0 106
-0 10
-cfn=getauxval
-calls=1 0 
-0 12
-0 9
-
-fn=poll
-0 59
-
-fn=__libc_start_main@@GLIBC_2.34
-0 16
-cfn=__cxa_atexit
-calls=1 0 
-0 88611
-0 2
-cfn=(below main)
-calls=1 0 
-0 88105
-cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/ld-linux-aarch64.so.1
-cfi=???
-cfn=_dl_audit_preinit
-calls=1 0 
-0 15
-0 9
-0 5
-cob=/work/benchmark-tests-exit
-cfi=???
-cfn=init_have_lse_atomics
-calls=1 0 
-0 88463
-
-fn=__cxa_atexit
-0 6
-cfn=__internal_atexit
-calls=1 0 
-0 88605
-
-fn=pthread_attr_init@@GLIBC_2.17
-0 8
-cfn=getpagesize
-calls=1 0 
-0 10
-0 9
-
-fn=__glibc_morecore
-0 12
-cfn=sbrk
-calls=2 0 
-0 97
-0 18
-cfn=sysmalloc
-calls=1 0 
-0 136
-
-fn=sbrk
-0 39
-cfn=brk
-calls=1 0 
-0 17
-0 21
-cfn=brk
-calls=1 0 
-0 17
-0 3
-cfn=sbrk
-calls=1 0 
-0 33
-
-fn=__GI_memset
-0 15
-
-fn=__libc_cleanup_pop_restore
-0 777
-
-fn=__open_nocancel
-0 41
-
-fn=index
-0 19
-
-fn=_IO_doallocbuf
-0 6
-cfn=_IO_file_underflow@@GLIBC_2.17
-calls=1 0 
-0 82
-0 18
-cfn=_IO_file_doallocate
-calls=1 0 
-0 320
-
-fn=__GI_memcpy
-0 855
-
-fn=__vfscanf_internal
-0 2673
-cfn=__libc_cleanup_push_defer
-calls=33 0 
-0 792
-0 4059
-cfn=__vfscanf_internal
-calls=66 0 
-0 84740
-0 2442
-cfn=__libc_cleanup_pop_restore
-calls=33 0 
-0 693
-0 2409
-cfn=__vfscanf_internal
-calls=66 0 
-0 81506
-0 1650
-cfn=_IO_sputbackc
-calls=66 0 
-0 79856
-0 11634
-cfn=__vfscanf_internal
-calls=66 0 
-0 32869
-0 9012
-cfn=__vfscanf_internal
-calls=66 0 
-0 57206
-0 594
-cfn=_IO_sputbackc
-calls=66 0 
-0 55952
-0 354
-cfn=__vfscanf_internal
-calls=66 0 
-0 74324
-
-fn=__strlen_asimd
-0 52
-
-fn=__pthread_mutex_unlock_usercnt
-0 3
-fi=???
-cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/ld-linux-aarch64.so.1
-cfi=???
-cfn=_dl_fini
-calls=1 0 
-0 847
-0 36
-cfn=__pthread_mutex_unlock_usercnt
-calls=1 0 
-0 18
-0 17
-cfn=__pthread_mutex_unlock_usercnt
-calls=1 0 
-0 24
-
-fn=getrlimit
-0 32
-
-fn=fopen@@GLIBC_2.17
-0 5
-cfn=__fopen_internal
-calls=1 0 
-0 80933
-
-fn=tcache_init.part.0
-0 13
-cfn=__aarch64_cas4_acq
-calls=1 0 
-0 5
-0 4
-cfn=_int_malloc
-calls=1 0 
-0 447
-0 63
-
-fn=_int_malloc
-0 886
-cfn=_int_malloc
-calls=7 0 
-0 924
-0 240
-cfn=_int_malloc
-calls=13 0 
-0 1440
-0 25
-cfn=_int_malloc
-calls=5 0 
-0 927
-0 52
-cfn=_int_malloc
-calls=13 0 
-0 1388
-0 425
-cfn=alloc_perturb
-calls=13 0 
-0 169
-0 65
-cfn=_int_malloc
-calls=13 0 
-0 247
-0 192
-cfn=_int_malloc
-calls=12 0 
-0 456
-0 3
-cfn=sysmalloc
-calls=1 0 
-0 325
-0 5
-cfn=__aarch64_swp4_rel
-calls=1 0 
-0 5
-0 24
-cfn=__GI_memcpy
-calls=1 0 
-0 20
-0 4
-cfn=_int_free
-calls=1 0 
-0 83
-0 184
-cfn=calloc
-calls=1 0 
-0 19
-
-fn=brk
-0 34
-
-fn=_IO_old_init
-0 919
-
-fn=__isoc23_sscanf
-0 924
-cfn=_IO_no_init
-calls=33 0 
-0 1716
-0 264
-cfn=_IO_str_init_static_internal
-calls=33 0 
-0 3654
-0 495
-cfn=__vfscanf_internal
-calls=33 0 
-0 61705
-0 128
-cfn=getline
-calls=32 0 
-0 1280996
-0 442
-cfn=pthread_getattr_np@@GLIBC_2.32
-calls=1 0 
-0 1710
-
-fn=fclose@@GLIBC_2.17
-0 12
-cfn=_IO_file_finish@@GLIBC_2.17
-calls=1 0 
-0 31
-0 15
-cfn=free
-calls=1 0 
-0 115
-0 4
-0 1
-cfn=_IO_un_link
-calls=1 0 
-0 569
-0 20
-cfn=_IO_file_close_it@@GLIBC_2.17
-calls=1 0 
-0 436
-0 7
-cfn=pthread_getattr_np@@GLIBC_2.32
-calls=1 0 
-0 1011
-
-fn=_IO_unsave_markers
-0 14
-
-fn=__close_nocancel
-0 13
-
-fn=pthread_attr_setaffinity_np@@GLIBC_2.32
-0 19
-cfn=__pthread_attr_extension
-calls=1 0 
-0 553
-0 3
-cfn=free
-calls=1 0 
-0 138
-0 4
-
-fn=calloc
-0 33
-cfn=_int_malloc
-calls=1 0 
-0 192
-0 50
-
-fn=_IO_flush_all
-0 21
-cfn=__libc_cleanup_push_defer
-calls=1 0 
-0 24
-0 12
-cfn=_IO_flush_all
-calls=1 0 
-0 145
-0 87
-cfn=__libc_cleanup_pop_restore
-calls=1 0 
-0 21
-0 31
-cfn=_IO_flush_all
-calls=3 0 
-0 306
-0 13
-cfn=_IO_flush_all
-calls=1 0 
-0 42
-0 6
-cfn=__libc_cleanup_push_defer
-calls=1 0 
-0 24
-0 10
-cfn=_IO_cleanup
-calls=1 0 
-0 155
-0 6
-
-fn=__pthread_tunables_init
-0 14
-cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/ld-linux-aarch64.so.1
-cfi=???
-cfn=__tunable_get_val
-calls=3 0 
-0 96
-0 39
-0 20
-
-fn=_IO_stdfiles_init
-0 24
-
-fn=_setjmp
-0 3
-cfn=__sigsetjmp
-calls=1 0 
-0 35
-
-fn=signal
-0 3
-fi=???
-cob=/work/benchmark-tests-exit
-cfi=???
-cfn=std::sys::pal::unix::stack_overflow::imp::init
-calls=1 0 
-0 82593
-0 45
-cfn=sigaction
-calls=1 0 
-0 87
-0 3
-cfn=signal
-calls=1 0 
-0 17
-
-fn=sysconf
-0 7
-fi=???
-cfn=pthread_getattr_np@@GLIBC_2.32
-calls=1 0 
-0 82482
-cfn=pthread_self
-calls=1 0 
-0 3
-fi=???
-0 10
-fe=???
-0 52
-cfn=getpagesize
-calls=1 0 
-0 10
-0 2
-cfn=sysconf
-calls=1 0 
-0 16
-0 4
-cfn=sysconf
-calls=1 0 
-0 37
-
-fn=__internal_atexit
-0 21
-cob=???
-cfi=???
-cfn=0x00000000040051d0
-calls=1 0 
-0 10
-0 13
-cfn=__libc_start_main@@GLIBC_2.34
-calls=1 0 
-0 88468
-0 14
-cfn=__aarch64_cas4_acq
-calls=1 0 
-0 5
-0 3
-cfn=__new_exitfn
-calls=1 0 
-0 71
-
-fn=ptmalloc_init.part.0
-0 554
-cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/ld-linux-aarch64.so.1
-cfi=???
-cfn=__tunable_get_val
-calls=12 0 
-0 384
-0 128
-0 20
-cfn=tcache_init.part.0
-calls=1 0 
-0 532
-0 14
-cfn=_int_malloc
-calls=1 0 
-0 176
-
-fn=_IO_no_init
-0 306
-cfn=_IO_old_init
-calls=34 0 
-0 919
-0 549
-
-fn=_IO_new_file_init_internal
-0 5
-cfn=_IO_file_fopen@@GLIBC_2.17
-calls=1 0 
-0 281
-0 11
-cfn=_IO_link_in
-calls=1 0 
-0 148
-
-fn=_IO_switch_to_get_mode
-0 112
-
-fn=_IO_sputbackc
-0 2970
-cfn=__strtoul_internal
-calls=66 0 
-0 52256
-0 132
-cfn=__vfscanf_internal
-calls=66 0 
-0 76886
-0 3564
-cfn=_IO_sputbackc
-calls=132 0 
-0 1320
-
-fn=memchr
-0 14
-
-fn=strlen
-0 45
-
-fn=__init_misc
-0 10
-cfn=rindex
-calls=1 0 
-0 53
-0 17
-
-fn=check_stdfiles_vtables
-0 6
-fi=???
-cfn=_IO_stdfiles_init
-calls=1 0 
-0 24
-0 44
-cfn=check_stdfiles_vtables
-calls=1 0 
-0 5
-
-ob=/nix/store/l8wljp091lkvnvx6xfnvfpgr6j568idc-gcc-14.3.0-libgcc/lib/libgcc_s.so.1
-fl=???
-fn=0x0000000000003d60
-0 7
-cfn=0x0000000000003e00
-calls=1 0 
-0 5
-
-fn=init_have_sme
-0 4
-cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
-cfi=???
-cfn=getauxval
-calls=1 0 
-0 14
-0 9
-0 6
-fi=???
-cfn=init_have_lse_atomics
-calls=1 0 
-0 326
-0 3
-
-fn=__aarch64_swp8_acq_rel
-0 10
-
-fn=__init_cpu_features
-0 9
-cfn=__init_cpu_features_constructor
-calls=1 0 
-0 204
-cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
-cfi=???
-cfn=getauxval
-calls=2 0 
-0 26
-0 18
-0 18
-
-fn=btree_destroy
-0 14
-cfn=__aarch64_swp8_acq_rel
-calls=2 0 
-0 10
-0 12
-
-fn=call_weak_fn
-0 4
-
-fn=0x0000000000003dcc
-0 25
-cfn=0x0000000000003d60
-calls=1 0 
-0 12
-cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
-cfi=???
-cfn=__cxa_finalize
-calls=1 0 
-0 118
-0 5
-
-fn=0x0000000000003e00
-0 5
-
-fn=0x0000000000003d90
-0 10
-
-fn=__init_cpu_features_constructor
-0 201
-cfn=__init_cpu_features
-calls=1 0 
-0 3
-
-fn=0x0000000000003e20
-0 1
-cfn=0x0000000000003d90
-calls=1 0 
-0 10
-
-fn=release_registered_frames
-0 7
-cfn=btree_destroy
-calls=1 0 
-0 18
-0 2
-cfn=btree_destroy
-calls=1 0 
-0 18
-0 5
-
-fn=init_have_lse_atomics
-0 4
-cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
-cfi=???
-cfn=getauxval
-calls=1 0 
-0 12
-0 9
-0 12
-fi=???
-cfn=__init_cpu_features
-calls=1 0 
-0 272
-cfn=0x0000000000003e20
-calls=1 0 
-0 11
-0 6
 
 ob=/nix/store/skvxpqppwwsfqgb4c8jhsk8s9v4cxbm6-valgrind-3.26.0/libexec/valgrind/vgpreload_core-arm64-linux.so
 fl=???
@@ -3370,15 +5231,6 @@ fn=0x0000000000000620
 cfn=0x00000000000006c0
 calls=1 0 
 0 5
-
-fn=0x0000000000000650
-0 10
-
-fn=0x00000000000006e0
-0 1
-cfn=0x0000000000000650
-calls=1 0 
-0 10
 
 fn=0x000000000000068c
 0 12
@@ -3399,1357 +5251,13 @@ fn=0x00000000000006c0
 fn=call_weak_fn
 0 4
 
-ob=/work/benchmark-tests-exit
-fl=/build/rustc-1.91.1-src/library/std/src/rt.rs
-fn=std::rt::lang_start::{{closure}}
-206 7
-cfi=/build/rustc-1.91.1-src/library/std/src/sys/backtrace.rs
-cfn=std::sys::backtrace::__rust_begin_short_backtrace
-calls=1 154 
-206 5101
-
-fn=std::rt::lang_start
-199 17
-206 1
-205 3
-cfi=???
-cfn=std::rt::lang_start_internal
-calls=1 0 
-205 88005
-
-fl=/build/rustc-1.91.1-src/library/core/src/ptr/non_null.rs
-fn=core::ptr::non_null::NonNull<T>::offset_from_unsigned
-fi=/build/rustc-1.91.1-src/library/alloc/src/vec/into_iter.rs
-233 1
-230 1
-cfn=<alloc::vec::into_iter::IntoIter<T,A> as core::iter::traits::iterator::Iterator>::size_hint
-calls=1 0 
-230 10
-fe=/build/rustc-1.91.1-src/library/core/src/ptr/non_null.rs
-948 7
-407 1
-953 1
-fi=/build/rustc-1.91.1-src/library/core/src/ptr/mut_ptr.rs
-887 1
-fi=/build/rustc-1.91.1-src/library/core/src/ub_checks.rs
-76 1
-cfn=core::ptr::non_null::NonNull<T>::offset_from_unsigned
-calls=1 0 
-76 36
-fe=/build/rustc-1.91.1-src/library/core/src/ptr/non_null.rs
-
-fl=/build/rustc-1.91.1-src/library/core/src/ops/function.rs
-fn=core::ops::function::FnOnce::call_once
-250 5
-cfi=/work/benchmark-tests-exit.rs
-cfn=benchmark_tests_exit::main
-calls=1 1 
-250 5090
-
-fl=/build/rustc-1.91.1-src/library/alloc/src/string.rs
-fn=<alloc::string::String as core::ops::deref::Deref>::deref
-fi=/work/benchmark-tests-exit.rs
-3 3
-cfn=benchmark_tests_exit::main
-calls=1 0 
-3 3167
-fe=/build/rustc-1.91.1-src/library/alloc/src/string.rs
-2727 5
-2728 1
-cfn=alloc::string::String::as_str
-calls=1 1066 
-2728 89
-
-fn=alloc::string::String::as_str
-1066 5
-1069 2
-fi=/build/rustc-1.91.1-src/library/alloc/src/raw_vec/mod.rs
-508 2
-fi=/build/rustc-1.91.1-src/library/alloc/src/vec/mod.rs
-1767 1
-1671 3
-fi=/build/rustc-1.91.1-src/library/core/src/ub_checks.rs
-76 1
-cfn=alloc::string::String::as_str
-calls=1 0 
-76 72
-fe=/build/rustc-1.91.1-src/library/alloc/src/string.rs
-2729 3
-
-fl=/build/rustc-1.91.1-src/library/core/src/result.rs
-fn=core::result::Result<T,E>::expect
-1172 11
-1176 2
-1177 2
-1180 3
-
-fl=/build/rustc-1.91.1-src/library/alloc/src/vec/into_iter.rs
-fn=<alloc::vec::into_iter::IntoIter<T,A> as core::iter::traits::iterator::Iterator>::size_hint
-229 6
-230 1
-cfn=<alloc::vec::into_iter::IntoIter<T,A> as core::iter::traits::iterator::Iterator>::size_hint
-calls=1 0 
-230 63
-0 1
-28 1
-233 2
-cfi=/build/rustc-1.91.1-src/library/core/src/ptr/non_null.rs
-cfn=core::ptr::non_null::NonNull<T>::offset_from_unsigned
-calls=1 948 
-233 59
-0 1
-235 6
-236 3
-fi=/build/rustc-1.91.1-src/library/core/src/iter/traits/exact_size.rs
-117 8
-fi=/build/rustc-1.91.1-src/library/core/src/macros/mod.rs
-44 2
-fi=/build/rustc-1.91.1-src/library/core/src/iter/traits/exact_size.rs
-122 3
-fi=/build/rustc-1.91.1-src/library/core/src/macros/mod.rs
-44 1
-fi=/build/rustc-1.91.1-src/library/core/src/option.rs
-2354 3
-cfn=core::iter::traits::exact_size::ExactSizeIterator::len
-calls=1 0 
-2354 14
-fe=/build/rustc-1.91.1-src/library/alloc/src/vec/into_iter.rs
-
-fn=<alloc::vec::into_iter::IntoIter<T,A> as core::ops::drop::Drop>::drop
-fi=/build/rustc-1.91.1-src/library/core/src/ptr/mod.rs
-804 3
-fe=/build/rustc-1.91.1-src/library/alloc/src/vec/into_iter.rs
-487 5
-501 1
-504 4
-113 3
-fi=/build/rustc-1.91.1-src/library/core/src/ptr/non_null.rs
-407 1
-fe=/build/rustc-1.91.1-src/library/alloc/src/vec/into_iter.rs
-113 1
-fi=/build/rustc-1.91.1-src/library/core/src/iter/traits/exact_size.rs
-156 1
-cfn=core::iter::traits::exact_size::ExactSizeIterator::len
-calls=1 116 
-156 332
-fe=/build/rustc-1.91.1-src/library/alloc/src/vec/into_iter.rs
-0 2
-fi=/build/rustc-1.91.1-src/library/core/src/iter/traits/exact_size.rs
-156 1
-fe=/build/rustc-1.91.1-src/library/alloc/src/vec/into_iter.rs
-504 1
-cfi=/build/rustc-1.91.1-src/library/core/src/ptr/mod.rs
-cfn=core::ptr::drop_in_place<[std::ffi::os_str::OsString]>
-calls=1 804 
-504 217
-507 2
-cfi=/build/rustc-1.91.1-src/library/core/src/ptr/mod.rs
-cfn=core::ptr::drop_in_place<<alloc::vec::into_iter::IntoIter<T,A> as core::ops::drop::Drop>::drop::DropGuard<std::ffi::os_str::OsString,alloc::alloc::Global>>
-calls=1 804 
-507 198
-
-fn=<<alloc::vec::into_iter::IntoIter<T,A> as core::ops::drop::Drop>::drop::DropGuard<T,A> as core::ops::drop::Drop>::drop
-491 5
-494 3
-496 8
-fi=/build/rustc-1.91.1-src/library/core/src/ptr/non_null.rs
-504 1
-fi=/build/rustc-1.91.1-src/library/alloc/src/raw_vec/mod.rs
-48 1
-cfn=<<alloc::vec::into_iter::IntoIter<T,A> as core::ops::drop::Drop>::drop::DropGuard<T,A> as core::ops::drop::Drop>::drop
-calls=1 0 
-48 168
-fi=/build/rustc-1.91.1-src/library/core/src/ptr/mod.rs
-804 3
-fe=/build/rustc-1.91.1-src/library/alloc/src/vec/into_iter.rs
-
-fl=/build/rustc-1.91.1-src/library/core/src/num/mod.rs
-fn=core::num::<impl core::str::traits::FromStr for i32>::from_str
-1439 7
-1482 1
-1483 1
-cfn=core::num::<impl i32>::from_ascii_radix
-calls=1 1561 
-1483 190
-fi=/build/rustc-1.91.1-src/library/core/src/str/mod.rs
-2702 3
-2703 4
-fe=/build/rustc-1.91.1-src/library/core/src/num/mod.rs
-
-fn=core::num::<impl i32>::from_ascii_radix
-1561 13
-1574 1
-1386 1
-1565 4
-cfn=core::num::<impl i32>::from_ascii_radix
-calls=1 0 
-1565 164
-0 1
-1565 2
-0 1
-1569 1
-fi=/work/benchmark-tests-exit.rs
-0 1
-fe=/build/rustc-1.91.1-src/library/core/src/num/mod.rs
-1577 2
-1649 5
-0 1
-1576 5
-cfn=core::num::<impl i32>::from_ascii_radix
-calls=1 0 
-1576 150
-0 1
-1576 3
-cfn=core::num::<impl i32>::from_ascii_radix
-calls=1 0 
-1576 146
-0 1
-1580 2
-0 1
-1576 5
-cfn=core::num::<impl i32>::from_ascii_radix
-calls=1 0 
-1576 137
-0 1
-1576 3
-cfi=/work/benchmark-tests-exit.rs
-cfn=core::num::<impl i32>::from_ascii_radix
-calls=1 0 
-1576 133
-1607 1
-cfn=core::num::<impl i32>::from_ascii_radix
-calls=1 1607 
-1607 95
-1607 7
-cfn=core::num::<impl i32>::from_ascii_radix
-calls=1 1648 
-1607 10
-1648 1
-cfn=core::num::<impl i32>::from_ascii_radix
-calls=1 1648 
-1648 9
-1648 3
-1649 1
-cfn=core::num::<impl i32>::from_ascii_radix
-calls=1 1649 
-1649 5
-fi=/work/benchmark-tests-exit.rs
-0 2
-fe=/build/rustc-1.91.1-src/library/core/src/num/mod.rs
-1607 11
-1608 3
-1609 2
-cfi=/build/rustc-1.91.1-src/library/core/src/char/methods.rs
-cfn=core::char::methods::<impl char>::to_digit
-calls=1 402 
-1609 74
-0 2
-1590 2
-1610 3
-1611 2
-1607 1
-cfn=core::num::<impl i32>::from_ascii_radix
-calls=1 1607 
-1607 14
-1483 3
-1441 4
-
-fl=/build/rustc-1.91.1-src/library/std/src/sys/backtrace.rs
-fn=std::sys::backtrace::__rust_begin_short_backtrace
-154 5
-158 1
-cfi=/build/rustc-1.91.1-src/library/core/src/ops/function.rs
-cfn=core::ops::function::FnOnce::call_once
-calls=1 250 
-158 5095
-
-fl=/work/benchmark-tests-exit.rs
-fn=benchmark_tests_exit::main
-1 5
-2 1
-cfi=???
-cfn=std::env::args
-calls=1 0 
-2 5084
-2 9
-cfi=/build/rustc-1.91.1-src/library/core/src/option.rs
-cfn=core::option::Option<T>::expect
-calls=1 962 
-2 3680
-2 2
-cfi=/build/rustc-1.91.1-src/library/core/src/ptr/mod.rs
-cfn=core::ptr::drop_in_place<std::env::Args>
-calls=1 804 
-2 3652
-3 2
-cfi=/build/rustc-1.91.1-src/library/alloc/src/string.rs
-cfn=<alloc::string::String as core::ops::deref::Deref>::deref
-calls=1 2727 
-3 3265
-0 2
-3 1
-cfi=/build/rustc-1.91.1-src/library/core/src/str/mod.rs
-cfn=core::str::<impl str>::parse
-calls=1 2701 
-3 3164
-0 1
-3 13
-cfi=/build/rustc-1.91.1-src/library/core/src/result.rs
-cfn=core::result::Result<T,E>::expect
-calls=1 1172 
-3 18
-3 2
-cfn=benchmark_tests_exit::main
-calls=1 0 
-3 2915
-0 1
-3 1
-4 1
-cfi=???
-cfn=std::process::exit
-calls=1 0 
-4 2912
-
-fn=core::num::<impl i32>::from_ascii_radix
-0 5
-fi=/build/rustc-1.91.1-src/library/core/src/num/mod.rs
-1582 3
-1576 8
-1585 1
-1596 5
-1387 5
-0 1
-1387 6
-1596 2
-1615 1
-cfn=core::num::<impl i32>::from_ascii_radix
-calls=1 1607 
-1615 96
-fe=/work/benchmark-tests-exit.rs
-
-fl=/build/rustc-1.91.1-src/library/core/src/slice/raw.rs
-fn=core::slice::raw::from_raw_parts::precondition_check
-0 1
-fi=/build/rustc-1.91.1-src/library/core/src/ub_checks.rs
-148 4
-cfn=core::slice::raw::from_raw_parts::precondition_check
-calls=1 0 
-148 8
-fe=/build/rustc-1.91.1-src/library/core/src/slice/raw.rs
-
-fl=/build/rustc-1.91.1-src/library/core/src/ptr/mod.rs
-fn=core::ptr::drop_in_place<std::env::ArgsOs>
-804 9
-cfn=core::ptr::drop_in_place<std::sys::args::common::Args>
-calls=1 804 
-804 369
-
-fn=core::ptr::drop_in_place<alloc::string::String>
-804 6
-cfn=core::ptr::drop_in_place<alloc::vec::Vec<u8>>
-calls=1 804 
-804 168
-fi=/build/rustc-1.91.1-src/library/core/src/iter/traits/iterator.rs
-0 1
-320 3
-fe=/build/rustc-1.91.1-src/library/core/src/ptr/mod.rs
-
-fn=core::ptr::drop_in_place<alloc::vec::Vec<u8>>
-804 10
-cfi=???
-cfn=<alloc::vec::Vec<T,A> as core::ops::drop::Drop>::drop
-calls=1 0 
-804 4
-804 1
-cfn=core::ptr::drop_in_place<alloc::vec::Vec<u8>>
-calls=1 0 
-804 153
-0 1
-804 1
-cfn=core::ptr::drop_in_place<alloc::raw_vec::RawVec<u8>>
-calls=1 804 
-804 151
-
-fn=core::ptr::drop_in_place<[std::ffi::os_str::OsString]>
-804 9
-cfn=core::ptr::drop_in_place<[std::ffi::os_str::OsString]>
-calls=1 0 
-804 7
-0 1
-804 6
-fi=/build/rustc-1.91.1-src/library/alloc/src/vec/into_iter.rs
-504 1
-cfn=<alloc::vec::into_iter::IntoIter<T,A> as core::ops::drop::Drop>::drop
-calls=1 507 
-504 200
-fe=/build/rustc-1.91.1-src/library/core/src/ptr/mod.rs
-
-fn=core::ptr::drop_in_place<alloc::raw_vec::RawVec<std::ffi::os_str::OsString>>
-fi=/build/rustc-1.91.1-src/library/alloc/src/vec/into_iter.rs
-498 3
-fe=/build/rustc-1.91.1-src/library/core/src/ptr/mod.rs
-804 6
-cfi=/build/rustc-1.91.1-src/library/alloc/src/raw_vec/mod.rs
-cfn=<alloc::raw_vec::RawVec<T,A> as core::ops::drop::Drop>::drop
-calls=1 404 
-804 149
-
-fn=core::ptr::drop_in_place<std::env::Args>
-fi=/work/benchmark-tests-exit.rs
-2 1
-cfn=benchmark_tests_exit::main
-calls=1 3 
-2 3267
-fe=/build/rustc-1.91.1-src/library/core/src/ptr/mod.rs
-804 6
-cfn=core::ptr::drop_in_place<std::env::ArgsOs>
-calls=1 804 
-804 378
-
-fn=core::ptr::drop_in_place<<alloc::vec::into_iter::IntoIter<T,A> as core::ops::drop::Drop>::drop::DropGuard<std::ffi::os_str::OsString,alloc::alloc::Global>>
-804 6
-cfi=/build/rustc-1.91.1-src/library/alloc/src/vec/into_iter.rs
-cfn=<<alloc::vec::into_iter::IntoIter<T,A> as core::ops::drop::Drop>::drop::DropGuard<T,A> as core::ops::drop::Drop>::drop
-calls=1 491 
-804 189
-fi=/build/rustc-1.91.1-src/library/alloc/src/vec/into_iter.rs
-507 3
-fe=/build/rustc-1.91.1-src/library/core/src/ptr/mod.rs
-
-fn=core::ptr::drop_in_place<alloc::raw_vec::RawVec<u8>>
-804 9
-cfi=???
-cfn=<alloc::raw_vec::RawVec<T,A> as core::ops::drop::Drop>::drop
-calls=1 0 
-804 142
-
-fn=core::ptr::drop_in_place<std::sys::args::common::Args>
-804 9
-cfn=core::ptr::drop_in_place<alloc::vec::into_iter::IntoIter<std::ffi::os_str::OsString>>
-calls=1 804 
-804 360
-
-fn=core::ptr::drop_in_place<alloc::vec::into_iter::IntoIter<std::ffi::os_str::OsString>>
-804 9
-cfi=/build/rustc-1.91.1-src/library/alloc/src/vec/into_iter.rs
-cfn=<alloc::vec::into_iter::IntoIter<T,A> as core::ops::drop::Drop>::drop
-calls=1 487 
-804 351
-
-fl=/build/rustc-1.91.1-src/library/core/src/ptr/const_ptr.rs
-fn=core::ptr::non_null::NonNull<T>::offset_from_unsigned
-727 1
-cfn=core::ptr::non_null::NonNull<T>::offset_from_unsigned
-calls=1 0 
-727 10
-0 2
-729 5
-fi=/build/rustc-1.91.1-src/library/core/src/ptr/non_null.rs
-954 3
-fe=/build/rustc-1.91.1-src/library/core/src/ptr/const_ptr.rs
-
-fn=core::slice::raw::from_raw_parts::precondition_check
-0 2
-1377 2
-fi=/build/rustc-1.91.1-src/library/core/src/ub_checks.rs
-124 1
-fe=/build/rustc-1.91.1-src/library/core/src/ptr/const_ptr.rs
-0 1
-fi=/build/rustc-1.91.1-src/library/core/src/slice/raw.rs
-136 1
-fi=/work/benchmark-tests-exit.rs
-0 1
-fi=/build/rustc-1.91.1-src/library/core/src/ub_checks.rs
-148 1
-0 1
-148 2
-cfi=/build/rustc-1.91.1-src/library/core/src/slice/raw.rs
-cfn=core::slice::raw::from_raw_parts::precondition_check
-calls=1 0 
-148 13
-fe=/build/rustc-1.91.1-src/library/core/src/ptr/const_ptr.rs
-
-fl=???
-fn=__init_cpu_features_constructor
-0 178
-cfn=__init_cpu_features
-calls=1 0 
-0 17
-
-fn=__rustc::__rdl_alloc
-0 35
-cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
-cfi=???
-cfn=malloc
-calls=5 0 
-0 2782
-0 20
-
-fn=alloc::raw_vec::RawVecInner<A>::deallocate
-0 2
-cfn=__rustc::__rdl_dealloc
-calls=2 0 
-0 232
-0 22
-cfn=alloc::raw_vec::RawVecInner<A>::deallocate
-calls=2 0 
-0 16
-0 16
-
-fn=std::sync::once_lock::OnceLock<T>::initialize
-0 19
-cfn=std::sys::sync::once::futex::Once::call
-calls=1 0 
-0 68
-0 3
-cfn=std::io::stdio::cleanup
-calls=1 0 
-0 6
-
-fn=std::sync::poison::once::Once::call_once_force::{{closure}}
-0 11
-
-fn=std::sys::exit_guard::unique_thread_exit
-0 4
-cfn=__aarch64_cas8_acq
-calls=1 0 
-0 10
-cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
-cfi=???
-cfn=__errno_location
-calls=1 0 
-0 9
-0 10
-0 7
-cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
-cfi=???
-cfn=exit
-calls=1 0 
-0 2119
-0 4
-
-fn=std::rt::lang_start_internal
-0 13
-cfn=std::sys::pal::unix::init
-calls=1 0 
-0 87992
-
-fn=__init_cpu_features
-0 14
-cfn=__init_cpu_features_constructor
-calls=1 0 
-0 195
-cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
-cfi=???
-cfn=getauxval
-calls=2 0 
-0 26
-0 18
-0 21
-fi=???
-cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
-cfi=???
-cfn=__libc_start_main@@GLIBC_2.34
-calls=1 0 
-0 88131
-fe=???
-
-fn=__rustc::__rust_no_alloc_shim_is_unstable_v2
-0 5
-cfn=std::sys::args::unix::args
-calls=2 0 
-0 874
-
-fn=__rustc::__rust_dealloc
-0 1
-cfn=__rustc::__rdl_dealloc
-calls=1 0 
-0 135
-
-fn=std::rt::cleanup
-0 2
-cfn=std::sys::pal::unix::os::exit
-calls=1 0 
-0 2163
-0 20
-cfn=std::sys::sync::once::futex::Once::call
-calls=1 0 
-0 722
-
-fn=0x0000000000008900
-0 5
-
-fn=std::sys::pal::unix::init
-0 18
-cfn=std::sys::pal::unix::init
-calls=1 0 
-0 82762
-cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
-cfi=???
-cfn=poll
-calls=1 0 
-0 59
-0 12
-0 7
-cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
-cfi=???
-cfn=signal
-calls=1 0 
-0 82731
-0 4
-0 39
-cfn=__aarch64_cas8_relax
-calls=1 0 
-0 5
-0 9
-cfi=/build/rustc-1.91.1-src/library/std/src/rt.rs
-cfn=std::rt::lang_start::{{closure}}
-calls=1 206 
-0 5108
-
-fn=call_weak_fn
-0 4
-
-fn=std::sys::args::unix::imp::ARGV_INIT_ARRAY::init_wrapper
-0 9
-
-fn=std::env::args
-0 4
-cfn=std::sys::args::unix::args
-calls=1 0 
-0 5080
-
-fn=__rustc::__rdl_dealloc
-0 12
-cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
-cfi=???
-cfn=free
-calls=3 0 
-0 343
-0 12
-
-fn=alloc::collections::btree::remove::<impl alloc::collections::btree::node::Handle<alloc::collections::btree::node::NodeRef<alloc::collections::btree::node::marker::Mut,K,V,alloc::collections::btree::node::marker::LeafOrInternal>,alloc::collections::btree::node::marker::KV>>::remove_kv_tracking
-0 36
-cfn=alloc::collections::btree::remove::<impl alloc::collections::btree::node::Handle<alloc::collections::btree::node::NodeRef<alloc::collections::btree::node::marker::Mut,K,V,alloc::collections::btree::node::marker::Leaf>,alloc::collections::btree::node::marker::KV>>::remove_leaf_kv
-calls=1 0 
-0 99
-
-fn=std::sys::pal::unix::os::exit
-0 5
-cfn=std::sys::exit_guard::unique_thread_exit
-calls=1 0 
-0 2158
-
-fn=(below main)
-0 12
-cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
-cfi=???
-cfn=__libc_start_main@@GLIBC_2.34
-calls=1 0 
-0 88627
-0 4
-
-fn=__aarch64_cas8_acq
-0 15
-cfn=std::sys::exit_guard::unique_thread_exit
-calls=1 0 
-0 5
-
-fn=__aarch64_cas8_relax
-0 5
-
-fn=<std::env::Args as core::iter::traits::iterator::Iterator>::next
-fi=/build/rustc-1.91.1-src/library/core/src/iter/traits/iterator.rs
-375 1
-cfn=core::iter::traits::iterator::Iterator::nth
-calls=1 376 
-375 3
-2425 1
-cfn=core::iter::traits::iterator::Iterator::try_fold
-calls=1 2425 
-2425 250
-fe=???
-0 42
-cfn=core::str::converts::from_utf8
-calls=2 0 
-0 113
-
-fn=<alloc::vec::Vec<T,A> as core::ops::drop::Drop>::drop
-0 4
-
-fn=<alloc::raw_vec::RawVec<T,A> as core::ops::drop::Drop>::drop
-0 6
-cfn=alloc::raw_vec::RawVecInner<A>::deallocate
-calls=1 0 
-0 136
-
-fn=std::process::exit
-0 5
-cfn=std::rt::cleanup
-calls=1 0 
-0 2907
-
-fn=std::sys::pal::unix::stack_overflow::thread_info::delete_current_info
-0 7
-cfn=__aarch64_cas4_acq
-calls=1 0 
-0 352
-cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
-cfi=???
-cfn=__errno_location
-calls=1 0 
-0 9
-0 11
-0 17
-cfn=__aarch64_cas8_acq
-calls=1 0 
-0 5
-0 32
-cfn=alloc::collections::btree::map::entry::OccupiedEntry<K,V,A>::remove_kv
-calls=1 0 
-0 293
-0 5
-
-fn=__aarch64_swp4_rel
-0 20
-
-fn=0x00000000000088cc
-0 25
-cfn=0x0000000000008860
-calls=1 0 
-0 12
-cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
-cfi=???
-cfn=__cxa_finalize
-calls=1 0 
-0 118
-0 5
-
-fn=main
-0 12
-cfi=/build/rustc-1.91.1-src/library/std/src/rt.rs
-cfn=std::rt::lang_start
-calls=1 199 
-0 88026
-
-fn=0x0000000000008890
+fn=0x0000000000000650
 0 10
 
-fn=__aarch64_cas4_acq
-0 20
-cfn=std::sys::pal::unix::stack_overflow::thread_info::delete_current_info
-calls=1 0 
-0 347
-cfn=std::sys::pal::unix::stack_overflow::thread_info::set_current_info
-calls=1 0 
-0 328
-
-fn=alloc::collections::btree::map::entry::OccupiedEntry<K,V,A>::remove_kv
-0 6
-cfn=__rustc::__rust_dealloc
-calls=1 0 
-0 136
-0 16
-cfn=alloc::collections::btree::remove::<impl alloc::collections::btree::node::Handle<alloc::collections::btree::node::NodeRef<alloc::collections::btree::node::marker::Mut,K,V,alloc::collections::btree::node::marker::LeafOrInternal>,alloc::collections::btree::node::marker::KV>>::remove_kv_tracking
-calls=1 0 
-0 135
-
-fn=0x0000000000008860
-0 7
-cfn=0x0000000000008900
-calls=1 0 
-0 5
-
-fn=0x0000000000008920
+fn=0x00000000000006e0
 0 1
-cfn=0x0000000000008890
+cfn=0x0000000000000650
 calls=1 0 
 0 10
-
-fn=__rustc::__rust_alloc
-0 5
-cfn=__rustc::__rdl_alloc
-calls=5 0 
-0 2837
-
-fn=std::sys::pal::unix::stack_overflow::thread_info::set_current_info
-0 11
-cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
-cfi=???
-cfn=sigaction
-calls=3 0 
-0 206
-0 37
-0 13
-cfn=__aarch64_cas4_acq
-calls=1 0 
-0 333
-cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
-cfi=???
-cfn=__errno_location
-calls=1 0 
-0 9
-0 11
-0 17
-cfn=__aarch64_cas8_acq
-calls=1 0 
-0 5
-0 16
-cfn=alloc::collections::btree::map::entry::VacantEntry<K,V,A>::insert_entry
-calls=1 0 
-0 290
-
-fn=std::sys::sync::once::futex::Once::call
-0 28
-cfn=std::sys::sync::once::futex::Once::call
-calls=1 0 
-0 51
-0 4
-cfn=__aarch64_cas4_acq
-calls=1 0 
-0 5
-0 16
-cfn=std::sync::poison::once::Once::call_once_force::{{closure}}
-calls=1 0 
-0 11
-0 6
-cfn=std::sync::poison::once::Once::call_once::{{closure}}
-calls=1 0 
-0 680
-0 3
-cfn=__aarch64_swp4_rel
-calls=1 0 
-0 5
-0 9
-cfn=std::sys::sync::once::futex::Once::call
-calls=1 0 
-0 706
-0 10
-cfn=__aarch64_cas4_acq
-calls=1 0 
-0 5
-0 5
-cfn=std::sys::sync::once::futex::Once::call
-calls=1 0 
-0 686
-0 3
-
-fn=std::sync::poison::once::Once::call_once::{{closure}}
-0 3
-cfn=__aarch64_swp4_rel
-calls=1 0 
-0 5
-0 18
-cfn=std::io::stdio::cleanup
-calls=1 0 
-0 654
-
-fn=init_have_lse_atomics
-0 3
-cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
-cfi=???
-cfn=getauxval
-calls=1 0 
-0 12
-0 13
-0 18
-fi=???
-cfn=__init_cpu_features
-calls=1 0 
-0 88388
-cfn=0x0000000000008920
-calls=1 0 
-0 11
-cfn=std::sys::args::unix::imp::ARGV_INIT_ARRAY::init_wrapper
-calls=1 0 
-0 9
-0 9
-
-fn=std::sys::pal::unix::stack_overflow::imp::make_handler
-0 19
-cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
-cfi=???
-cfn=mprotect
-calls=1 0 
-0 6
-cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
-cfi=???
-cfn=mmap
-calls=1 0 
-0 19
-cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
-cfi=???
-cfn=getauxval
-calls=1 0 
-0 114
-cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
-cfi=???
-cfn=sigaltstack
-calls=2 0 
-0 12
-0 61
-0 4
-cfn=__rustc::__rust_no_alloc_shim_is_unstable_v2
-calls=1 0 
-0 1
-0 3
-cfn=__rustc::__rust_alloc
-calls=1 0 
-0 857
-
-fn=core::str::converts::from_utf8
-0 42
-cfn=core::str::converts::from_utf8
-calls=2 0 
-0 71
-0 63
-cfn=core::str::converts::from_utf8
-calls=2 0 
-0 8
-0 8
-
-fn=std::sys::pal::unix::stack_overflow::imp::init
-0 19
-cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
-cfi=???
-cfn=sysconf
-calls=1 0 
-0 82570
-0 4
-
-fn=alloc::collections::btree::map::entry::VacantEntry<K,V,A>::insert_entry
-0 11
-cfn=__aarch64_swp4_rel
-calls=1 0 
-0 5
-0 23
-cfn=__rustc::__rust_no_alloc_shim_is_unstable_v2
-calls=1 0 
-0 1
-0 3
-cfn=__rustc::__rust_alloc
-calls=1 0 
-0 247
-
-fn=std::sys::args::unix::args
-fi=/work/benchmark-tests-exit.rs
-2 5
-cfi=/build/rustc-1.91.1-src/library/core/src/iter/traits/iterator.rs
-cfn=core::iter::traits::iterator::Iterator::nth
-calls=1 373 
-2 4176
-fe=???
-0 37
-cfn=__rustc::__rust_no_alloc_shim_is_unstable_v2
-calls=1 0 
-0 1
-0 3
-cfn=__rustc::__rust_alloc
-calls=1 0 
-0 870
-0 6
-cfn=__rustc::__rust_alloc
-calls=2 0 
-0 868
-
-fn=std::io::stdio::cleanup
-0 21
-cfn=std::sync::once_lock::OnceLock<T>::initialize
-calls=1 0 
-0 96
-0 5
-cfn=std::sys::pal::unix::stack_overflow::thread_info::delete_current_info
-calls=1 0 
-0 384
-cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
-cfi=???
-cfn=munmap
-calls=1 0 
-0 6
-cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
-cfi=???
-cfn=sigaltstack
-calls=1 0 
-0 6
-cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
-cfi=???
-cfn=getauxval
-calls=1 0 
-0 114
-0 28
-
-fn=alloc::collections::btree::remove::<impl alloc::collections::btree::node::Handle<alloc::collections::btree::node::NodeRef<alloc::collections::btree::node::marker::Mut,K,V,alloc::collections::btree::node::marker::Leaf>,alloc::collections::btree::node::marker::KV>>::remove_leaf_kv
-0 22
-cfn=alloc::collections::btree::remove::<impl alloc::collections::btree::node::Handle<alloc::collections::btree::node::NodeRef<alloc::collections::btree::node::marker::Mut,K,V,alloc::collections::btree::node::marker::Leaf>,alloc::collections::btree::node::marker::KV>>::remove_leaf_kv
-calls=1 0 
-0 17
-cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
-cfi=???
-cfn=__GI_memmove
-calls=2 0 
-0 26
-0 30
-0 21
-
-fl=/build/rustc-1.91.1-src/library/core/src/option.rs
-fn=core::iter::traits::iterator::Iterator::nth
-2655 3
-cfn=core::iter::traits::iterator::Iterator::nth
-calls=1 0 
-2655 68
-0 2
-fi=/build/rustc-1.91.1-src/library/core/src/iter/traits/iterator.rs
-375 1
-cfi=???
-cfn=<std::env::Args as core::iter::traits::iterator::Iterator>::next
-calls=1 0 
-375 65
-fe=/build/rustc-1.91.1-src/library/core/src/option.rs
-
-fn=<core::option::Option<T> as core::ops::try_trait::Try>::branch
-fi=/build/rustc-1.91.1-src/library/core/src/iter/traits/iterator.rs
-2426 2
-cfn=core::iter::traits::iterator::Iterator::try_fold
-calls=1 0 
-2426 22
-fe=/build/rustc-1.91.1-src/library/core/src/option.rs
-2654 2
-2655 4
-2657 2
-cfn=<core::option::Option<T> as core::ops::try_trait::Try>::branch
-calls=1 2659 
-2657 3
-2659 3
-
-fn=core::option::Option<T>::expect
-fi=/work/benchmark-tests-exit.rs
-2 1
-cfn=benchmark_tests_exit::main
-calls=1 2 
-2 3654
-fe=/build/rustc-1.91.1-src/library/core/src/option.rs
-962 10
-963 6
-cfn=core::option::Option<T>::expect
-calls=1 0 
-963 9
-0 2
-964 4
-967 3
-
-fn=core::iter::traits::exact_size::ExactSizeIterator::len
-0 2
-2355 5
-fi=/build/rustc-1.91.1-src/library/core/src/cmp.rs
-1866 1
-fi=/build/rustc-1.91.1-src/library/core/src/macros/mod.rs
-46 2
-0 1
-fi=/build/rustc-1.91.1-src/library/core/src/iter/traits/exact_size.rs
-124 3
-fe=/build/rustc-1.91.1-src/library/core/src/option.rs
-
-fn=<core::option::Option<T> as core::ops::try_trait::FromResidual<core::option::Option<core::convert::Infallible>>>::from_residual
-2668 1
-2672 3
-
-fl=/build/rustc-1.91.1-src/library/alloc/src/raw_vec/mod.rs
-fn=<alloc::raw_vec::RawVec<T,A> as core::ops::drop::Drop>::drop
-fi=/build/rustc-1.91.1-src/library/core/src/ptr/mod.rs
-804 3
-fe=/build/rustc-1.91.1-src/library/alloc/src/raw_vec/mod.rs
-404 5
-406 5
-cfi=???
-cfn=alloc::raw_vec::RawVecInner<A>::deallocate
-calls=1 0 
-406 136
-
-fn=<<alloc::vec::into_iter::IntoIter<T,A> as core::ops::drop::Drop>::drop::DropGuard<T,A> as core::ops::drop::Drop>::drop
-0 1
-fi=/build/rustc-1.91.1-src/library/core/src/num/niche_types.rs
-54 1
-fe=/build/rustc-1.91.1-src/library/alloc/src/raw_vec/mod.rs
-48 1
-cfn=<<alloc::vec::into_iter::IntoIter<T,A> as core::ops::drop::Drop>::drop::DropGuard<T,A> as core::ops::drop::Drop>::drop
-calls=1 0 
-48 165
-0 1
-277 5
-fi=/build/rustc-1.91.1-src/library/alloc/src/vec/into_iter.rs
-496 1
-cfi=/build/rustc-1.91.1-src/library/core/src/ptr/mod.rs
-cfn=core::ptr::drop_in_place<alloc::raw_vec::RawVec<std::ffi::os_str::OsString>>
-calls=1 804 
-496 158
-fe=/build/rustc-1.91.1-src/library/alloc/src/raw_vec/mod.rs
-
-fl=/build/rustc-1.91.1-src/library/core/src/mem/mod.rs
-fn=core::ptr::non_null::NonNull<T>::offset_from_unsigned
-335 2
-fi=/build/rustc-1.91.1-src/library/core/src/ptr/const_ptr.rs
-727 1
-cfn=core::ptr::non_null::NonNull<T>::offset_from_unsigned
-calls=1 727 
-727 11
-fe=/build/rustc-1.91.1-src/library/core/src/mem/mod.rs
-
-fl=/build/rustc-1.91.1-src/library/core/src/ub_checks.rs
-fn=core::ptr::const_ptr::<impl *const T>::offset_from_unsigned::precondition_check
-67 6
-69 5
-fi=/build/rustc-1.91.1-src/library/core/src/ptr/const_ptr.rs
-723 2
-fe=/build/rustc-1.91.1-src/library/core/src/ub_checks.rs
-74 3
-
-fn=alloc::string::String::as_str
-0 4
-77 4
-cfn=core::slice::raw::from_raw_parts::precondition_check
-calls=1 67 
-77 64
-0 2
-fi=/build/rustc-1.91.1-src/library/core/src/ptr/metadata.rs
-119 2
-fi=/build/rustc-1.91.1-src/library/alloc/src/string.rs
-1070 3
-fe=/build/rustc-1.91.1-src/library/core/src/ub_checks.rs
-
-fn=core::ptr::non_null::NonNull<T>::offset_from_unsigned
-0 2
-77 3
-cfn=core::ptr::const_ptr::<impl *const T>::offset_from_unsigned::precondition_check
-calls=1 67 
-77 16
-76 1
-cfi=/build/rustc-1.91.1-src/library/core/src/mem/mod.rs
-cfn=core::ptr::non_null::NonNull<T>::offset_from_unsigned
-calls=1 335 
-76 14
-
-fn=core::slice::raw::from_raw_parts::precondition_check
-67 13
-69 5
-121 1
-fi=/build/rustc-1.91.1-src/library/core/src/fmt/rt.rs
-194 3
-fi=/build/rustc-1.91.1-src/library/core/src/slice/raw.rs
-136 1
-fi=/build/rustc-1.91.1-src/library/core/src/num/uint_macros.rs
-82 5
-fi=/build/rustc-1.91.1-src/library/core/src/ptr/const_ptr.rs
-1373 3
-cfn=core::slice::raw::from_raw_parts::precondition_check
-calls=1 0 
-1373 25
-fe=/build/rustc-1.91.1-src/library/core/src/ub_checks.rs
-0 1
-149 1
-fi=/build/rustc-1.91.1-src/library/core/src/slice/raw.rs
-137 2
-fe=/build/rustc-1.91.1-src/library/core/src/ub_checks.rs
-74 4
-76 1
-cfn=alloc::string::String::as_str
-calls=1 0 
-76 7
-
-fl=/build/rustc-1.91.1-src/library/core/src/iter/traits/iterator.rs
-fn=<I as core::iter::traits::iterator::Iterator::advance_by::SpecAdvanceBy>::spec_advance_by::{{closure}}
-2426 2
-cfn=core::iter::traits::iterator::Iterator::try_fold
-calls=1 0 
-2426 37
-320 11
-cfi=/build/rustc-1.91.1-src/library/core/src/ptr/mod.rs
-cfn=core::ptr::drop_in_place<alloc::string::String>
-calls=1 804 
-320 178
-
-fn=core::iter::traits::iterator::Iterator::try_fold
-2418 8
-2424 3
-2425 1
-cfn=core::iter::traits::iterator::Iterator::try_fold
-calls=1 0 
-2425 348
-0 1
-2425 2
-cfi=???
-cfn=<std::env::Args as core::iter::traits::iterator::Iterator>::next
-calls=1 0 
-2425 345
-2425 6
-cfn=core::iter::traits::iterator::Iterator::try_fold
-calls=1 2425 
-2425 244
-2425 4
-2426 12
-cfn=<I as core::iter::traits::iterator::Iterator::advance_by::SpecAdvanceBy>::spec_advance_by::{{closure}}
-calls=1 320 
-2426 228
-0 1
-2426 1
-cfi=/build/rustc-1.91.1-src/library/core/src/option.rs
-cfn=<core::option::Option<T> as core::ops::try_trait::Try>::branch
-calls=1 2654 
-2426 35
-0 1
-2426 7
-cfn=core::iter::traits::iterator::Iterator::try_fold
-calls=1 2426 
-2426 14
-2426 1
-cfi=/build/rustc-1.91.1-src/library/core/src/option.rs
-cfn=<core::option::Option<T> as core::ops::try_trait::FromResidual<core::option::Option<core::convert::Infallible>>>::from_residual
-calls=1 2668 
-2426 4
-2426 2
-cfn=core::iter::traits::iterator::Iterator::try_fold
-calls=1 0 
-2426 7
-0 1
-2426 1
-2429 1
-cfn=core::iter::traits::iterator::Iterator::try_fold
-calls=1 2429 
-2429 4
-2429 4
-320 1
-322 5
-cfn=<I as core::iter::traits::iterator::Iterator::advance_by::SpecAdvanceBy>::spec_advance_by
-calls=1 323 
-322 7
-
-fn=<I as core::iter::traits::iterator::Iterator::advance_by::SpecAdvanceBy>::spec_advance_by
-330 3
-315 6
-fi=/build/rustc-1.91.1-src/library/core/src/num/nonzero.rs
-400 1
-fe=/build/rustc-1.91.1-src/library/core/src/iter/traits/iterator.rs
-316 5
-cfn=<I as core::iter::traits::iterator::Iterator::advance_by::SpecAdvanceBy>::spec_advance_by
-calls=1 0 
-316 377
-0 1
-316 2
-320 1
-cfn=core::iter::traits::iterator::Iterator::try_fold
-calls=1 2418 
-320 373
-323 2
-cfn=<I as core::iter::traits::iterator::Iterator::advance_by::SpecAdvanceBy>::spec_advance_by
-calls=1 326 
-323 5
-326 1
-cfn=<I as core::iter::traits::iterator::Iterator::advance_by::SpecAdvanceBy>::spec_advance_by
-calls=1 326 
-326 4
-326 4
-
-fn=core::iter::traits::iterator::Iterator::nth
-fi=/work/benchmark-tests-exit.rs
-2 1
-cfn=benchmark_tests_exit::main
-calls=1 2 
-2 3689
-fe=/build/rustc-1.91.1-src/library/core/src/iter/traits/iterator.rs
-373 8
-374 1
-cfn=core::iter::traits::iterator::Iterator::advance_by
-calls=1 296 
-374 477
-376 3
-
-fn=core::iter::traits::iterator::Iterator::advance_by
-296 6
-329 1
-cfn=<I as core::iter::traits::iterator::Iterator::advance_by::SpecAdvanceBy>::spec_advance_by
-calls=1 315 
-329 392
-374 1
-fi=/build/rustc-1.91.1-src/library/core/src/result.rs
-706 3
-707 3
-cfi=/build/rustc-1.91.1-src/library/core/src/option.rs
-cfn=core::iter::traits::iterator::Iterator::nth
-calls=1 2655 
-707 71
-fe=/build/rustc-1.91.1-src/library/core/src/iter/traits/iterator.rs
-
-fl=/build/rustc-1.91.1-src/library/core/src/iter/traits/exact_size.rs
-fn=core::iter::traits::exact_size::ExactSizeIterator::len
-116 5
-fi=/build/rustc-1.91.1-src/library/core/src/macros/mod.rs
-47 2
-fe=/build/rustc-1.91.1-src/library/core/src/iter/traits/exact_size.rs
-117 1
-cfi=/build/rustc-1.91.1-src/library/alloc/src/vec/into_iter.rs
-cfn=<alloc::vec::into_iter::IntoIter<T,A> as core::iter::traits::iterator::Iterator>::size_hint
-calls=1 229 
-117 101
-156 2
-cfi=/build/rustc-1.91.1-src/library/alloc/src/vec/into_iter.rs
-cfn=<alloc::vec::into_iter::IntoIter<T,A> as core::ops::drop::Drop>::drop
-calls=1 0 
-156 221
-
-fl=/build/rustc-1.91.1-src/library/core/src/char/methods.rs
-fn=core::char::methods::<impl char>::to_digit
-fi=/build/rustc-1.91.1-src/library/core/src/num/mod.rs
-1609 4
-1589 3
-cfn=core::num::<impl i32>::from_ascii_radix
-calls=1 0 
-1589 24
-fe=/build/rustc-1.91.1-src/library/core/src/char/methods.rs
-402 7
-fi=/build/rustc-1.91.1-src/library/core/src/fmt/rt.rs
-194 3
-fi=/build/rustc-1.91.1-src/library/core/src/num/uint_macros.rs
-2339 4
-fe=/build/rustc-1.91.1-src/library/core/src/char/methods.rs
-404 2
-0 1
-404 3
-cfn=core::char::methods::<impl char>::to_digit
-calls=1 0 
-404 23
-0 1
-408 3
-cfn=core::char::methods::<impl char>::to_digit
-calls=1 0 
-408 19
-0 1
-420 1
-fi=/build/rustc-1.91.1-src/library/core/src/num/uint_macros.rs
-2340 2
-fe=/build/rustc-1.91.1-src/library/core/src/char/methods.rs
-408 1
-cfn=core::char::methods::<impl char>::to_digit
-calls=1 0 
-408 14
-0 1
-423 8
-cfn=core::char::methods::<impl char>::to_digit
-calls=1 424 
-423 5
-424 5
-
-fl=/build/rustc-1.91.1-src/library/core/src/str/mod.rs
-fn=core::str::<impl str>::parse
-fi=/work/benchmark-tests-exit.rs
-3 2
-cfn=benchmark_tests_exit::main
-calls=1 0 
-3 2949
-fe=/build/rustc-1.91.1-src/library/core/src/str/mod.rs
-2701 6
-2702 1
-cfi=/build/rustc-1.91.1-src/library/core/src/num/mod.rs
-cfn=core::num::<impl core::str::traits::FromStr for i32>::from_str
-calls=1 1439 
-2702 206
 
 totals: 295059

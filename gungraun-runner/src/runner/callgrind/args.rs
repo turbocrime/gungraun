@@ -28,7 +28,6 @@ pub struct Args {
     i1: String,
     ll: String,
     other: Vec<String>,
-    separate_recs: u32,
     separate_threads: bool,
     toggle_collect: VecDeque<String>,
     trace_children: bool,
@@ -72,14 +71,6 @@ impl Args {
                 Some((key @ "--trace-children", value)) => {
                     self.trace_children = yesno_to_bool(value).ok_or_else(|| {
                         Error::InvalidBoolArgument(key.to_owned(), value.to_owned())
-                    })?;
-                }
-                Some(("--separate-recs", value)) => {
-                    self.separate_recs = value.parse::<u32>().map_err(|_| {
-                        anyhow::anyhow!(
-                            "Invalid argument for --separate-recs: '{value}'. Expected a \
-                             non-negative integer"
-                        )
                     })?;
                 }
                 Some((key @ "--separate-threads", value)) => {
@@ -136,7 +127,6 @@ impl Default for Args {
             dump_instr: defaults::DUMP_INSTR,
             toggle_collect: VecDeque::default(),
             other: Vec::default(),
-            separate_recs: defaults::SEPARATE_RECS,
             trace_children: defaults::TRACE_CHILDREN,
             separate_threads: defaults::SEPARATE_THREADS,
             fair_sched: defaults::FAIR_SCHED,
@@ -159,7 +149,6 @@ impl From<Args> for ToolArgs {
             format!("--dump-line={}", bool_to_yesno(value.dump_line)),
             format!("--dump-instr={}", bool_to_yesno(value.dump_instr)),
             format!("--combine-dumps={}", bool_to_yesno(value.combine_dumps)),
-            format!("--separate-recs={}", value.separate_recs),
             format!(
                 "--separate-threads={}",
                 bool_to_yesno(value.separate_threads)

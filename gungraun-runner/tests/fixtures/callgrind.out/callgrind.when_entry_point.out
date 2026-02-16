@@ -1,7 +1,7 @@
 # callgrind format
 version: 1
 creator: callgrind-3.26.0
-pid: 67
+pid: 66
 cmd:  ./benchmark-tests-exit 0
 part: 1
 
@@ -18,226 +18,443 @@ events: Ir
 summary: 5090
 
 
-ob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/ld-linux-aarch64.so.1
+ob=/nix/store/skvxpqppwwsfqgb4c8jhsk8s9v4cxbm6-valgrind-3.26.0/libexec/valgrind/vgpreload_core-arm64-linux.so
 fl=???
-fn=_dl_fini
-0 25
-cfn=_dl_fini
+fn=0x0000000000000620
+0 7
+cfn=0x00000000000006c0
 calls=1 0 
-0 1544
-0 3
+0 5
+
+fn=0x000000000000068c
+0 12
+cfn=0x0000000000000620
+calls=1 0 
+0 12
 cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
 cfi=???
-cfn=pthread_mutex_lock@@GLIBC_2.17
+cfn=__cxa_finalize
 calls=1 0 
-0 1541
-0 25
-cfn=_dl_call_fini
+0 118
+0 5
+0 13
+
+fn=0x00000000000006c0
+0 5
+
+ob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
+fl=???
+fn=__aarch64_swp4_rel
+0 40
+
+fn=malloc
+0 15
+fi=???
+cob=/work/benchmark-tests-exit
+cfi=???
+cfn=__rustc::__rust_no_alloc_shim_is_unstable_v2
+calls=1 0 
+0 588
+cfn=__strlen_asimd
+calls=1 0 
+0 31
+fi=???
+0 8
+fe=???
+0 37
+cfn=_int_malloc
+calls=4 0 
+0 179
+
+fn=malloc'2
+0 12
+fi=???
+cob=/work/benchmark-tests-exit
+cfi=???
+cfn=std::sys::args::unix::args'2
+calls=1 0 
+0 12
+cob=/work/benchmark-tests-exit
+cfi=???
+cfn=__rustc::__rust_no_alloc_shim_is_unstable_v2'2
+calls=1 0 
+0 288
+cfn=__strlen_asimd
+calls=1 0 
+0 21
+cfn=__GI_memcpy
+calls=2 0 
+0 34
+fi=???
+0 45
+fe=???
+0 74
+cfn=_int_malloc
 calls=5 0 
-0 672
-0 10
-cfn=_dl_audit_objclose
-calls=5 0 
-0 80
-0 33
+0 358
+
+fn=exit
+0 7
+cfn=__run_exit_handlers
+calls=1 0 
+0 2112
+
+fn=__pthread_mutex_unlock_usercnt
+0 3
+fi=???
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/ld-linux-aarch64.so.1
+cfi=???
+cfn=_dl_fini'2
+calls=1 0 
+0 847
+0 29
+cfn=__pthread_mutex_unlock_usercnt'2
+calls=1 0 
+0 24
+
+fn=__pthread_mutex_unlock_usercnt'2
+0 24
+cfn=__pthread_mutex_unlock_usercnt'2
+calls=1 0 
+0 18
+
+fn=alloc_perturb
+0 39
+
+fn=__GI_memcpy
+0 34
+
+fn=__strlen_asimd
+0 52
+
+fn=__GI_memmove
+0 26
+
+fn=__aarch64_cas4_acq
+0 40
+
+fn=getauxval
+0 114
+
+fn=__libc_cleanup_pop_restore
+0 42
+
+fn=__run_exit_handlers
+0 12
+cfn=__call_tls_dtors
+calls=1 0 
+0 19
+0 1
+cfn=__run_exit_handlers'2
+calls=1 0 
+0 2080
+
+fn=__run_exit_handlers'2
+0 5
+cfn=__aarch64_cas4_acq
+calls=1 0 
+0 5
+0 28
+cfn=__aarch64_swp4_rel
+calls=1 0 
+0 5
+0 5
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/ld-linux-aarch64.so.1
+cfi=???
+cfn=_dl_fini
+calls=1 0 
+0 2034
+
+fn=__call_tls_dtors
+0 19
+
+fn=_IO_cleanup
+0 1
+cfn=__run_exit_handlers'2
+calls=1 0 
+0 2
+0 18
+cfn=_IO_flush_all
+calls=1 0 
+0 410
+
+fn=_IO_cleanup'2
+0 96
+cfn=__libc_cleanup_pop_restore
+calls=1 0 
+0 21
+0 32
+cfn=_IO_cleanup'2
+calls=3 0 
+0 328
+0 6
+cfn=_IO_cleanup'2
+calls=1 0 
+0 43
+
+fn=__libc_cleanup_push_defer
+0 48
+
+fn=munmap
+0 6
+
+fn=pthread_mutex_lock@@GLIBC_2.17
+0 12
+fi=???
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/ld-linux-aarch64.so.1
+cfi=???
 cfn=_dl_audit_activity_nsid
 calls=1 0 
 0 21
-0 18
+0 95
 fi=???
-cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/ld-linux-aarch64.so.1
+cfi=???
+cfn=_dl_sort_maps
+calls=1 0 
+0 425
+0 3
+fi=???
+cfn=pthread_mutex_unlock@@GLIBC_2.17
+calls=1 0 
+0 908
+0 63
+cfn=pthread_mutex_lock@@GLIBC_2.17'2
+calls=1 0 
+0 14
+
+fn=pthread_mutex_lock@@GLIBC_2.17'2
+0 14
+
+fn=pthread_mutex_unlock@@GLIBC_2.17
+0 5
+cfn=__pthread_mutex_unlock_usercnt
+calls=1 0 
+0 903
+
+fn=__cxa_finalize
+0 39
+cfn=__aarch64_cas4_acq
+calls=3 0 
+0 15
+0 99
+cfn=__unregister_atfork
+calls=3 0 
+0 129
+0 12
+cfn=__aarch64_swp4_rel
+calls=3 0 
+0 15
+0 45
+
+fn=_int_free
+0 156
+cfn=_int_free'2
+calls=10 0 
+0 51
+0 39
+
+fn=_int_free'2
+0 51
+
+fn=free
+fi=/build/rustc-1.91.1-src/library/core/src/ptr/mod.rs
+804 3
+fi=/build/rustc-1.91.1-src/library/alloc/src/raw_vec/mod.rs
+407 3
+fe=???
+0 9
+fi=???
+cob=/work/benchmark-tests-exit
 cfi=???
 cfn=__aarch64_swp4_rel
 calls=1 0 
 0 5
-0 7
-fi=???
-cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
-cfi=???
-cfn=__aarch64_cas4_acq
-calls=1 0 
-0 5
-0 5
-fi=???
-cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
-cfi=???
-cfn=_IO_cleanup
-calls=1 0 
-0 431
-fe=???
+0 71
+cfn=free'2
+calls=5 0 
+0 252
 
-fn=_dl_audit_activity_nsid
-0 42
+fn=free'2
+0 6
+cfn=_int_free
+calls=9 0 
+0 246
 
-fn=_dl_sort_maps
-0 104
-cfn=_dl_sort_maps
-calls=2 0 
-0 321
-0 51
-cfn=dfs_traversal.part.0
-calls=10 0 
-0 229
-0 26
-cfn=memcpy
-calls=2 0 
-0 14
-0 1
-cfn=_dl_sort_maps
-calls=2 0 
+fn=sigaltstack
 0 6
 
-fn=(below main)
-cfn=_dl_start
+fn=__errno_location
+0 18
+
+fn=__unregister_atfork
+0 33
+cfn=__aarch64_cas4_acq
+calls=3 0 
+0 15
+0 24
+cfn=__aarch64_swp4_rel
+calls=3 0 
+0 15
+0 42
+
+fn=__libc_start_main@@GLIBC_2.34
+cfn=__cxa_atexit
 calls=1 0 
 0 5090
 
-fn=_dl_call_fini
-0 102
-cob=/nix/store/l8wljp091lkvnvx6xfnvfpgr6j568idc-gcc-14.3.0-libgcc/lib/libgcc_s.so.1
-cfi=???
-cfn=release_registered_frames
-calls=1 0 
-0 50
-cob=/nix/store/skvxpqppwwsfqgb4c8jhsk8s9v4cxbm6-valgrind-3.26.0/libexec/valgrind/vgpreload_core-arm64-linux.so
-cfi=???
-cfn=0x000000000000068c
-calls=1 0 
-0 160
-cob=/work/benchmark-tests-exit
-cfi=???
-cfn=0x00000000000088cc
-calls=1 0 
-0 160
-0 2
-cob=/nix/store/l8wljp091lkvnvx6xfnvfpgr6j568idc-gcc-14.3.0-libgcc/lib/libgcc_s.so.1
-cfi=???
-cfn=0x0000000000003dcc
-calls=1 0 
-0 160
-0 38
-
-fn=_dl_audit_objclose
-0 80
-
-fn=_dl_init
-cob=/work/benchmark-tests-exit
-cfi=???
+fn=__libc_start_main@@GLIBC_2.34'2
 cfn=(below main)
 calls=1 0 
 0 5090
-
-fn=_dl_start
-cfn=_dl_init
+cob=/work/benchmark-tests-exit
+cfi=???
+cfn=init_have_lse_atomics
 calls=1 0 
 0 5090
 
-fn=memcpy
-0 14
+fn=__cxa_atexit
+cfn=__internal_atexit
+calls=1 0 
+0 5090
 
-fn=dfs_traversal.part.0
-0 229
+fn=_int_malloc
+0 90
+cfn=_int_malloc'2
+calls=7 0 
+0 396
+0 51
+
+fn=_int_malloc'2
+0 180
+cfn=_int_malloc'2
+calls=12 0 
+0 273
+0 12
+cfn=_int_malloc'2
+calls=13 0 
+0 261
+0 102
+cfn=alloc_perturb
+calls=13 0 
+0 39
+0 15
+cfn=_int_malloc'2
+calls=13 0 
+0 57
+0 48
+cfn=_int_malloc'2
+calls=12 0 
+0 114
+
+fn=_IO_flush_all
+0 21
+cfn=__libc_cleanup_push_defer
+calls=1 0 
+0 24
+0 12
+cfn=_IO_flush_all'2
+calls=1 0 
+0 145
+0 13
+cfn=__libc_cleanup_push_defer
+calls=1 0 
+0 24
+0 10
+cfn=_IO_cleanup'2
+calls=1 0 
+0 155
+0 6
+
+fn=_IO_flush_all'2
+0 87
+cfn=__libc_cleanup_pop_restore
+calls=1 0 
+0 21
+0 31
+cfn=_IO_flush_all'2
+calls=3 0 
+0 306
+0 6
+cfn=_IO_flush_all'2
+calls=1 0 
+0 42
+
+fn=__internal_atexit
+cfn=__libc_start_main@@GLIBC_2.34'2
+calls=1 0 
+0 5090
+
+fn=(below main)
+cob=/work/benchmark-tests-exit
+cfi=???
+cfn=main
+calls=1 0 
+0 5090
 
 ob=/work/benchmark-tests-exit
-fl=/build/rustc-1.91.1-src/library/core/src/num/mod.rs
-fn=core::num::<impl core::str::traits::FromStr for i32>::from_str
-1439 7
-1482 1
-1483 1
-cfn=core::num::<impl i32>::from_ascii_radix
-calls=1 1561 
-1483 190
-fi=/build/rustc-1.91.1-src/library/core/src/str/mod.rs
-2702 3
-2703 4
-fe=/build/rustc-1.91.1-src/library/core/src/num/mod.rs
+fl=/build/rustc-1.91.1-src/library/core/src/char/methods.rs
+fn=core::char::methods::<impl char>::to_digit
+fi=/build/rustc-1.91.1-src/library/core/src/num/mod.rs
+1609 4
+1589 3
+cfn=core::num::<impl i32>::from_ascii_radix'2
+calls=1 0 
+1589 24
+fe=/build/rustc-1.91.1-src/library/core/src/char/methods.rs
+402 7
+fi=/build/rustc-1.91.1-src/library/core/src/fmt/rt.rs
+194 3
+fi=/build/rustc-1.91.1-src/library/core/src/num/uint_macros.rs
+2339 4
+fe=/build/rustc-1.91.1-src/library/core/src/char/methods.rs
+404 2
+0 1
+404 3
+cfn=core::char::methods::<impl char>::to_digit'2
+calls=1 0 
+404 23
 
-fn=core::num::<impl i32>::from_ascii_radix
-1561 13
-1574 1
-1386 1
-1565 4
-cfn=core::num::<impl i32>::from_ascii_radix
+fn=core::char::methods::<impl char>::to_digit'2
+0 1
+408 3
+cfn=core::char::methods::<impl char>::to_digit'2
 calls=1 0 
-1565 164
+408 19
 0 1
-1565 2
-0 1
-1569 1
-fi=/work/benchmark-tests-exit.rs
-0 1
-fe=/build/rustc-1.91.1-src/library/core/src/num/mod.rs
-1577 2
-1649 5
-0 1
-1576 5
-cfn=core::num::<impl i32>::from_ascii_radix
+420 1
+fi=/build/rustc-1.91.1-src/library/core/src/num/uint_macros.rs
+2340 2
+fe=/build/rustc-1.91.1-src/library/core/src/char/methods.rs
+408 1
+cfn=core::char::methods::<impl char>::to_digit'2
 calls=1 0 
-1576 150
+408 14
 0 1
-1576 3
-cfn=core::num::<impl i32>::from_ascii_radix
-calls=1 0 
-1576 146
-0 1
-1580 2
-0 1
-1576 5
-cfn=core::num::<impl i32>::from_ascii_radix
-calls=1 0 
-1576 137
-0 1
-1576 3
-cfi=/work/benchmark-tests-exit.rs
-cfn=core::num::<impl i32>::from_ascii_radix
-calls=1 0 
-1576 133
-1607 1
-cfn=core::num::<impl i32>::from_ascii_radix
-calls=1 1607 
-1607 95
-1607 7
-cfn=core::num::<impl i32>::from_ascii_radix
-calls=1 1648 
-1607 10
-1648 1
-cfn=core::num::<impl i32>::from_ascii_radix
-calls=1 1648 
-1648 9
-1648 3
-1649 1
-cfn=core::num::<impl i32>::from_ascii_radix
-calls=1 1649 
-1649 5
-fi=/work/benchmark-tests-exit.rs
-0 2
-fe=/build/rustc-1.91.1-src/library/core/src/num/mod.rs
-1607 11
-1608 3
-1609 2
-cfi=/build/rustc-1.91.1-src/library/core/src/char/methods.rs
-cfn=core::char::methods::<impl char>::to_digit
-calls=1 402 
-1609 74
-0 2
-1590 2
-1610 3
-1611 2
-1607 1
-cfn=core::num::<impl i32>::from_ascii_radix
-calls=1 1607 
-1607 14
-1483 3
-1441 4
-
-fl=/build/rustc-1.91.1-src/library/std/src/sys/backtrace.rs
-fn=std::sys::backtrace::__rust_begin_short_backtrace
-cfi=/build/rustc-1.91.1-src/library/core/src/ops/function.rs
-cfn=core::ops::function::FnOnce::call_once
-calls=1 250 
-158 5090
+423 8
+cfn=core::char::methods::<impl char>::to_digit'2
+calls=1 424 
+423 5
+424 5
 
 fl=/work/benchmark-tests-exit.rs
+fn=core::num::<impl i32>::from_ascii_radix
+0 5
+fi=/build/rustc-1.91.1-src/library/core/src/num/mod.rs
+1582 3
+1576 8
+1585 1
+1596 5
+1387 5
+0 1
+1387 6
+1596 2
+1615 1
+cfn=core::num::<impl i32>::from_ascii_radix'2
+calls=1 1607 
+1615 96
+fe=/work/benchmark-tests-exit.rs
+
 fn=benchmark_tests_exit::main
 1 5
 2 1
@@ -245,6 +462,8 @@ cfi=???
 cfn=std::env::args
 calls=1 0 
 2 5084
+
+fn=benchmark_tests_exit::main'2
 2 9
 cfi=/build/rustc-1.91.1-src/library/core/src/option.rs
 cfn=core::option::Option<T>::expect
@@ -273,7 +492,7 @@ cfn=core::result::Result<T,E>::expect
 calls=1 1172 
 3 18
 3 2
-cfn=benchmark_tests_exit::main
+cfn=benchmark_tests_exit::main'2
 calls=1 0 
 3 2915
 0 1
@@ -284,32 +503,130 @@ cfn=std::process::exit
 calls=1 0 
 4 2912
 
-fn=core::num::<impl i32>::from_ascii_radix
-0 5
-fi=/build/rustc-1.91.1-src/library/core/src/num/mod.rs
-1582 3
-1576 8
-1585 1
-1596 5
-1387 5
+fl=/build/rustc-1.91.1-src/library/alloc/src/raw_vec/mod.rs
+fn=<<alloc::vec::into_iter::IntoIter<T,A> as core::ops::drop::Drop>::drop::DropGuard<T,A> as core::ops::drop::Drop>::drop
 0 1
-1387 6
-1596 2
-1615 1
-cfn=core::num::<impl i32>::from_ascii_radix
-calls=1 1607 
-1615 96
-fe=/work/benchmark-tests-exit.rs
-
-fl=/build/rustc-1.91.1-src/library/core/src/slice/raw.rs
-fn=core::slice::raw::from_raw_parts::precondition_check
-0 1
-fi=/build/rustc-1.91.1-src/library/core/src/ub_checks.rs
-148 4
-cfn=core::slice::raw::from_raw_parts::precondition_check
+fi=/build/rustc-1.91.1-src/library/core/src/num/niche_types.rs
+54 1
+fe=/build/rustc-1.91.1-src/library/alloc/src/raw_vec/mod.rs
+48 1
+cfn=<<alloc::vec::into_iter::IntoIter<T,A> as core::ops::drop::Drop>::drop::DropGuard<T,A> as core::ops::drop::Drop>::drop'2
 calls=1 0 
-148 8
-fe=/build/rustc-1.91.1-src/library/core/src/slice/raw.rs
+48 165
+
+fn=<<alloc::vec::into_iter::IntoIter<T,A> as core::ops::drop::Drop>::drop::DropGuard<T,A> as core::ops::drop::Drop>::drop'2
+0 1
+277 5
+fi=/build/rustc-1.91.1-src/library/alloc/src/vec/into_iter.rs
+496 1
+cfi=/build/rustc-1.91.1-src/library/core/src/ptr/mod.rs
+cfn=core::ptr::drop_in_place<alloc::raw_vec::RawVec<std::ffi::os_str::OsString>>
+calls=1 804 
+496 158
+fe=/build/rustc-1.91.1-src/library/alloc/src/raw_vec/mod.rs
+
+fn=<alloc::raw_vec::RawVec<T,A> as core::ops::drop::Drop>::drop
+fi=/build/rustc-1.91.1-src/library/core/src/ptr/mod.rs
+804 3
+fe=/build/rustc-1.91.1-src/library/alloc/src/raw_vec/mod.rs
+404 5
+406 5
+cfi=???
+cfn=alloc::raw_vec::RawVecInner<A>::deallocate
+calls=1 0 
+406 136
+
+fl=/build/rustc-1.91.1-src/library/core/src/option.rs
+fn=core::option::Option<T>::expect
+fi=/work/benchmark-tests-exit.rs
+2 1
+cfn=benchmark_tests_exit::main'2
+calls=1 2 
+2 3654
+fe=/build/rustc-1.91.1-src/library/core/src/option.rs
+962 10
+963 6
+cfn=core::option::Option<T>::expect'2
+calls=1 0 
+963 9
+
+fn=core::option::Option<T>::expect'2
+0 2
+964 4
+967 3
+
+fn=core::iter::traits::exact_size::ExactSizeIterator::len
+0 2
+2355 5
+fi=/build/rustc-1.91.1-src/library/core/src/cmp.rs
+1866 1
+fi=/build/rustc-1.91.1-src/library/core/src/macros/mod.rs
+46 2
+0 1
+fi=/build/rustc-1.91.1-src/library/core/src/iter/traits/exact_size.rs
+124 3
+fe=/build/rustc-1.91.1-src/library/core/src/option.rs
+
+fn=<core::option::Option<T> as core::ops::try_trait::FromResidual<core::option::Option<core::convert::Infallible>>>::from_residual
+2668 1
+2672 3
+
+fn=core::iter::traits::iterator::Iterator::nth
+2655 3
+cfn=core::iter::traits::iterator::Iterator::nth'2
+calls=1 0 
+2655 68
+
+fn=core::iter::traits::iterator::Iterator::nth'2
+0 2
+fi=/build/rustc-1.91.1-src/library/core/src/iter/traits/iterator.rs
+375 1
+cfi=???
+cfn=<std::env::Args as core::iter::traits::iterator::Iterator>::next
+calls=1 0 
+375 65
+fe=/build/rustc-1.91.1-src/library/core/src/option.rs
+
+fn=<core::option::Option<T> as core::ops::try_trait::Try>::branch
+fi=/build/rustc-1.91.1-src/library/core/src/iter/traits/iterator.rs
+2426 2
+cfn=core::iter::traits::iterator::Iterator::try_fold'2
+calls=1 0 
+2426 22
+fe=/build/rustc-1.91.1-src/library/core/src/option.rs
+2654 2
+2655 4
+2657 2
+cfn=<core::option::Option<T> as core::ops::try_trait::Try>::branch'2
+calls=1 2659 
+2657 3
+
+fn=<core::option::Option<T> as core::ops::try_trait::Try>::branch'2
+2659 3
+
+fl=/build/rustc-1.91.1-src/library/core/src/result.rs
+fn=core::result::Result<T,E>::expect
+1172 11
+1176 2
+1177 2
+1180 3
+
+fl=/build/rustc-1.91.1-src/library/core/src/iter/traits/exact_size.rs
+fn=core::iter::traits::exact_size::ExactSizeIterator::len
+116 5
+fi=/build/rustc-1.91.1-src/library/core/src/macros/mod.rs
+47 2
+fe=/build/rustc-1.91.1-src/library/core/src/iter/traits/exact_size.rs
+117 1
+cfi=/build/rustc-1.91.1-src/library/alloc/src/vec/into_iter.rs
+cfn=<alloc::vec::into_iter::IntoIter<T,A> as core::iter::traits::iterator::Iterator>::size_hint
+calls=1 229 
+117 101
+156 2
+cfi=/build/rustc-1.91.1-src/library/alloc/src/vec/into_iter.rs
+cfn=<alloc::vec::into_iter::IntoIter<T,A> as core::ops::drop::Drop>::drop'2
+calls=1 0 
+156 221
 
 fl=/build/rustc-1.91.1-src/library/core/src/ptr/mod.rs
 fn=core::ptr::drop_in_place<alloc::raw_vec::RawVec<u8>>
@@ -319,24 +636,21 @@ cfn=<alloc::raw_vec::RawVec<T,A> as core::ops::drop::Drop>::drop
 calls=1 0 
 804 142
 
-fn=core::ptr::drop_in_place<std::sys::args::common::Args>
-804 9
-cfn=core::ptr::drop_in_place<alloc::vec::into_iter::IntoIter<std::ffi::os_str::OsString>>
-calls=1 804 
-804 360
-
-fn=core::ptr::drop_in_place<alloc::vec::into_iter::IntoIter<std::ffi::os_str::OsString>>
-804 9
-cfi=/build/rustc-1.91.1-src/library/alloc/src/vec/into_iter.rs
-cfn=<alloc::vec::into_iter::IntoIter<T,A> as core::ops::drop::Drop>::drop
-calls=1 487 
-804 351
-
 fn=core::ptr::drop_in_place<std::env::ArgsOs>
 804 9
 cfn=core::ptr::drop_in_place<std::sys::args::common::Args>
 calls=1 804 
 804 369
+
+fn=core::ptr::drop_in_place<<alloc::vec::into_iter::IntoIter<T,A> as core::ops::drop::Drop>::drop::DropGuard<std::ffi::os_str::OsString,alloc::alloc::Global>>
+804 6
+cfi=/build/rustc-1.91.1-src/library/alloc/src/vec/into_iter.rs
+cfn=<<alloc::vec::into_iter::IntoIter<T,A> as core::ops::drop::Drop>::drop::DropGuard<T,A> as core::ops::drop::Drop>::drop
+calls=1 491 
+804 189
+fi=/build/rustc-1.91.1-src/library/alloc/src/vec/into_iter.rs
+507 3
+fe=/build/rustc-1.91.1-src/library/core/src/ptr/mod.rs
 
 fn=core::ptr::drop_in_place<alloc::string::String>
 804 6
@@ -355,9 +669,11 @@ cfn=<alloc::vec::Vec<T,A> as core::ops::drop::Drop>::drop
 calls=1 0 
 804 4
 804 1
-cfn=core::ptr::drop_in_place<alloc::vec::Vec<u8>>
+cfn=core::ptr::drop_in_place<alloc::vec::Vec<u8>>'2
 calls=1 0 
 804 153
+
+fn=core::ptr::drop_in_place<alloc::vec::Vec<u8>>'2
 0 1
 804 1
 cfn=core::ptr::drop_in_place<alloc::raw_vec::RawVec<u8>>
@@ -366,17 +682,19 @@ calls=1 804
 
 fn=core::ptr::drop_in_place<[std::ffi::os_str::OsString]>
 804 9
-cfn=core::ptr::drop_in_place<[std::ffi::os_str::OsString]>
+cfn=core::ptr::drop_in_place<[std::ffi::os_str::OsString]>'2
 calls=1 0 
 804 7
-0 1
-804 6
 fi=/build/rustc-1.91.1-src/library/alloc/src/vec/into_iter.rs
 504 1
-cfn=<alloc::vec::into_iter::IntoIter<T,A> as core::ops::drop::Drop>::drop
+cfn=<alloc::vec::into_iter::IntoIter<T,A> as core::ops::drop::Drop>::drop'2
 calls=1 507 
 504 200
 fe=/build/rustc-1.91.1-src/library/core/src/ptr/mod.rs
+
+fn=core::ptr::drop_in_place<[std::ffi::os_str::OsString]>'2
+0 1
+804 6
 
 fn=core::ptr::drop_in_place<alloc::raw_vec::RawVec<std::ffi::os_str::OsString>>
 fi=/build/rustc-1.91.1-src/library/alloc/src/vec/into_iter.rs
@@ -391,7 +709,7 @@ calls=1 404
 fn=core::ptr::drop_in_place<std::env::Args>
 fi=/work/benchmark-tests-exit.rs
 2 1
-cfn=benchmark_tests_exit::main
+cfn=benchmark_tests_exit::main'2
 calls=1 3 
 2 3267
 fe=/build/rustc-1.91.1-src/library/core/src/ptr/mod.rs
@@ -400,22 +718,120 @@ cfn=core::ptr::drop_in_place<std::env::ArgsOs>
 calls=1 804 
 804 378
 
-fn=core::ptr::drop_in_place<<alloc::vec::into_iter::IntoIter<T,A> as core::ops::drop::Drop>::drop::DropGuard<std::ffi::os_str::OsString,alloc::alloc::Global>>
-804 6
+fn=core::ptr::drop_in_place<std::sys::args::common::Args>
+804 9
+cfn=core::ptr::drop_in_place<alloc::vec::into_iter::IntoIter<std::ffi::os_str::OsString>>
+calls=1 804 
+804 360
+
+fn=core::ptr::drop_in_place<alloc::vec::into_iter::IntoIter<std::ffi::os_str::OsString>>
+804 9
 cfi=/build/rustc-1.91.1-src/library/alloc/src/vec/into_iter.rs
-cfn=<<alloc::vec::into_iter::IntoIter<T,A> as core::ops::drop::Drop>::drop::DropGuard<T,A> as core::ops::drop::Drop>::drop
-calls=1 491 
-804 189
-fi=/build/rustc-1.91.1-src/library/alloc/src/vec/into_iter.rs
-507 3
-fe=/build/rustc-1.91.1-src/library/core/src/ptr/mod.rs
+cfn=<alloc::vec::into_iter::IntoIter<T,A> as core::ops::drop::Drop>::drop
+calls=1 487 
+804 351
+
+fl=/build/rustc-1.91.1-src/library/core/src/num/mod.rs
+fn=core::num::<impl core::str::traits::FromStr for i32>::from_str
+1439 7
+1482 1
+1483 1
+cfn=core::num::<impl i32>::from_ascii_radix
+calls=1 1561 
+1483 190
+fi=/build/rustc-1.91.1-src/library/core/src/str/mod.rs
+2702 3
+2703 4
+fe=/build/rustc-1.91.1-src/library/core/src/num/mod.rs
+
+fn=core::num::<impl i32>::from_ascii_radix
+1561 13
+1574 1
+1386 1
+1565 4
+cfn=core::num::<impl i32>::from_ascii_radix'2
+calls=1 0 
+1565 164
+1483 3
+1441 4
+
+fn=core::num::<impl i32>::from_ascii_radix'2
+0 1
+1565 2
+0 1
+1569 1
+fi=/work/benchmark-tests-exit.rs
+0 1
+fe=/build/rustc-1.91.1-src/library/core/src/num/mod.rs
+1577 2
+1649 5
+0 1
+1576 5
+cfn=core::num::<impl i32>::from_ascii_radix'2
+calls=1 0 
+1576 150
+0 1
+1576 3
+cfn=core::num::<impl i32>::from_ascii_radix'2
+calls=1 0 
+1576 146
+0 1
+1580 2
+0 1
+1576 5
+cfn=core::num::<impl i32>::from_ascii_radix'2
+calls=1 0 
+1576 137
+0 1
+1576 3
+cfi=/work/benchmark-tests-exit.rs
+cfn=core::num::<impl i32>::from_ascii_radix
+calls=1 0 
+1576 133
+1607 1
+cfn=core::num::<impl i32>::from_ascii_radix'2
+calls=1 1607 
+1607 95
+1607 7
+cfn=core::num::<impl i32>::from_ascii_radix'2
+calls=1 1648 
+1607 10
+1648 1
+cfn=core::num::<impl i32>::from_ascii_radix'2
+calls=1 1648 
+1648 9
+1648 3
+1649 1
+cfn=core::num::<impl i32>::from_ascii_radix'2
+calls=1 1649 
+1649 5
+fi=/work/benchmark-tests-exit.rs
+0 2
+fe=/build/rustc-1.91.1-src/library/core/src/num/mod.rs
+1607 11
+1608 3
+1609 2
+cfi=/build/rustc-1.91.1-src/library/core/src/char/methods.rs
+cfn=core::char::methods::<impl char>::to_digit
+calls=1 402 
+1609 74
+0 2
+1590 2
+1610 3
+1611 2
+1607 1
+cfn=core::num::<impl i32>::from_ascii_radix'2
+calls=1 1607 
+1607 14
 
 fl=/build/rustc-1.91.1-src/library/core/src/ptr/const_ptr.rs
 fn=core::ptr::non_null::NonNull<T>::offset_from_unsigned
 727 1
-cfn=core::ptr::non_null::NonNull<T>::offset_from_unsigned
+cfn=core::ptr::non_null::NonNull<T>::offset_from_unsigned'2
 calls=1 0 
 727 10
+
+fn=core::ptr::non_null::NonNull<T>::offset_from_unsigned'2
 0 2
 729 5
 fi=/build/rustc-1.91.1-src/library/core/src/ptr/non_null.rs
@@ -443,28 +859,156 @@ calls=1 0
 148 13
 fe=/build/rustc-1.91.1-src/library/core/src/ptr/const_ptr.rs
 
-fl=???
-fn=(below main)
-cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
-cfi=???
-cfn=__libc_start_main@@GLIBC_2.34
+fl=/build/rustc-1.91.1-src/library/core/src/iter/traits/iterator.rs
+fn=<I as core::iter::traits::iterator::Iterator::advance_by::SpecAdvanceBy>::spec_advance_by
+330 3
+315 6
+fi=/build/rustc-1.91.1-src/library/core/src/num/nonzero.rs
+400 1
+fe=/build/rustc-1.91.1-src/library/core/src/iter/traits/iterator.rs
+316 5
+cfn=<I as core::iter::traits::iterator::Iterator::advance_by::SpecAdvanceBy>::spec_advance_by'2
 calls=1 0 
+316 377
+
+fn=<I as core::iter::traits::iterator::Iterator::advance_by::SpecAdvanceBy>::spec_advance_by'2
+0 1
+316 2
+320 1
+cfn=core::iter::traits::iterator::Iterator::try_fold
+calls=1 2418 
+320 373
+323 2
+cfn=<I as core::iter::traits::iterator::Iterator::advance_by::SpecAdvanceBy>::spec_advance_by'2
+calls=1 326 
+323 5
+326 1
+cfn=<I as core::iter::traits::iterator::Iterator::advance_by::SpecAdvanceBy>::spec_advance_by'2
+calls=1 326 
+326 4
+326 4
+
+fn=core::iter::traits::iterator::Iterator::try_fold
+2418 8
+2424 3
+2425 1
+cfn=core::iter::traits::iterator::Iterator::try_fold'2
+calls=1 0 
+2425 348
+320 1
+322 5
+cfn=<I as core::iter::traits::iterator::Iterator::advance_by::SpecAdvanceBy>::spec_advance_by'2
+calls=1 323 
+322 7
+
+fn=core::iter::traits::iterator::Iterator::try_fold'2
+0 1
+2425 2
+cfi=???
+cfn=<std::env::Args as core::iter::traits::iterator::Iterator>::next
+calls=1 0 
+2425 345
+2425 6
+cfn=core::iter::traits::iterator::Iterator::try_fold'2
+calls=1 2425 
+2425 244
+2425 4
+2426 12
+cfn=<I as core::iter::traits::iterator::Iterator::advance_by::SpecAdvanceBy>::spec_advance_by::{{closure}}
+calls=1 320 
+2426 228
+0 1
+2426 1
+cfi=/build/rustc-1.91.1-src/library/core/src/option.rs
+cfn=<core::option::Option<T> as core::ops::try_trait::Try>::branch
+calls=1 2654 
+2426 35
+0 1
+2426 7
+cfn=core::iter::traits::iterator::Iterator::try_fold'2
+calls=1 2426 
+2426 14
+2426 1
+cfi=/build/rustc-1.91.1-src/library/core/src/option.rs
+cfn=<core::option::Option<T> as core::ops::try_trait::FromResidual<core::option::Option<core::convert::Infallible>>>::from_residual
+calls=1 2668 
+2426 4
+2426 2
+cfn=core::iter::traits::iterator::Iterator::try_fold'2
+calls=1 0 
+2426 7
+0 1
+2426 1
+2429 1
+cfn=core::iter::traits::iterator::Iterator::try_fold'2
+calls=1 2429 
+2429 4
+2429 4
+
+fn=<I as core::iter::traits::iterator::Iterator::advance_by::SpecAdvanceBy>::spec_advance_by::{{closure}}
+2426 2
+cfn=core::iter::traits::iterator::Iterator::try_fold'2
+calls=1 0 
+2426 37
+320 11
+cfi=/build/rustc-1.91.1-src/library/core/src/ptr/mod.rs
+cfn=core::ptr::drop_in_place<alloc::string::String>
+calls=1 804 
+320 178
+
+fn=core::iter::traits::iterator::Iterator::nth
+fi=/work/benchmark-tests-exit.rs
+2 1
+cfn=benchmark_tests_exit::main'2
+calls=1 2 
+2 3689
+fe=/build/rustc-1.91.1-src/library/core/src/iter/traits/iterator.rs
+373 8
+374 1
+cfn=core::iter::traits::iterator::Iterator::advance_by
+calls=1 296 
+374 477
+
+fn=core::iter::traits::iterator::Iterator::nth'2
+376 3
+
+fn=core::iter::traits::iterator::Iterator::advance_by
+296 6
+329 1
+cfn=<I as core::iter::traits::iterator::Iterator::advance_by::SpecAdvanceBy>::spec_advance_by
+calls=1 315 
+329 392
+374 1
+fi=/build/rustc-1.91.1-src/library/core/src/result.rs
+706 3
+707 3
+cfi=/build/rustc-1.91.1-src/library/core/src/option.rs
+cfn=core::iter::traits::iterator::Iterator::nth
+calls=1 2655 
+707 71
+fe=/build/rustc-1.91.1-src/library/core/src/iter/traits/iterator.rs
+
+fl=???
+fn=std::sys::pal::unix::init
+cfi=/build/rustc-1.91.1-src/library/std/src/rt.rs
+cfn=std::rt::lang_start::{{closure}}
+calls=1 206 
 0 5090
 
-fn=__aarch64_cas8_acq
-0 10
-cfn=std::sys::exit_guard::unique_thread_exit
+fn=std::env::args
+0 4
+cfn=std::sys::args::unix::args
 calls=1 0 
-0 5
+0 5080
 
 fn=<std::env::Args as core::iter::traits::iterator::Iterator>::next
 fi=/build/rustc-1.91.1-src/library/core/src/iter/traits/iterator.rs
 375 1
-cfn=core::iter::traits::iterator::Iterator::nth
+cfn=core::iter::traits::iterator::Iterator::nth'2
 calls=1 376 
 375 3
 2425 1
-cfn=core::iter::traits::iterator::Iterator::try_fold
+cfn=core::iter::traits::iterator::Iterator::try_fold'2
 calls=1 2425 
 2425 250
 fe=???
@@ -473,182 +1017,8 @@ cfn=core::str::converts::from_utf8
 calls=2 0 
 0 113
 
-fn=<alloc::vec::Vec<T,A> as core::ops::drop::Drop>::drop
-0 4
-
-fn=<alloc::raw_vec::RawVec<T,A> as core::ops::drop::Drop>::drop
-0 6
-cfn=alloc::raw_vec::RawVecInner<A>::deallocate
-calls=1 0 
-0 136
-
-fn=std::process::exit
-0 5
-cfn=std::rt::cleanup
-calls=1 0 
-0 2907
-
-fn=std::sys::pal::unix::stack_overflow::thread_info::delete_current_info
-0 7
-cfn=__aarch64_cas4_acq
-calls=1 0 
-0 352
-cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
-cfi=???
-cfn=__errno_location
-calls=1 0 
-0 9
-0 11
-0 17
-cfn=__aarch64_cas8_acq
-calls=1 0 
-0 5
-0 32
-cfn=alloc::collections::btree::map::entry::OccupiedEntry<K,V,A>::remove_kv
-calls=1 0 
-0 293
-0 5
-
-fn=__aarch64_swp4_rel
-0 15
-
-fn=0x00000000000088cc
-0 25
-cfn=0x0000000000008860
-calls=1 0 
-0 12
-cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
-cfi=???
-cfn=__cxa_finalize
-calls=1 0 
-0 118
-0 5
-
-fn=__aarch64_cas4_acq
-0 15
-cfn=std::sys::pal::unix::stack_overflow::thread_info::delete_current_info
-calls=1 0 
-0 347
-
-fn=alloc::collections::btree::map::entry::OccupiedEntry<K,V,A>::remove_kv
-0 6
-cfn=__rustc::__rust_dealloc
-calls=1 0 
-0 136
-0 16
-cfn=alloc::collections::btree::remove::<impl alloc::collections::btree::node::Handle<alloc::collections::btree::node::NodeRef<alloc::collections::btree::node::marker::Mut,K,V,alloc::collections::btree::node::marker::LeafOrInternal>,alloc::collections::btree::node::marker::KV>>::remove_kv_tracking
-calls=1 0 
-0 135
-
-fn=0x0000000000008860
-0 7
-cfn=0x0000000000008900
-calls=1 0 
-0 5
-
-fn=std::rt::lang_start_internal
-cfn=std::sys::pal::unix::init
-calls=1 0 
-0 5090
-
-fn=__rustc::__rust_alloc
-0 3
-cfn=__rustc::__rdl_alloc
-calls=5 0 
-0 1735
-
-fn=std::sys::sync::once::futex::Once::call
-0 28
-cfn=std::sys::sync::once::futex::Once::call
-calls=1 0 
-0 51
-0 4
-cfn=__aarch64_cas4_acq
-calls=1 0 
-0 5
-0 16
-cfn=std::sync::poison::once::Once::call_once_force::{{closure}}
-calls=1 0 
-0 11
-0 6
-cfn=std::sync::poison::once::Once::call_once::{{closure}}
-calls=1 0 
-0 680
-0 3
-cfn=__aarch64_swp4_rel
-calls=1 0 
-0 5
-0 9
-cfn=std::sys::sync::once::futex::Once::call
-calls=1 0 
-0 706
-0 10
-cfn=__aarch64_cas4_acq
-calls=1 0 
-0 5
-0 5
-cfn=std::sys::sync::once::futex::Once::call
-calls=1 0 
-0 686
-0 3
-
-fn=std::sync::poison::once::Once::call_once::{{closure}}
-0 3
-cfn=__aarch64_swp4_rel
-calls=1 0 
-0 5
-0 18
-cfn=std::io::stdio::cleanup
-calls=1 0 
-0 654
-
-fn=std::sys::pal::unix::init
-cfi=/build/rustc-1.91.1-src/library/std/src/rt.rs
-cfn=std::rt::lang_start::{{closure}}
-calls=1 206 
-0 5090
-
-fn=init_have_lse_atomics
-fi=???
-cfn=__init_cpu_features
-calls=1 0 
-0 5090
-fe=???
-
-fn=core::str::converts::from_utf8
-0 42
-cfn=core::str::converts::from_utf8
-calls=2 0 
-0 71
-0 63
-cfn=core::str::converts::from_utf8
-calls=2 0 
-0 8
-0 8
-
-fn=std::sys::args::unix::args
-fi=/work/benchmark-tests-exit.rs
-2 5
-cfi=/build/rustc-1.91.1-src/library/core/src/iter/traits/iterator.rs
-cfn=core::iter::traits::iterator::Iterator::nth
-calls=1 373 
-2 4176
-fe=???
-0 37
-cfn=__rustc::__rust_no_alloc_shim_is_unstable_v2
-calls=1 0 
-0 1
-0 3
-cfn=__rustc::__rust_alloc
-calls=1 0 
-0 870
-0 6
-cfn=__rustc::__rust_alloc
-calls=2 0 
-0 868
-
 fn=std::io::stdio::cleanup
-0 21
+0 15
 cfn=std::sync::once_lock::OnceLock<T>::initialize
 calls=1 0 
 0 96
@@ -673,91 +1043,82 @@ calls=1 0
 0 114
 0 28
 
-fn=alloc::collections::btree::remove::<impl alloc::collections::btree::node::Handle<alloc::collections::btree::node::NodeRef<alloc::collections::btree::node::marker::Mut,K,V,alloc::collections::btree::node::marker::Leaf>,alloc::collections::btree::node::marker::KV>>::remove_leaf_kv
-0 22
-cfn=alloc::collections::btree::remove::<impl alloc::collections::btree::node::Handle<alloc::collections::btree::node::NodeRef<alloc::collections::btree::node::marker::Mut,K,V,alloc::collections::btree::node::marker::Leaf>,alloc::collections::btree::node::marker::KV>>::remove_leaf_kv
-calls=1 0 
-0 17
-cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
-cfi=???
-cfn=__GI_memmove
-calls=2 0 
-0 26
-0 30
-0 21
-
-fn=__rustc::__rdl_alloc
-0 21
-cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
-cfi=???
-cfn=malloc
-calls=5 0 
-0 1702
-0 12
-
-fn=alloc::raw_vec::RawVecInner<A>::deallocate
-0 2
-cfn=__rustc::__rdl_dealloc
-calls=2 0 
-0 232
-0 22
-cfn=alloc::raw_vec::RawVecInner<A>::deallocate
-calls=2 0 
-0 16
-0 16
-
-fn=std::sync::once_lock::OnceLock<T>::initialize
-0 19
-cfn=std::sys::sync::once::futex::Once::call
-calls=1 0 
-0 68
-0 3
-cfn=std::io::stdio::cleanup
-calls=1 0 
+fn=std::io::stdio::cleanup'2
 0 6
 
-fn=std::sync::poison::once::Once::call_once_force::{{closure}}
-0 11
-
-fn=std::sys::exit_guard::unique_thread_exit
-0 4
-cfn=__aarch64_cas8_acq
+fn=std::sys::pal::unix::os::exit
+0 5
+cfn=std::sys::exit_guard::unique_thread_exit
 calls=1 0 
-0 10
+0 2158
+
+fn=0x00000000000088cc
+0 25
+cfn=0x0000000000008860
+calls=1 0 
+0 12
 cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
 cfi=???
-cfn=__errno_location
+cfn=__cxa_finalize
 calls=1 0 
-0 9
-0 10
-0 7
-cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
-cfi=???
-cfn=exit
-calls=1 0 
-0 2119
-0 4
+0 118
+0 5
 
-fn=main
-cfi=/build/rustc-1.91.1-src/library/std/src/rt.rs
-cfn=std::rt::lang_start
-calls=1 199 
-0 5090
-
-fn=__init_cpu_features
+fn=init_have_lse_atomics
 fi=???
-cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
-cfi=???
-cfn=__libc_start_main@@GLIBC_2.34
+cfn=__init_cpu_features
 calls=1 0 
 0 5090
 fe=???
 
-fn=__rustc::__rust_no_alloc_shim_is_unstable_v2
+fn=__aarch64_cas4_acq
+0 15
+cfn=std::sys::pal::unix::stack_overflow::thread_info::delete_current_info'2
+calls=1 0 
+0 347
+
+fn=__aarch64_cas8_acq
+0 10
+cfn=std::sys::exit_guard::unique_thread_exit'2
+calls=1 0 
+0 5
+
+fn=std::sync::once_lock::OnceLock<T>::initialize
+0 19
+cfn=std::sys::sync::once::futex::Once::call'2
+calls=1 0 
+0 68
 0 3
-cfn=std::sys::args::unix::args
+cfn=std::io::stdio::cleanup'2
+calls=1 0 
+0 6
+
+fn=0x0000000000008860
+0 7
+cfn=0x0000000000008900
+calls=1 0 
+0 5
+
+fn=__rustc::__rust_alloc
+0 1
+cfn=__rustc::__rdl_alloc
 calls=2 0 
-0 874
+0 869
+
+fn=__rustc::__rust_alloc'2
+0 2
+cfn=__rustc::__rdl_alloc'2
+calls=3 0 
+0 866
+
+fn=__aarch64_swp4_rel
+0 15
+
+fn=<alloc::raw_vec::RawVec<T,A> as core::ops::drop::Drop>::drop
+0 6
+cfn=alloc::raw_vec::RawVecInner<A>::deallocate
+calls=1 0 
+0 136
 
 fn=__rustc::__rust_dealloc
 0 1
@@ -775,14 +1136,27 @@ cfn=std::sys::sync::once::futex::Once::call
 calls=1 0 
 0 722
 
-fn=0x0000000000008900
-0 5
-
-fn=std::env::args
-0 4
-cfn=std::sys::args::unix::args
+fn=alloc::collections::btree::remove::<impl alloc::collections::btree::node::Handle<alloc::collections::btree::node::NodeRef<alloc::collections::btree::node::marker::Mut,K,V,alloc::collections::btree::node::marker::Leaf>,alloc::collections::btree::node::marker::KV>>::remove_leaf_kv
+0 22
+cfn=alloc::collections::btree::remove::<impl alloc::collections::btree::node::Handle<alloc::collections::btree::node::NodeRef<alloc::collections::btree::node::marker::Mut,K,V,alloc::collections::btree::node::marker::Leaf>,alloc::collections::btree::node::marker::KV>>::remove_leaf_kv'2
 calls=1 0 
-0 5080
+0 17
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
+cfi=???
+cfn=__GI_memmove
+calls=2 0 
+0 26
+0 30
+0 4
+
+fn=alloc::collections::btree::remove::<impl alloc::collections::btree::node::Handle<alloc::collections::btree::node::NodeRef<alloc::collections::btree::node::marker::Mut,K,V,alloc::collections::btree::node::marker::Leaf>,alloc::collections::btree::node::marker::KV>>::remove_leaf_kv'2
+0 17
+
+fn=main
+cfi=/build/rustc-1.91.1-src/library/std/src/rt.rs
+cfn=std::rt::lang_start
+calls=1 199 
+0 5090
 
 fn=__rustc::__rdl_dealloc
 0 12
@@ -793,110 +1167,355 @@ calls=3 0
 0 343
 0 12
 
+fn=__init_cpu_features
+fi=???
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
+cfi=???
+cfn=__libc_start_main@@GLIBC_2.34'2
+calls=1 0 
+0 5090
+fe=???
+
+fn=core::str::converts::from_utf8
+0 42
+cfn=core::str::converts::from_utf8'2
+calls=2 0 
+0 71
+
+fn=core::str::converts::from_utf8'2
+0 63
+cfn=core::str::converts::from_utf8'2
+calls=2 0 
+0 8
+0 8
+
+fn=std::process::exit
+0 5
+cfn=std::rt::cleanup
+calls=1 0 
+0 2907
+
+fn=__rustc::__rdl_alloc
+0 7
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
+cfi=???
+cfn=malloc
+calls=2 0 
+0 858
+0 4
+
+fn=__rustc::__rdl_alloc'2
+0 14
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
+cfi=???
+cfn=malloc'2
+calls=3 0 
+0 844
+0 8
+
+fn=std::sync::poison::once::Once::call_once_force::{{closure}}
+0 11
+
+fn=std::sys::pal::unix::stack_overflow::thread_info::delete_current_info
+0 7
+cfn=__aarch64_cas4_acq
+calls=1 0 
+0 352
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
+cfi=???
+cfn=__errno_location
+calls=1 0 
+0 9
+0 11
+0 5
+
+fn=std::sys::pal::unix::stack_overflow::thread_info::delete_current_info'2
+0 17
+cfn=__aarch64_cas8_acq
+calls=1 0 
+0 5
+0 32
+cfn=alloc::collections::btree::map::entry::OccupiedEntry<K,V,A>::remove_kv
+calls=1 0 
+0 293
+
 fn=alloc::collections::btree::remove::<impl alloc::collections::btree::node::Handle<alloc::collections::btree::node::NodeRef<alloc::collections::btree::node::marker::Mut,K,V,alloc::collections::btree::node::marker::LeafOrInternal>,alloc::collections::btree::node::marker::KV>>::remove_kv_tracking
 0 36
 cfn=alloc::collections::btree::remove::<impl alloc::collections::btree::node::Handle<alloc::collections::btree::node::NodeRef<alloc::collections::btree::node::marker::Mut,K,V,alloc::collections::btree::node::marker::Leaf>,alloc::collections::btree::node::marker::KV>>::remove_leaf_kv
 calls=1 0 
 0 99
 
-fn=std::sys::pal::unix::os::exit
-0 5
-cfn=std::sys::exit_guard::unique_thread_exit
-calls=1 0 
-0 2158
-
-fl=/build/rustc-1.91.1-src/library/core/src/option.rs
-fn=<core::option::Option<T> as core::ops::try_trait::FromResidual<core::option::Option<core::convert::Infallible>>>::from_residual
-2668 1
-2672 3
-
-fn=core::iter::traits::iterator::Iterator::nth
-2655 3
-cfn=core::iter::traits::iterator::Iterator::nth
-calls=1 0 
-2655 68
-0 2
-fi=/build/rustc-1.91.1-src/library/core/src/iter/traits/iterator.rs
-375 1
+fn=(below main)
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
 cfi=???
-cfn=<std::env::Args as core::iter::traits::iterator::Iterator>::next
+cfn=__libc_start_main@@GLIBC_2.34
 calls=1 0 
-375 65
-fe=/build/rustc-1.91.1-src/library/core/src/option.rs
+0 5090
 
-fn=<core::option::Option<T> as core::ops::try_trait::Try>::branch
-fi=/build/rustc-1.91.1-src/library/core/src/iter/traits/iterator.rs
-2426 2
-cfn=core::iter::traits::iterator::Iterator::try_fold
+fn=__rustc::__rust_no_alloc_shim_is_unstable_v2
+0 2
+cfn=std::sys::args::unix::args'2
 calls=1 0 
-2426 22
-fe=/build/rustc-1.91.1-src/library/core/src/option.rs
-2654 2
-2655 4
-2657 2
-cfn=<core::option::Option<T> as core::ops::try_trait::Try>::branch
-calls=1 2659 
-2657 3
-2659 3
+0 587
 
-fn=core::option::Option<T>::expect
+fn=__rustc::__rust_no_alloc_shim_is_unstable_v2'2
+0 1
+cfn=std::sys::args::unix::args'2
+calls=1 0 
+0 287
+
+fn=std::sys::args::unix::args
 fi=/work/benchmark-tests-exit.rs
-2 1
-cfn=benchmark_tests_exit::main
-calls=1 2 
-2 3654
-fe=/build/rustc-1.91.1-src/library/core/src/option.rs
-962 10
-963 6
-cfn=core::option::Option<T>::expect
+2 5
+cfi=/build/rustc-1.91.1-src/library/core/src/iter/traits/iterator.rs
+cfn=core::iter::traits::iterator::Iterator::nth
+calls=1 373 
+2 4176
+fe=???
+0 25
+cfn=__rustc::__rust_no_alloc_shim_is_unstable_v2
 calls=1 0 
-963 9
-0 2
-964 4
-967 3
-
-fn=core::iter::traits::exact_size::ExactSizeIterator::len
-0 2
-2355 5
-fi=/build/rustc-1.91.1-src/library/core/src/cmp.rs
-1866 1
-fi=/build/rustc-1.91.1-src/library/core/src/macros/mod.rs
-46 2
 0 1
-fi=/build/rustc-1.91.1-src/library/core/src/iter/traits/exact_size.rs
-124 3
-fe=/build/rustc-1.91.1-src/library/core/src/option.rs
+0 3
+cfn=__rustc::__rust_alloc
+calls=1 0 
+0 870
 
-fl=/build/rustc-1.91.1-src/library/alloc/src/raw_vec/mod.rs
-fn=<alloc::raw_vec::RawVec<T,A> as core::ops::drop::Drop>::drop
-fi=/build/rustc-1.91.1-src/library/core/src/ptr/mod.rs
-804 3
-fe=/build/rustc-1.91.1-src/library/alloc/src/raw_vec/mod.rs
-404 5
-406 5
+fn=std::sys::args::unix::args'2
+0 18
+cfn=__rustc::__rust_alloc'2
+calls=2 0 
+0 868
+
+fn=0x0000000000008900
+0 5
+
+fn=<alloc::vec::Vec<T,A> as core::ops::drop::Drop>::drop
+0 4
+
+fn=std::sys::sync::once::futex::Once::call
+0 13
+cfn=std::sys::sync::once::futex::Once::call'2
+calls=1 0 
+0 706
+0 3
+
+fn=std::sys::sync::once::futex::Once::call'2
+0 17
+cfn=std::sys::sync::once::futex::Once::call'2
+calls=1 0 
+0 51
+0 4
+cfn=__aarch64_cas4_acq
+calls=1 0 
+0 5
+0 16
+cfn=std::sync::poison::once::Once::call_once_force::{{closure}}
+calls=1 0 
+0 11
+0 6
+cfn=std::sync::poison::once::Once::call_once::{{closure}}
+calls=1 0 
+0 680
+0 3
+cfn=__aarch64_swp4_rel
+calls=1 0 
+0 5
+0 17
+cfn=__aarch64_cas4_acq
+calls=1 0 
+0 5
+0 5
+cfn=std::sys::sync::once::futex::Once::call'2
+calls=1 0 
+0 686
+
+fn=std::sync::poison::once::Once::call_once::{{closure}}
+0 3
+cfn=__aarch64_swp4_rel
+calls=1 0 
+0 5
+0 18
+cfn=std::io::stdio::cleanup
+calls=1 0 
+0 654
+
+fn=std::sys::exit_guard::unique_thread_exit
+0 4
+cfn=__aarch64_cas8_acq
+calls=1 0 
+0 10
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
 cfi=???
-cfn=alloc::raw_vec::RawVecInner<A>::deallocate
+cfn=__errno_location
 calls=1 0 
-406 136
+0 9
+0 10
+0 2
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
+cfi=???
+cfn=exit
+calls=1 0 
+0 2119
+0 4
 
+fn=std::sys::exit_guard::unique_thread_exit'2
+0 5
+
+fn=std::rt::lang_start_internal
+cfn=std::sys::pal::unix::init
+calls=1 0 
+0 5090
+
+fn=alloc::raw_vec::RawVecInner<A>::deallocate
+0 2
+cfn=__rustc::__rdl_dealloc
+calls=2 0 
+0 232
+0 22
+cfn=alloc::raw_vec::RawVecInner<A>::deallocate'2
+calls=2 0 
+0 16
+
+fn=alloc::raw_vec::RawVecInner<A>::deallocate'2
+0 16
+
+fn=alloc::collections::btree::map::entry::OccupiedEntry<K,V,A>::remove_kv
+0 6
+cfn=__rustc::__rust_dealloc
+calls=1 0 
+0 136
+0 16
+cfn=alloc::collections::btree::remove::<impl alloc::collections::btree::node::Handle<alloc::collections::btree::node::NodeRef<alloc::collections::btree::node::marker::Mut,K,V,alloc::collections::btree::node::marker::LeafOrInternal>,alloc::collections::btree::node::marker::KV>>::remove_kv_tracking
+calls=1 0 
+0 135
+
+fl=/build/rustc-1.91.1-src/library/alloc/src/string.rs
+fn=<alloc::string::String as core::ops::deref::Deref>::deref
+fi=/work/benchmark-tests-exit.rs
+3 3
+cfn=benchmark_tests_exit::main'2
+calls=1 0 
+3 3167
+fe=/build/rustc-1.91.1-src/library/alloc/src/string.rs
+2727 5
+2728 1
+cfn=alloc::string::String::as_str
+calls=1 1066 
+2728 89
+
+fn=alloc::string::String::as_str
+1066 5
+1069 2
+fi=/build/rustc-1.91.1-src/library/alloc/src/raw_vec/mod.rs
+508 2
+fi=/build/rustc-1.91.1-src/library/alloc/src/vec/mod.rs
+1767 1
+1671 3
+fi=/build/rustc-1.91.1-src/library/core/src/ub_checks.rs
+76 1
+cfn=alloc::string::String::as_str
+calls=1 0 
+76 72
+fe=/build/rustc-1.91.1-src/library/alloc/src/string.rs
+2729 3
+
+fl=/build/rustc-1.91.1-src/library/alloc/src/vec/into_iter.rs
 fn=<<alloc::vec::into_iter::IntoIter<T,A> as core::ops::drop::Drop>::drop::DropGuard<T,A> as core::ops::drop::Drop>::drop
-0 1
-fi=/build/rustc-1.91.1-src/library/core/src/num/niche_types.rs
-54 1
-fe=/build/rustc-1.91.1-src/library/alloc/src/raw_vec/mod.rs
+491 5
+494 3
+496 8
+fi=/build/rustc-1.91.1-src/library/core/src/ptr/non_null.rs
+504 1
+fi=/build/rustc-1.91.1-src/library/alloc/src/raw_vec/mod.rs
 48 1
 cfn=<<alloc::vec::into_iter::IntoIter<T,A> as core::ops::drop::Drop>::drop::DropGuard<T,A> as core::ops::drop::Drop>::drop
 calls=1 0 
-48 165
+48 168
+fi=/build/rustc-1.91.1-src/library/core/src/ptr/mod.rs
+804 3
+fe=/build/rustc-1.91.1-src/library/alloc/src/vec/into_iter.rs
+
+fn=<alloc::vec::into_iter::IntoIter<T,A> as core::iter::traits::iterator::Iterator>::size_hint
+229 6
+230 1
+cfn=<alloc::vec::into_iter::IntoIter<T,A> as core::iter::traits::iterator::Iterator>::size_hint'2
+calls=1 0 
+230 63
+fi=/build/rustc-1.91.1-src/library/core/src/iter/traits/exact_size.rs
+117 8
+fi=/build/rustc-1.91.1-src/library/core/src/macros/mod.rs
+44 2
+fi=/build/rustc-1.91.1-src/library/core/src/iter/traits/exact_size.rs
+122 3
+fi=/build/rustc-1.91.1-src/library/core/src/macros/mod.rs
+44 1
+fi=/build/rustc-1.91.1-src/library/core/src/option.rs
+2354 3
+cfn=core::iter::traits::exact_size::ExactSizeIterator::len
+calls=1 0 
+2354 14
+fe=/build/rustc-1.91.1-src/library/alloc/src/vec/into_iter.rs
+
+fn=<alloc::vec::into_iter::IntoIter<T,A> as core::iter::traits::iterator::Iterator>::size_hint'2
 0 1
-277 5
-fi=/build/rustc-1.91.1-src/library/alloc/src/vec/into_iter.rs
-496 1
+28 1
+233 2
+cfi=/build/rustc-1.91.1-src/library/core/src/ptr/non_null.rs
+cfn=core::ptr::non_null::NonNull<T>::offset_from_unsigned
+calls=1 948 
+233 59
+0 1
+235 6
+236 3
+
+fn=<alloc::vec::into_iter::IntoIter<T,A> as core::ops::drop::Drop>::drop
+fi=/build/rustc-1.91.1-src/library/core/src/ptr/mod.rs
+804 3
+fe=/build/rustc-1.91.1-src/library/alloc/src/vec/into_iter.rs
+487 5
+501 1
+504 4
+113 3
+fi=/build/rustc-1.91.1-src/library/core/src/ptr/non_null.rs
+407 1
+fe=/build/rustc-1.91.1-src/library/alloc/src/vec/into_iter.rs
+113 1
+fi=/build/rustc-1.91.1-src/library/core/src/iter/traits/exact_size.rs
+156 1
+cfn=core::iter::traits::exact_size::ExactSizeIterator::len
+calls=1 116 
+156 332
+fe=/build/rustc-1.91.1-src/library/alloc/src/vec/into_iter.rs
+
+fn=<alloc::vec::into_iter::IntoIter<T,A> as core::ops::drop::Drop>::drop'2
+0 2
+fi=/build/rustc-1.91.1-src/library/core/src/iter/traits/exact_size.rs
+156 1
+fe=/build/rustc-1.91.1-src/library/alloc/src/vec/into_iter.rs
+504 1
 cfi=/build/rustc-1.91.1-src/library/core/src/ptr/mod.rs
-cfn=core::ptr::drop_in_place<alloc::raw_vec::RawVec<std::ffi::os_str::OsString>>
+cfn=core::ptr::drop_in_place<[std::ffi::os_str::OsString]>
 calls=1 804 
-496 158
-fe=/build/rustc-1.91.1-src/library/alloc/src/raw_vec/mod.rs
+504 217
+507 2
+cfi=/build/rustc-1.91.1-src/library/core/src/ptr/mod.rs
+cfn=core::ptr::drop_in_place<<alloc::vec::into_iter::IntoIter<T,A> as core::ops::drop::Drop>::drop::DropGuard<std::ffi::os_str::OsString,alloc::alloc::Global>>
+calls=1 804 
+507 198
+
+fl=/build/rustc-1.91.1-src/library/std/src/rt.rs
+fn=std::rt::lang_start::{{closure}}
+cfi=/build/rustc-1.91.1-src/library/std/src/sys/backtrace.rs
+cfn=std::sys::backtrace::__rust_begin_short_backtrace
+calls=1 154 
+206 5090
+
+fn=std::rt::lang_start
+cfi=???
+cfn=std::rt::lang_start_internal
+calls=1 0 
+205 5090
 
 fl=/build/rustc-1.91.1-src/library/core/src/mem/mod.rs
 fn=core::ptr::non_null::NonNull<T>::offset_from_unsigned
@@ -923,6 +1542,8 @@ fn=alloc::string::String::as_str
 cfn=core::slice::raw::from_raw_parts::precondition_check
 calls=1 67 
 77 64
+
+fn=alloc::string::String::as_str'2
 0 2
 fi=/build/rustc-1.91.1-src/library/core/src/ptr/metadata.rs
 119 2
@@ -958,220 +1579,42 @@ cfn=core::slice::raw::from_raw_parts::precondition_check
 calls=1 0 
 1373 25
 fe=/build/rustc-1.91.1-src/library/core/src/ub_checks.rs
+76 1
+cfn=alloc::string::String::as_str'2
+calls=1 0 
+76 7
+
+fn=core::slice::raw::from_raw_parts::precondition_check'2
 0 1
 149 1
 fi=/build/rustc-1.91.1-src/library/core/src/slice/raw.rs
 137 2
 fe=/build/rustc-1.91.1-src/library/core/src/ub_checks.rs
 74 4
-76 1
-cfn=alloc::string::String::as_str
-calls=1 0 
-76 7
 
-fl=/build/rustc-1.91.1-src/library/core/src/iter/traits/iterator.rs
-fn=core::iter::traits::iterator::Iterator::nth
-fi=/work/benchmark-tests-exit.rs
-2 1
+fl=/build/rustc-1.91.1-src/library/core/src/ops/function.rs
+fn=core::ops::function::FnOnce::call_once
+cfi=/work/benchmark-tests-exit.rs
 cfn=benchmark_tests_exit::main
-calls=1 2 
-2 3689
-fe=/build/rustc-1.91.1-src/library/core/src/iter/traits/iterator.rs
-373 8
-374 1
-cfn=core::iter::traits::iterator::Iterator::advance_by
-calls=1 296 
-374 477
-376 3
+calls=1 1 
+250 5090
 
-fn=core::iter::traits::iterator::Iterator::advance_by
-296 6
-329 1
-cfn=<I as core::iter::traits::iterator::Iterator::advance_by::SpecAdvanceBy>::spec_advance_by
-calls=1 315 
-329 392
-374 1
-fi=/build/rustc-1.91.1-src/library/core/src/result.rs
-706 3
-707 3
-cfi=/build/rustc-1.91.1-src/library/core/src/option.rs
-cfn=core::iter::traits::iterator::Iterator::nth
-calls=1 2655 
-707 71
-fe=/build/rustc-1.91.1-src/library/core/src/iter/traits/iterator.rs
-
-fn=<I as core::iter::traits::iterator::Iterator::advance_by::SpecAdvanceBy>::spec_advance_by::{{closure}}
-2426 2
-cfn=core::iter::traits::iterator::Iterator::try_fold
-calls=1 0 
-2426 37
-320 11
-cfi=/build/rustc-1.91.1-src/library/core/src/ptr/mod.rs
-cfn=core::ptr::drop_in_place<alloc::string::String>
-calls=1 804 
-320 178
-
-fn=core::iter::traits::iterator::Iterator::try_fold
-2418 8
-2424 3
-2425 1
-cfn=core::iter::traits::iterator::Iterator::try_fold
-calls=1 0 
-2425 348
+fl=/build/rustc-1.91.1-src/library/core/src/slice/raw.rs
+fn=core::slice::raw::from_raw_parts::precondition_check
 0 1
-2425 2
-cfi=???
-cfn=<std::env::Args as core::iter::traits::iterator::Iterator>::next
+fi=/build/rustc-1.91.1-src/library/core/src/ub_checks.rs
+148 4
+cfn=core::slice::raw::from_raw_parts::precondition_check'2
 calls=1 0 
-2425 345
-2425 6
-cfn=core::iter::traits::iterator::Iterator::try_fold
-calls=1 2425 
-2425 244
-2425 4
-2426 12
-cfn=<I as core::iter::traits::iterator::Iterator::advance_by::SpecAdvanceBy>::spec_advance_by::{{closure}}
-calls=1 320 
-2426 228
-0 1
-2426 1
-cfi=/build/rustc-1.91.1-src/library/core/src/option.rs
-cfn=<core::option::Option<T> as core::ops::try_trait::Try>::branch
-calls=1 2654 
-2426 35
-0 1
-2426 7
-cfn=core::iter::traits::iterator::Iterator::try_fold
-calls=1 2426 
-2426 14
-2426 1
-cfi=/build/rustc-1.91.1-src/library/core/src/option.rs
-cfn=<core::option::Option<T> as core::ops::try_trait::FromResidual<core::option::Option<core::convert::Infallible>>>::from_residual
-calls=1 2668 
-2426 4
-2426 2
-cfn=core::iter::traits::iterator::Iterator::try_fold
-calls=1 0 
-2426 7
-0 1
-2426 1
-2429 1
-cfn=core::iter::traits::iterator::Iterator::try_fold
-calls=1 2429 
-2429 4
-2429 4
-320 1
-322 5
-cfn=<I as core::iter::traits::iterator::Iterator::advance_by::SpecAdvanceBy>::spec_advance_by
-calls=1 323 
-322 7
-
-fn=<I as core::iter::traits::iterator::Iterator::advance_by::SpecAdvanceBy>::spec_advance_by
-330 3
-315 6
-fi=/build/rustc-1.91.1-src/library/core/src/num/nonzero.rs
-400 1
-fe=/build/rustc-1.91.1-src/library/core/src/iter/traits/iterator.rs
-316 5
-cfn=<I as core::iter::traits::iterator::Iterator::advance_by::SpecAdvanceBy>::spec_advance_by
-calls=1 0 
-316 377
-0 1
-316 2
-320 1
-cfn=core::iter::traits::iterator::Iterator::try_fold
-calls=1 2418 
-320 373
-323 2
-cfn=<I as core::iter::traits::iterator::Iterator::advance_by::SpecAdvanceBy>::spec_advance_by
-calls=1 326 
-323 5
-326 1
-cfn=<I as core::iter::traits::iterator::Iterator::advance_by::SpecAdvanceBy>::spec_advance_by
-calls=1 326 
-326 4
-326 4
-
-fl=/build/rustc-1.91.1-src/library/core/src/iter/traits/exact_size.rs
-fn=core::iter::traits::exact_size::ExactSizeIterator::len
-116 5
-fi=/build/rustc-1.91.1-src/library/core/src/macros/mod.rs
-47 2
-fe=/build/rustc-1.91.1-src/library/core/src/iter/traits/exact_size.rs
-117 1
-cfi=/build/rustc-1.91.1-src/library/alloc/src/vec/into_iter.rs
-cfn=<alloc::vec::into_iter::IntoIter<T,A> as core::iter::traits::iterator::Iterator>::size_hint
-calls=1 229 
-117 101
-156 2
-cfi=/build/rustc-1.91.1-src/library/alloc/src/vec/into_iter.rs
-cfn=<alloc::vec::into_iter::IntoIter<T,A> as core::ops::drop::Drop>::drop
-calls=1 0 
-156 221
-
-fl=/build/rustc-1.91.1-src/library/core/src/char/methods.rs
-fn=core::char::methods::<impl char>::to_digit
-fi=/build/rustc-1.91.1-src/library/core/src/num/mod.rs
-1609 4
-1589 3
-cfn=core::num::<impl i32>::from_ascii_radix
-calls=1 0 
-1589 24
-fe=/build/rustc-1.91.1-src/library/core/src/char/methods.rs
-402 7
-fi=/build/rustc-1.91.1-src/library/core/src/fmt/rt.rs
-194 3
-fi=/build/rustc-1.91.1-src/library/core/src/num/uint_macros.rs
-2339 4
-fe=/build/rustc-1.91.1-src/library/core/src/char/methods.rs
-404 2
-0 1
-404 3
-cfn=core::char::methods::<impl char>::to_digit
-calls=1 0 
-404 23
-0 1
-408 3
-cfn=core::char::methods::<impl char>::to_digit
-calls=1 0 
-408 19
-0 1
-420 1
-fi=/build/rustc-1.91.1-src/library/core/src/num/uint_macros.rs
-2340 2
-fe=/build/rustc-1.91.1-src/library/core/src/char/methods.rs
-408 1
-cfn=core::char::methods::<impl char>::to_digit
-calls=1 0 
-408 14
-0 1
-423 8
-cfn=core::char::methods::<impl char>::to_digit
-calls=1 424 
-423 5
-424 5
-
-fl=/build/rustc-1.91.1-src/library/core/src/str/mod.rs
-fn=core::str::<impl str>::parse
-fi=/work/benchmark-tests-exit.rs
-3 2
-cfn=benchmark_tests_exit::main
-calls=1 0 
-3 2949
-fe=/build/rustc-1.91.1-src/library/core/src/str/mod.rs
-2701 6
-2702 1
-cfi=/build/rustc-1.91.1-src/library/core/src/num/mod.rs
-cfn=core::num::<impl core::str::traits::FromStr for i32>::from_str
-calls=1 1439 
-2702 206
+148 8
+fe=/build/rustc-1.91.1-src/library/core/src/slice/raw.rs
 
 fl=/build/rustc-1.91.1-src/library/core/src/ptr/non_null.rs
 fn=core::ptr::non_null::NonNull<T>::offset_from_unsigned
 fi=/build/rustc-1.91.1-src/library/alloc/src/vec/into_iter.rs
 233 1
 230 1
-cfn=<alloc::vec::into_iter::IntoIter<T,A> as core::iter::traits::iterator::Iterator>::size_hint
+cfn=<alloc::vec::into_iter::IntoIter<T,A> as core::iter::traits::iterator::Iterator>::size_hint'2
 calls=1 0 
 230 10
 fe=/build/rustc-1.91.1-src/library/core/src/ptr/non_null.rs
@@ -1187,466 +1630,27 @@ calls=1 0
 76 36
 fe=/build/rustc-1.91.1-src/library/core/src/ptr/non_null.rs
 
-fl=/build/rustc-1.91.1-src/library/core/src/ops/function.rs
-fn=core::ops::function::FnOnce::call_once
-cfi=/work/benchmark-tests-exit.rs
-cfn=benchmark_tests_exit::main
-calls=1 1 
-250 5090
-
-fl=/build/rustc-1.91.1-src/library/alloc/src/string.rs
-fn=<alloc::string::String as core::ops::deref::Deref>::deref
+fl=/build/rustc-1.91.1-src/library/core/src/str/mod.rs
+fn=core::str::<impl str>::parse
 fi=/work/benchmark-tests-exit.rs
-3 3
-cfn=benchmark_tests_exit::main
+3 2
+cfn=benchmark_tests_exit::main'2
 calls=1 0 
-3 3167
-fe=/build/rustc-1.91.1-src/library/alloc/src/string.rs
-2727 5
-2728 1
-cfn=alloc::string::String::as_str
-calls=1 1066 
-2728 89
+3 2949
+fe=/build/rustc-1.91.1-src/library/core/src/str/mod.rs
+2701 6
+2702 1
+cfi=/build/rustc-1.91.1-src/library/core/src/num/mod.rs
+cfn=core::num::<impl core::str::traits::FromStr for i32>::from_str
+calls=1 1439 
+2702 206
 
-fn=alloc::string::String::as_str
-1066 5
-1069 2
-fi=/build/rustc-1.91.1-src/library/alloc/src/raw_vec/mod.rs
-508 2
-fi=/build/rustc-1.91.1-src/library/alloc/src/vec/mod.rs
-1767 1
-1671 3
-fi=/build/rustc-1.91.1-src/library/core/src/ub_checks.rs
-76 1
-cfn=alloc::string::String::as_str
-calls=1 0 
-76 72
-fe=/build/rustc-1.91.1-src/library/alloc/src/string.rs
-2729 3
-
-fl=/build/rustc-1.91.1-src/library/core/src/result.rs
-fn=core::result::Result<T,E>::expect
-1172 11
-1176 2
-1177 2
-1180 3
-
-fl=/build/rustc-1.91.1-src/library/std/src/rt.rs
-fn=std::rt::lang_start
-cfi=???
-cfn=std::rt::lang_start_internal
-calls=1 0 
-205 5090
-
-fn=std::rt::lang_start::{{closure}}
-cfi=/build/rustc-1.91.1-src/library/std/src/sys/backtrace.rs
-cfn=std::sys::backtrace::__rust_begin_short_backtrace
-calls=1 154 
-206 5090
-
-fl=/build/rustc-1.91.1-src/library/alloc/src/vec/into_iter.rs
-fn=<alloc::vec::into_iter::IntoIter<T,A> as core::iter::traits::iterator::Iterator>::size_hint
-229 6
-230 1
-cfn=<alloc::vec::into_iter::IntoIter<T,A> as core::iter::traits::iterator::Iterator>::size_hint
-calls=1 0 
-230 63
-0 1
-28 1
-233 2
-cfi=/build/rustc-1.91.1-src/library/core/src/ptr/non_null.rs
-cfn=core::ptr::non_null::NonNull<T>::offset_from_unsigned
-calls=1 948 
-233 59
-0 1
-235 6
-236 3
-fi=/build/rustc-1.91.1-src/library/core/src/iter/traits/exact_size.rs
-117 8
-fi=/build/rustc-1.91.1-src/library/core/src/macros/mod.rs
-44 2
-fi=/build/rustc-1.91.1-src/library/core/src/iter/traits/exact_size.rs
-122 3
-fi=/build/rustc-1.91.1-src/library/core/src/macros/mod.rs
-44 1
-fi=/build/rustc-1.91.1-src/library/core/src/option.rs
-2354 3
-cfn=core::iter::traits::exact_size::ExactSizeIterator::len
-calls=1 0 
-2354 14
-fe=/build/rustc-1.91.1-src/library/alloc/src/vec/into_iter.rs
-
-fn=<alloc::vec::into_iter::IntoIter<T,A> as core::ops::drop::Drop>::drop
-fi=/build/rustc-1.91.1-src/library/core/src/ptr/mod.rs
-804 3
-fe=/build/rustc-1.91.1-src/library/alloc/src/vec/into_iter.rs
-487 5
-501 1
-504 4
-113 3
-fi=/build/rustc-1.91.1-src/library/core/src/ptr/non_null.rs
-407 1
-fe=/build/rustc-1.91.1-src/library/alloc/src/vec/into_iter.rs
-113 1
-fi=/build/rustc-1.91.1-src/library/core/src/iter/traits/exact_size.rs
-156 1
-cfn=core::iter::traits::exact_size::ExactSizeIterator::len
-calls=1 116 
-156 332
-fe=/build/rustc-1.91.1-src/library/alloc/src/vec/into_iter.rs
-0 2
-fi=/build/rustc-1.91.1-src/library/core/src/iter/traits/exact_size.rs
-156 1
-fe=/build/rustc-1.91.1-src/library/alloc/src/vec/into_iter.rs
-504 1
-cfi=/build/rustc-1.91.1-src/library/core/src/ptr/mod.rs
-cfn=core::ptr::drop_in_place<[std::ffi::os_str::OsString]>
-calls=1 804 
-504 217
-507 2
-cfi=/build/rustc-1.91.1-src/library/core/src/ptr/mod.rs
-cfn=core::ptr::drop_in_place<<alloc::vec::into_iter::IntoIter<T,A> as core::ops::drop::Drop>::drop::DropGuard<std::ffi::os_str::OsString,alloc::alloc::Global>>
-calls=1 804 
-507 198
-
-fn=<<alloc::vec::into_iter::IntoIter<T,A> as core::ops::drop::Drop>::drop::DropGuard<T,A> as core::ops::drop::Drop>::drop
-491 5
-494 3
-496 8
-fi=/build/rustc-1.91.1-src/library/core/src/ptr/non_null.rs
-504 1
-fi=/build/rustc-1.91.1-src/library/alloc/src/raw_vec/mod.rs
-48 1
-cfn=<<alloc::vec::into_iter::IntoIter<T,A> as core::ops::drop::Drop>::drop::DropGuard<T,A> as core::ops::drop::Drop>::drop
-calls=1 0 
-48 168
-fi=/build/rustc-1.91.1-src/library/core/src/ptr/mod.rs
-804 3
-fe=/build/rustc-1.91.1-src/library/alloc/src/vec/into_iter.rs
-
-ob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
-fl=???
-fn=malloc
-0 15
-fi=???
-cob=/work/benchmark-tests-exit
-cfi=???
-cfn=__rustc::__rust_no_alloc_shim_is_unstable_v2
-calls=1 0 
-0 588
-cfn=__strlen_asimd
-calls=1 0 
-0 31
-fi=???
-0 8
-fe=???
-0 12
-fi=???
-cob=/work/benchmark-tests-exit
-cfi=???
-cfn=std::sys::args::unix::args
-calls=1 0 
-0 12
-cob=/work/benchmark-tests-exit
-cfi=???
-cfn=__rustc::__rust_no_alloc_shim_is_unstable_v2
-calls=1 0 
-0 288
-cfn=__strlen_asimd
-calls=1 0 
-0 21
-cfn=__GI_memcpy
-calls=2 0 
-0 34
-fi=???
-0 45
-fe=???
-0 111
-cfn=_int_malloc
-calls=9 0 
-0 537
-
-fn=alloc_perturb
-0 39
-
-fn=__GI_memmove
-0 26
-
-fn=pthread_mutex_unlock@@GLIBC_2.17
-0 5
-cfn=__pthread_mutex_unlock_usercnt
-calls=1 0 
-0 903
-
-fn=__aarch64_cas4_acq
-0 40
-
-fn=__aarch64_swp4_rel
-0 40
-
-fn=__libc_cleanup_push_defer
-0 48
-
-fn=_int_free
-0 207
-cfn=_int_free
-calls=10 0 
-0 51
-0 39
-
-fn=exit
-0 7
-cfn=__run_exit_handlers
-calls=1 0 
-0 2112
-
-fn=__cxa_finalize
-0 39
-cfn=__aarch64_cas4_acq
-calls=3 0 
-0 15
-0 99
-cfn=__unregister_atfork
-calls=3 0 
-0 129
-0 12
-cfn=__aarch64_swp4_rel
-calls=3 0 
-0 15
-0 45
-
-fn=sigaltstack
-0 6
-
-fn=__errno_location
-0 18
-
-fn=__unregister_atfork
-0 33
-cfn=__aarch64_cas4_acq
-calls=3 0 
-0 15
-0 24
-cfn=__aarch64_swp4_rel
-calls=3 0 
-0 15
-0 42
-
-fn=_IO_cleanup
-0 1
-cfn=__run_exit_handlers
-calls=1 0 
-0 2
-0 18
-cfn=_IO_flush_all
-calls=1 0 
-0 410
-0 96
-cfn=__libc_cleanup_pop_restore
-calls=1 0 
-0 21
-0 32
-cfn=_IO_cleanup
-calls=3 0 
-0 328
-0 6
-cfn=_IO_cleanup
-calls=1 0 
-0 43
-
-fn=__run_exit_handlers
-0 16
-cfn=__aarch64_cas4_acq
-calls=1 0 
-0 5
-0 28
-cfn=__aarch64_swp4_rel
-calls=1 0 
-0 5
-0 5
-cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/ld-linux-aarch64.so.1
-cfi=???
-cfn=_dl_fini
-calls=1 0 
-0 2034
-0 1
-cfn=__call_tls_dtors
-calls=1 0 
-0 19
-0 1
-cfn=__run_exit_handlers
-calls=1 0 
-0 2080
-
-fn=__call_tls_dtors
-0 19
-
-fn=free
-fi=/build/rustc-1.91.1-src/library/core/src/ptr/mod.rs
-804 3
-fi=/build/rustc-1.91.1-src/library/alloc/src/raw_vec/mod.rs
-407 3
-fe=???
-0 9
-fi=???
-cob=/work/benchmark-tests-exit
-cfi=???
-cfn=__aarch64_swp4_rel
-calls=1 0 
-0 5
-0 68
-cfn=_int_free
-calls=9 0 
-0 246
-0 9
-cfn=free
-calls=9 0 
-0 252
-
-fn=munmap
-0 6
-
-fn=pthread_mutex_lock@@GLIBC_2.17
-0 12
-fi=???
-cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/ld-linux-aarch64.so.1
-cfi=???
-cfn=_dl_audit_activity_nsid
-calls=1 0 
-0 21
-0 95
-fi=???
-cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/ld-linux-aarch64.so.1
-cfi=???
-cfn=_dl_sort_maps
-calls=1 0 
-0 425
-0 3
-fi=???
-cfn=pthread_mutex_unlock@@GLIBC_2.17
-calls=1 0 
-0 908
-0 77
-cfn=pthread_mutex_lock@@GLIBC_2.17
-calls=1 0 
-0 14
-
-fn=__libc_start_main@@GLIBC_2.34
-cfn=__cxa_atexit
-calls=1 0 
-0 5090
-cfn=(below main)
-calls=1 0 
-0 5090
-cob=/work/benchmark-tests-exit
-cfi=???
-cfn=init_have_lse_atomics
-calls=1 0 
-0 5090
-
-fn=__cxa_atexit
-cfn=__internal_atexit
-calls=1 0 
-0 5090
-
-fn=__libc_cleanup_pop_restore
-0 42
-
-fn=__GI_memcpy
-0 34
-
-fn=__strlen_asimd
-0 52
-
-fn=__pthread_mutex_unlock_usercnt
-0 3
-fi=???
-cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/ld-linux-aarch64.so.1
-cfi=???
-cfn=_dl_fini
-calls=1 0 
-0 847
-0 36
-cfn=__pthread_mutex_unlock_usercnt
-calls=1 0 
-0 18
-0 17
-cfn=__pthread_mutex_unlock_usercnt
-calls=1 0 
-0 24
-
-fn=_int_malloc
-0 216
-cfn=_int_malloc
-calls=7 0 
-0 396
-0 54
-cfn=_int_malloc
-calls=13 0 
-0 273
-0 12
-cfn=_int_malloc
-calls=13 0 
-0 261
-0 102
-cfn=alloc_perturb
-calls=13 0 
-0 39
-0 15
-cfn=_int_malloc
-calls=13 0 
-0 57
-0 48
-cfn=_int_malloc
-calls=12 0 
-0 114
-0 51
-
-fn=_IO_flush_all
-0 21
-cfn=__libc_cleanup_push_defer
-calls=1 0 
-0 24
-0 12
-cfn=_IO_flush_all
-calls=1 0 
-0 145
-0 87
-cfn=__libc_cleanup_pop_restore
-calls=1 0 
-0 21
-0 31
-cfn=_IO_flush_all
-calls=3 0 
-0 306
-0 13
-cfn=_IO_flush_all
-calls=1 0 
-0 42
-0 6
-cfn=__libc_cleanup_push_defer
-calls=1 0 
-0 24
-0 10
-cfn=_IO_cleanup
-calls=1 0 
-0 155
-0 6
-
-fn=__internal_atexit
-cfn=__libc_start_main@@GLIBC_2.34
-calls=1 0 
-0 5090
-
-fn=(below main)
-cob=/work/benchmark-tests-exit
-cfi=???
-cfn=main
-calls=1 0 
-0 5090
-
-fn=getauxval
-0 114
+fl=/build/rustc-1.91.1-src/library/std/src/sys/backtrace.rs
+fn=std::sys::backtrace::__rust_begin_short_backtrace
+cfi=/build/rustc-1.91.1-src/library/core/src/ops/function.rs
+cfn=core::ops::function::FnOnce::call_once
+calls=1 250 
+158 5090
 
 ob=/nix/store/l8wljp091lkvnvx6xfnvfpgr6j568idc-gcc-14.3.0-libgcc/lib/libgcc_s.so.1
 fl=???
@@ -1692,28 +1696,129 @@ calls=1 0
 0 18
 0 5
 
-ob=/nix/store/skvxpqppwwsfqgb4c8jhsk8s9v4cxbm6-valgrind-3.26.0/libexec/valgrind/vgpreload_core-arm64-linux.so
+ob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/ld-linux-aarch64.so.1
 fl=???
-fn=0x0000000000000620
-0 7
-cfn=0x00000000000006c0
-calls=1 0 
-0 5
+fn=_dl_audit_objclose
+0 80
 
-fn=0x000000000000068c
-0 12
-cfn=0x0000000000000620
+fn=_dl_init
+cob=/work/benchmark-tests-exit
+cfi=???
+cfn=(below main)
 calls=1 0 
+0 5090
+
+fn=memcpy
+0 14
+
+fn=(below main)
+cfn=_dl_start
+calls=1 0 
+0 5090
+
+fn=_dl_fini
+0 25
+cfn=_dl_fini'2
+calls=1 0 
+0 1544
 0 12
+fi=???
 cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
 cfi=???
-cfn=__cxa_finalize
+cfn=__aarch64_swp4_rel
 calls=1 0 
-0 118
 0 5
-0 13
+0 7
+fi=???
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
+cfi=???
+cfn=__aarch64_cas4_acq
+calls=1 0 
+0 5
+0 5
+fi=???
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
+cfi=???
+cfn=_IO_cleanup
+calls=1 0 
+0 431
+fe=???
 
-fn=0x00000000000006c0
-0 5
+fn=_dl_fini'2
+0 3
+cob=/nix/store/89n0gcl1yjp37ycca45rn50h7lms5p6f-glibc-2.40-66/lib/libc.so.6
+cfi=???
+cfn=pthread_mutex_lock@@GLIBC_2.17
+calls=1 0 
+0 1541
+0 25
+cfn=_dl_call_fini
+calls=5 0 
+0 672
+0 10
+cfn=_dl_audit_objclose
+calls=5 0 
+0 80
+0 33
+cfn=_dl_audit_activity_nsid
+calls=1 0 
+0 21
+0 6
+
+fn=_dl_call_fini
+0 102
+cob=/nix/store/l8wljp091lkvnvx6xfnvfpgr6j568idc-gcc-14.3.0-libgcc/lib/libgcc_s.so.1
+cfi=???
+cfn=release_registered_frames
+calls=1 0 
+0 50
+cob=/nix/store/skvxpqppwwsfqgb4c8jhsk8s9v4cxbm6-valgrind-3.26.0/libexec/valgrind/vgpreload_core-arm64-linux.so
+cfi=???
+cfn=0x000000000000068c
+calls=1 0 
+0 160
+cob=/work/benchmark-tests-exit
+cfi=???
+cfn=0x00000000000088cc
+calls=1 0 
+0 160
+0 2
+cob=/nix/store/l8wljp091lkvnvx6xfnvfpgr6j568idc-gcc-14.3.0-libgcc/lib/libgcc_s.so.1
+cfi=???
+cfn=0x0000000000003dcc
+calls=1 0 
+0 160
+0 38
+
+fn=_dl_start
+cfn=_dl_init
+calls=1 0 
+0 5090
+
+fn=_dl_sort_maps
+0 104
+cfn=_dl_sort_maps'2
+calls=2 0 
+0 321
+
+fn=_dl_sort_maps'2
+0 51
+cfn=dfs_traversal.part.0
+calls=10 0 
+0 229
+0 26
+cfn=memcpy
+calls=2 0 
+0 14
+0 1
+cfn=_dl_sort_maps'2
+calls=2 0 
+0 6
+
+fn=dfs_traversal.part.0
+0 229
+
+fn=_dl_audit_activity_nsid
+0 42
 
 totals: 5090

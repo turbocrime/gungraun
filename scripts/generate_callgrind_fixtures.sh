@@ -31,7 +31,7 @@ docker run --rm \
         done
 
         # Common callgrind flags matching gungraun's defaults
-        CG='--compress-strings=no --compress-pos=no --dump-line=yes --separate-recs=1'
+        CG='--compress-strings=no --compress-pos=no --dump-line=yes'
 
         # Run callgrind on each
         # benchmark-tests-exit: full run (no_entry_point) and toggle-collect on main (when_entry_point)

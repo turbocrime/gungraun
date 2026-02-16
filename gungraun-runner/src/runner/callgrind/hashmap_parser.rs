@@ -67,14 +67,48 @@ pub struct HashMapParser {
 }
 
 /// The unique `Id` identifying a function uniquely
-#[derive(Debug, Hash, PartialEq, Eq, PartialOrd, Ord, Clone, Serialize, Deserialize)]
+///
+/// Identity (Hash/Eq/Ord) is based on `func` + `obj` only.
+/// `file` is kept for display but excluded from matching because callgrind's
+/// `fi=`/`fe=` inline directives change the file context mid-function,
+/// creating spurious mismatches.
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Id {
-    /// the file the function is found in
+    /// The file the function is found in (display only, not part of identity)
     pub file: Option<SourcePath>,
     /// The function
     pub func: String,
     /// The object the function is found in
     pub obj: Option<SourcePath>,
+}
+
+impl PartialEq for Id {
+    fn eq(&self, other: &Self) -> bool {
+        self.func == other.func && self.obj == other.obj
+    }
+}
+
+impl Eq for Id {}
+
+impl std::hash::Hash for Id {
+    fn hash<H: std::hash::Hasher>(&self, state: &mut H) {
+        self.func.hash(state);
+        self.obj.hash(state);
+    }
+}
+
+impl PartialOrd for Id {
+    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
+        Some(self.cmp(other))
+    }
+}
+
+impl Ord for Id {
+    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
+        self.func
+            .cmp(&other.func)
+            .then_with(|| self.obj.cmp(&other.obj))
+    }
 }
 
 /// The `Value` to be associated with an [`Id`]
